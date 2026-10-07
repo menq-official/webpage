@@ -92,11 +92,11 @@
     "maturityPromotionAuthorized": true,
     "maturityPromotionInstruction": "Owner approved merge + M2 in the project conversation on 2026-10-08 («Հա ընգեր»)"
   },
-  "overallVerdict": "M2_PILOT_BRANDMARK_CONTRAST_GLOW_AWAITING_CI",
+  "overallVerdict": "M2_PILOT_AXE_CLEAN_ICONS_AWAITING_CI",
   "pullRequest": 1,
   "mergeCommit": "d985a5718ed7ec47717fdf271d14580e8eb947cb",
   "brandTokenConsumption": {
-    "status": "Validated — CI GREEN (run 37682218097); BrandMark/contrast/glow update awaiting re-validation",
+    "status": "Validated — CI GREEN (run 37687205276: BrandMark, AA contrast, brand glow; axe 0/0/0/0)",
     "date": "2026-10-07",
     "repository": "menqstudio/MenQ-Standard",
     "commit": "3eb4af22562930a87f5752697722b46fffc09a51",
@@ -110,23 +110,31 @@
     "tokenVerifier": "scripts/verify_brand_tokens.mjs",
     "runtimeEvidence": "scripts/e2e_consumer_smoke.mjs",
     "baseline": "docs/menq-standard/evidence/brand-token-baseline.json",
-    "validatedContentHead": "0ec4aa1",
+    "validatedContentHead": "246cebd",
     "ciEvidence": {
-      "workflowRunId": 37682218097,
+      "workflowRunId": 37687205276,
       "event": "pull_request",
       "verdict": "GREEN",
       "tokenParity": "GREEN — 1632/1632 values in 8 contexts",
       "runtime": "GREEN — 14 page×theme checks (hy, en, ru, privacy ×3, admin login × light/dark): HTTP, lang, data-theme, no console errors, vendored layer live, page background = token",
       "axe": {
         "critical": 0,
-        "serious": 7,
+        "serious": 0,
         "moderate": 0,
         "minor": 0
       },
-      "findings": [
-        "light-theme color-contrast fixed upstream (CR-0006) and re-pinned; local axe: 0 violations in 14 checks"
-      ],
+      "findings": [],
       "note": "Commits re-authored as MenQ <menqstudio@gmail.com> on Owner instruction (2026-10-08); the earlier GREEN run 37680568760 validated the same tree."
+    },
+    "brandIcons": {
+      "source": "MenQ-Standard CR-0008",
+      "served": [
+        "/favicon.ico",
+        "/icon.svg",
+        "/apple-icon.png",
+        "/manifest.webmanifest"
+      ],
+      "status": "Implemented — awaiting CI"
     }
   }
 }
