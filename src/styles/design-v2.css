@@ -58,3 +58,9 @@ body {
 @keyframes menq-signal { 0%, 100% { opacity: .45; transform: scale(.9); } 50% { opacity: 1; transform: scale(1.1); } }
 @keyframes menq-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 @media (prefers-reduced-motion: reduce) { .animate-signal, .animate-float { animation: none; } }
+
+/* BrandMark neon glow: softer on light grounds, full on dark grounds and contrast sections. */
+.menq-mark-glow { opacity: 0.55; }
+:root[data-theme="dark"] .menq-mark-glow,
+.section-contrast .menq-mark-glow { opacity: 0.9; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme]) .menq-mark-glow { opacity: 0.9; } }

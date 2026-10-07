@@ -24,9 +24,12 @@ Local ֆայլերում (`primitives`, `semantic`, `components`, `motion`, `sec
 
 Run `37682218097`-ում token parity-ն GREEN է (1632/1632), runtime evidence-ը GREEN է (14 էջ×theme ստուգում), axe-ը՝ 0 critical, 7 serious։ Բոլոր 7 serious-ը `color-contrast` է light theme-ում, ամեն էջում. դա adoption-ից առաջ էլ կար (token արժեքները չեն փոխվել), և ուղղումը Owner-ի design որոշում է։
 
-### Պահպանված հին վարքագիծ
+### 2026-10-08 փոփոխություններ
 
-Light theme-ում contrast section-ի ներսում glow/hover shadow-ները adoption-ից առաջ օգտագործում էին `cyan-500`։ Brand շերտը դրանք լուծում է section-ի ներսում (`cyan-400`)։ Տեսքը չփոխելու համար `sections.css`-ը պահում է հին արժեքը, մինչև Owner-ը որոշի։
+- Owner-ի որոշմամբ contrast section-ի glow/hover shadow-ները light theme-ում անցան brand արժեքին (`cyan-400`)։ Հին quirk-ը հեռացված է։
+- Light theme-ի `color-contrast` խնդիրը (սպիտակ տեքստ `#0284c7`-ի վրա, 4.09:1) ուղղվեց brand շերտում (CR-0006)՝ `#0369a1` (5.9:1)։ Webpage-ը re-pin արեց `tokens.vars.css`-ը և հեռացրեց իր light override-ը։ axe-ը՝ 0 violation 14 էջ×theme ստուգումում, և CI-ն այժմ serious violation-ն էլ է RED համարում։
+- BrandMark-ը փոխարինվեց պաշտոնական մարկով (CR-0005), OG պատկերը՝ պաշտոնական լոգոյով։
+- Baseline-ի բոլոր դիտավորյալ փոփոխությունները գրանցված են `brand-token-baseline.json`-ի `intentionalChanges`-ում։
 
 ### Maturity
 
@@ -51,9 +54,12 @@ Both run in CI, and the evidence is stored in the audit artifact.
 
 In run `37682218097`, token parity is GREEN (1632/1632) and runtime evidence is GREEN (14 page×theme checks); axe reports 0 critical and 7 serious. All 7 serious findings are `color-contrast` in the light theme on every page. They existed before adoption (token values are unchanged), and the fix is an Owner design decision.
 
-### Preserved legacy behavior
+### 2026-10-08 changes
 
-Before adoption, the glow/hover shadows inside a contrast section in the light theme used `cyan-500`. The brand layer resolves them inside the section (`cyan-400`). To keep the look unchanged, `sections.css` keeps the old value until the Owner decides.
+- By Owner decision, the contrast-section glow/hover shadows in the light theme moved to the brand value (`cyan-400`); the legacy quirk is removed.
+- The light-theme `color-contrast` finding (white text on `#0284c7`, 4.09:1) was fixed in the brand layer (CR-0006) with `#0369a1` (5.9:1). Webpage re-pinned `tokens.vars.css` and removed its own light override. axe reports 0 violations in 14 page×theme checks, and CI now treats serious violations as RED too.
+- BrandMark is replaced by the official mark (CR-0005), and the OG image uses the official logo.
+- Every intentional baseline change is recorded in `intentionalChanges` in `brand-token-baseline.json`.
 
 ### Maturity
 

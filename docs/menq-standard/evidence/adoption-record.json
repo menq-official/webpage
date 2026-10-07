@@ -92,21 +92,21 @@
     "maturityPromotionAuthorized": true,
     "maturityPromotionInstruction": "Owner approved merge + M2 in the project conversation on 2026-10-08 («Հա ընգեր»)"
   },
-  "overallVerdict": "GREEN_M2_PILOT_OWNER_APPROVED",
+  "overallVerdict": "M2_PILOT_BRANDMARK_CONTRAST_GLOW_AWAITING_CI",
   "pullRequest": 1,
   "mergeCommit": "d985a5718ed7ec47717fdf271d14580e8eb947cb",
   "brandTokenConsumption": {
-    "status": "Validated — CI GREEN",
+    "status": "Validated — CI GREEN (run 37682218097); BrandMark/contrast/glow update awaiting re-validation",
     "date": "2026-10-07",
     "repository": "menqstudio/MenQ-Standard",
-    "commit": "493a3df597687dae778afd5c5b88959ff44c0ba4",
+    "commit": "3eb4af22562930a87f5752697722b46fffc09a51",
     "path": "platforms/design/brand-expression/tokens.vars.css",
-    "sha256": "1e377a93c40b87404bc473ebdaeb8e3100ba683936547e960f7daaa02f94f3d7",
+    "sha256": "565657385244c9467642fcc51c60b051a05c5d4485a43710381f8fc835c41f05",
     "decision": "D-027",
-    "upstreamChangeRequest": "CR-0003",
+    "upstreamChangeRequest": "CR-0003, CR-0005, CR-0006",
     "localDeclarationsRemoved": "duplicates of the vendored layer removed from primitives/semantic/components/motion/sections; product-local overrides kept",
     "tokenParity": "1632 resolved values in 8 contexts equal the pre-adoption baseline (measured in Chromium)",
-    "legacyQuirkPreserved": "glow/hover shadows inside light-theme contrast sections keep cyan-500 (pre-adoption look); Owner decision pending",
+    "legacyQuirkPreserved": "removed 2026-10-08 (Owner decision): contrast-section glow/hover use the brand value",
     "tokenVerifier": "scripts/verify_brand_tokens.mjs",
     "runtimeEvidence": "scripts/e2e_consumer_smoke.mjs",
     "baseline": "docs/menq-standard/evidence/brand-token-baseline.json",
@@ -124,7 +124,7 @@
         "minor": 0
       },
       "findings": [
-        "axe color-contrast (serious) on every light-theme page; present before adoption (token values unchanged); fix is an Owner design decision"
+        "light-theme color-contrast fixed upstream (CR-0006) and re-pinned; local axe: 0 violations in 14 checks"
       ],
       "note": "Commits re-authored as MenQ <menqstudio@gmail.com> on Owner instruction (2026-10-08); the earlier GREEN run 37680568760 validated the same tree."
     }

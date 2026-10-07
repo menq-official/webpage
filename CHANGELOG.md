@@ -1,5 +1,16 @@
 # MenQ Webpage — Changelog / Փոփոխությունների պատմություն
 
+## 2026-10-08 — Official BrandMark, contrast and glow
+### Հայերեն
+- BrandMark-ը փոխարինվեց պաշտոնական MenQ մարկով (կլորացված «Men» + neon power-ring Q), OG պատկերը՝ պաշտոնական լոգոյով։
+- Light theme-ի կոնտրաստը ուղղվեց brand շերտում (CR-0006), `tokens.vars.css`-ը re-pin արվեց `3eb4af2`-ին. axe՝ 0 violation։
+- Contrast section-ի glow/hover-ը անցավ brand արժեքին, legacy quirk-ը հեռացվեց։ CI-ն serious axe violation-ն էլ է RED համարում։
+
+### English
+- BrandMark is replaced by the official MenQ mark (rounded "Men" + neon power-ring Q), and the OG image uses the official logo.
+- Light-theme contrast was fixed in the brand layer (CR-0006) and `tokens.vars.css` re-pinned to `3eb4af2`; axe reports 0 violations.
+- Contrast-section glow/hover moved to the brand value; the legacy quirk is removed. CI now treats serious axe violations as RED.
+
 ## 2026-10-08 — M2 pilot
 ### Հայերեն
 - Owner-ը հաստատեց PR #2-ի merge-ը և Webpage-ը բարձրացրեց `M2-pilot`։

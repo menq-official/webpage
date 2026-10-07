@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { ImageResponse } from "next/og";
 import { getDictionary } from "@/content/dictionaries";
 import { isLocale, defaultLocale } from "@/lib/i18n";
@@ -19,7 +21,10 @@ export async function generateImageMetadata({
 
 // Brand social card. Latin-only text so it renders with the built-in font
 // (no Armenian font fetch needed); used for HY/EN/RU shares alike.
-export default function OpengraphImage() {
+// The official MenQ logo (MenQ Design Platform brand assets, CR-0004/CR-0005).
+export default async function OpengraphImage() {
+  const logo = await readFile(path.join(process.cwd(), "public/brand/menq-logo-neon.png"));
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
   return new ImageResponse(
     (
       <div
@@ -36,26 +41,8 @@ export default function OpengraphImage() {
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <div
-            style={{
-              width: "72px",
-              height: "72px",
-              borderRadius: "18px",
-              background: "linear-gradient(135deg, #0ea5e9, #22d3ee)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "44px",
-              fontWeight: 800,
-              color: "#020617",
-            }}
-          >
-            M
-          </div>
-          <div style={{ fontSize: "40px", fontWeight: 700, letterSpacing: "-0.02em" }}>
-            MenQ
-          </div>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img src={logoSrc} alt="MenQ" width={320} height={120} />
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>

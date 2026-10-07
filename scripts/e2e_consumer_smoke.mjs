@@ -3,7 +3,7 @@
 // Runs against a production build (`npm run build && npm start`) and measures, per page,
 // locale and theme: HTTP status, <html lang>, <html data-theme>, console/page errors,
 // that the vendored brand layer is live in the shipped CSS, that the page background is
-// the semantic token, and axe-core accessibility violations. Critical axe violations fail.
+// the semantic token, and axe-core accessibility violations. Critical and serious axe violations fail.
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import AxeBuilder from "@axe-core/playwright";
@@ -66,7 +66,7 @@ for (const theme of themes) {
     if (!probe.vendoredLayerLive) problems.push("vendored brand layer not present in shipped CSS");
     if (probe.bodyBg !== probe.pageBg) problems.push(`body background ${probe.bodyBg} != --color-page-bg ${probe.pageBg}`);
     if (consoleErrors.length) problems.push(`console errors: ${consoleErrors.slice(0, 2).join(" | ")}`);
-    if (byImpact.critical) problems.push(`axe critical: ${row.axeRules.join(", ")}`);
+    if (byImpact.critical || byImpact.serious) problems.push(`axe critical/serious: ${row.axeRules.join(", ")}`);
     if (problems.length) failures.push(`${route} [${theme}]: ${problems.join("; ")}`);
     await page.close();
   }

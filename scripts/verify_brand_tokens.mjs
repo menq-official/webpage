@@ -71,6 +71,7 @@ for (const theme of ["light", "dark", null, "os-dark"]) {
   }
 }
 await browser.close();
+if (process.env.MENQ_DUMP_MEASURED) writeFileSync(process.env.MENQ_DUMP_MEASURED, JSON.stringify(measured, null, 1));
 
 // Colors may serialize as rgb(), rgba() or color(srgb ...); compare channel values at 8-bit precision.
 const COLOR = /rgba?\(([^)]*)\)|color\(srgb ([^)]*)\)/g;
@@ -104,4 +105,4 @@ if (errors.length) {
   for (const error of errors.slice(0, 50)) console.log(`- ${error}`);
   process.exit(1);
 }
-console.log(`MENQ BRAND TOKEN CONSUMPTION: GREEN (pinned ${upstream.commit.slice(0, 7)}, ${compared} values in ${report.contexts} contexts match the pre-adoption baseline)`);
+console.log(`MENQ BRAND TOKEN CONSUMPTION: GREEN (pinned ${upstream.commit.slice(0, 7)}, ${compared} values in ${report.contexts} contexts match the baseline: pre-adoption values plus recorded intentional changes)`);

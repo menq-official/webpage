@@ -1,11 +1,11 @@
 {
   "artifact": "MenQ brand expression custom properties (D-027)",
   "repository": "menqstudio/MenQ-Standard",
-  "commit": "493a3df597687dae778afd5c5b88959ff44c0ba4",
+  "commit": "3eb4af22562930a87f5752697722b46fffc09a51",
   "path": "platforms/design/brand-expression/tokens.vars.css",
-  "sha256": "1e377a93c40b87404bc473ebdaeb8e3100ba683936547e960f7daaa02f94f3d7",
+  "sha256": "565657385244c9467642fcc51c60b051a05c5d4485a43710381f8fc835c41f05",
   "decision": "D-027",
-  "changeRequest": "CR-0003",
+  "changeRequest": "CR-0003, CR-0006",
   "updatePolicy": {
     "hy": "Թարմացնել միայն upstream commit-ից ամբողջ ֆայլը փոխարինելով և commit/sha256-ը այստեղ թարմացնելով։ Ձեռքով չխմբագրել։",
     "en": "Update only by replacing the whole file from an upstream commit and updating commit/sha256 here. Never edit by hand."

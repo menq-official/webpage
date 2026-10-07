@@ -34,8 +34,8 @@
   --color-content-inverse: var(--neutral-0);
   --color-border-subtle: var(--neutral-200);
   --color-border-strong: var(--neutral-300);
-  --color-action-primary: var(--blue-600);
-  --color-action-primary-hover: var(--blue-500);
+  --color-action-primary: #0369a1;
+  --color-action-primary-hover: #075985;
   --color-action-primary-strong: #0369a1;
   --color-action-secondary: var(--neutral-900);
   --color-accent: var(--cyan-500);
