@@ -87,7 +87,10 @@ jobs:
           set -euo pipefail
           npm start -- -p 3100 > audit-artifact/evidence/server.log 2>&1 &
           for i in $(seq 1 60); do curl -fsS -o /dev/null http://localhost:3100/hy && break; sleep 2; done
-          node scripts/e2e_consumer_smoke.mjs
+          node scripts/e2e_consumer_smoke.mjs || {
+            tail -n 20 audit-artifact/evidence/server.log | sed 's/^/::warning title=server.log::/'
+            exit 1
+          }
 
       - name: Upload audit source and evidence
         if: always()

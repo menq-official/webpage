@@ -89,5 +89,6 @@ const evidence = {
 };
 writeFileSync(path.join(evidenceDir, "runtime-consumer-evidence.json"), JSON.stringify(evidence, null, 2) + "\n");
 console.log(`MENQ WEBPAGE RUNTIME EVIDENCE: ${evidence.verdict} (${results.length} page×theme checks; axe totals ${JSON.stringify(totals)})`);
-for (const f of failures) console.log(`- ${f}`);
+for (const f of failures) console.log(process.env.GITHUB_ACTIONS ? `::error title=Runtime consumer evidence::${f.replace(/\r?\n/g, " ")}` : `- ${f}`);
+if (process.env.GITHUB_ACTIONS) console.log(`::notice title=Runtime consumer evidence::${evidence.verdict}; checks=${results.length}; axe=${JSON.stringify(totals)}`);
 process.exit(failures.length ? 1 : 0);
