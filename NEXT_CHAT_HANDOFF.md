@@ -9,8 +9,8 @@
 - Adoption maturity՝ M2-pilot (Owner-ի հաստատում, 2026-10-08)։
 
 ### Exact next work
-1. Նոր PR՝ light theme-ի `color-contrast` ուղղում (`--color-accent-text`) և glow/hover shadow-ի անցում brand արժեքին (Owner-ի որոշում, 2026-10-08)։
-2. Դրանից հետո՝ M3 թեկնածություն։
+1. BrandMark/կոնտրաստ/glow PR-ի CI evidence-ից հետո՝ M3 թեկնածություն (Owner-ի որոշում)։
+2. Favicon/app icon հավաքածու պաշտոնական Q մարկից։
 3. Evidence-ը գրանցվում է MenQ Standard-ում (D-025-ի real-consumer պարտավորություն)։
 
 ## English
@@ -22,8 +22,8 @@
 - Adoption maturity: M2-pilot (Owner approval, 2026-10-08).
 
 ### Exact next work
-1. New PR: fix the light-theme `color-contrast` findings (`--color-accent-text`) and move the glow/hover shadows to the brand value (Owner decision, 2026-10-08).
-2. Then: M3 candidacy.
+1. After the BrandMark/contrast/glow PR's CI evidence: M3 candidacy (Owner decision).
+2. Favicon/app-icon set from the official Q mark.
 3. The evidence is recorded in MenQ Standard (D-025 real-consumer obligation).
 
 <!-- END: MENQ_WEBPAGE_NEXT_CHAT_HANDOFF -->

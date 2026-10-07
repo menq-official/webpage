@@ -17,8 +17,8 @@
    "--button-padding-x-lg": "1.5rem",
    "--button-padding-x-md": "1.25rem",
    "--button-padding-x-sm": "1rem",
-   "--button-primary-bg": "rgb(2, 132, 199)",
-   "--button-primary-bg-hover": "rgb(14, 165, 233)",
+   "--button-primary-bg": "rgb(3, 105, 161)",
+   "--button-primary-bg-hover": "rgb(7, 89, 133)",
    "--button-primary-text": "rgb(255, 255, 255)",
    "--button-radius": "999rem",
    "--card-bg": "rgb(255, 255, 255)",
@@ -28,8 +28,8 @@
    "--card-shadow": "shadow:rgba(15, 23, 42, 0.1) 0px 12px 30px 0px",
    "--color-accent": "rgb(6, 182, 212)",
    "--color-accent-soft": "color(srgb 0.0235294 0.713726 0.831373 / 0.14)",
-   "--color-action-primary": "rgb(2, 132, 199)",
-   "--color-action-primary-hover": "rgb(14, 165, 233)",
+   "--color-action-primary": "rgb(3, 105, 161)",
+   "--color-action-primary-hover": "rgb(7, 89, 133)",
    "--color-action-secondary": "rgb(15, 23, 42)",
    "--color-border-strong": "rgb(203, 213, 225)",
    "--color-border-subtle": "rgb(226, 232, 240)",
@@ -80,10 +80,10 @@
    "--glass-blur": "18px",
    "--glass-border-color": "rgb(226, 232, 240)",
    "--glass-shadow": "shadow:rgba(15, 23, 42, 0.16) 0px 24px 70px 0px",
-   "--gradient-brand": "linear-gradient(135deg, #0284c7, #06b6d4)",
-   "--gradient-brand-soft": "linear-gradient(135deg, color-mix(in srgb, #0284c7 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))",
+   "--gradient-brand": "linear-gradient(135deg, #0369a1, #06b6d4)",
+   "--gradient-brand-soft": "linear-gradient(135deg, color-mix(in srgb, #0369a1 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))",
    "--gradient-hero": "radial-gradient( 120% 120% at 80% 0%, color-mix(in srgb, #0ea5e9 16%, transparent) 0%, transparent 60% ), radial-gradient( 90% 90% at 0% 100%, color-mix(in srgb, #22d3ee 12%, transparent) 0%, transparent 55% )",
-   "--gradient-page": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0284c7 4%, #ffffff) 48%, #ffffff)",
+   "--gradient-page": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0369a1 4%, #ffffff) 48%, #ffffff)",
    "--gradient-panel": "linear-gradient(145deg, color-mix(in srgb, #ffffff 94%, transparent), color-mix(in srgb, #f8fafc 84%, transparent))",
    "--green-500": "rgb(34, 197, 94)",
    "--grid-line-color": "color(srgb 0.00784314 0.0235294 0.0901961 / 0.06)",
@@ -223,8 +223,8 @@
    "--button-padding-x-lg": "1.5rem",
    "--button-padding-x-md": "1.25rem",
    "--button-padding-x-sm": "1rem",
-   "--button-primary-bg": "rgb(2, 132, 199)",
-   "--button-primary-bg-hover": "rgb(14, 165, 233)",
+   "--button-primary-bg": "rgb(3, 105, 161)",
+   "--button-primary-bg-hover": "rgb(7, 89, 133)",
    "--button-primary-text": "rgb(255, 255, 255)",
    "--button-radius": "999rem",
    "--card-bg": "rgb(255, 255, 255)",
@@ -286,10 +286,10 @@
    "--glass-blur": "18px",
    "--glass-border-color": "rgb(226, 232, 240)",
    "--glass-shadow": "shadow:rgba(15, 23, 42, 0.16) 0px 24px 70px 0px",
-   "--gradient-brand": "linear-gradient(135deg, #0284c7, #06b6d4)",
-   "--gradient-brand-soft": "linear-gradient(135deg, color-mix(in srgb, #0284c7 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))",
+   "--gradient-brand": "linear-gradient(135deg, #0369a1, #06b6d4)",
+   "--gradient-brand-soft": "linear-gradient(135deg, color-mix(in srgb, #0369a1 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))",
    "--gradient-hero": "radial-gradient( 120% 120% at 80% 0%, color-mix(in srgb, #0ea5e9 16%, transparent) 0%, transparent 60% ), radial-gradient( 90% 90% at 0% 100%, color-mix(in srgb, #22d3ee 12%, transparent) 0%, transparent 55% )",
-   "--gradient-page": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0284c7 4%, #ffffff) 48%, #ffffff)",
+   "--gradient-page": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0369a1 4%, #ffffff) 48%, #ffffff)",
    "--gradient-panel": "linear-gradient(145deg, color-mix(in srgb, #ffffff 94%, transparent), color-mix(in srgb, #f8fafc 84%, transparent))",
    "--green-500": "rgb(34, 197, 94)",
    "--grid-line-color": "color(srgb 1 1 1 / 0.06)",
@@ -334,8 +334,8 @@
    "--section-padding-sm": "4rem",
    "--section-padding-xl": "8rem",
    "--shadow-card": "shadow:rgba(15, 23, 42, 0.1) 0px 12px 30px 0px",
-   "--shadow-glow": "shadow:color(srgb 0.0235294 0.713726 0.831373 / 0.24) 0px 0px 40px 0px",
-   "--shadow-hover": "shadow:color(srgb 0.0235294 0.713726 0.831373 / 0.18) 0px 30px 84px 0px",
+   "--shadow-glow": "shadow:rgba(34, 211, 238, 0.24) 0px 0px 40px 0px",
+   "--shadow-hover": "shadow:rgba(34, 211, 238, 0.18) 0px 30px 84px 0px",
    "--shadow-lg": "shadow:rgba(15, 23, 42, 0.16) 0px 24px 70px 0px",
    "--shadow-md": "shadow:rgba(15, 23, 42, 0.1) 0px 12px 30px 0px",
    "--shadow-premium": "shadow:rgba(15, 23, 42, 0.14) 0px 24px 70px 0px",
@@ -841,8 +841,8 @@
    "--button-padding-x-lg": "1.5rem",
    "--button-padding-x-md": "1.25rem",
    "--button-padding-x-sm": "1rem",
-   "--button-primary-bg": "rgb(2, 132, 199)",
-   "--button-primary-bg-hover": "rgb(14, 165, 233)",
+   "--button-primary-bg": "rgb(3, 105, 161)",
+   "--button-primary-bg-hover": "rgb(7, 89, 133)",
    "--button-primary-text": "rgb(255, 255, 255)",
    "--button-radius": "999rem",
    "--card-bg": "rgb(255, 255, 255)",
@@ -852,8 +852,8 @@
    "--card-shadow": "shadow:rgba(15, 23, 42, 0.1) 0px 12px 30px 0px",
    "--color-accent": "rgb(6, 182, 212)",
    "--color-accent-soft": "color(srgb 0.0235294 0.713726 0.831373 / 0.14)",
-   "--color-action-primary": "rgb(2, 132, 199)",
-   "--color-action-primary-hover": "rgb(14, 165, 233)",
+   "--color-action-primary": "rgb(3, 105, 161)",
+   "--color-action-primary-hover": "rgb(7, 89, 133)",
    "--color-action-secondary": "rgb(15, 23, 42)",
    "--color-border-strong": "rgb(203, 213, 225)",
    "--color-border-subtle": "rgb(226, 232, 240)",
@@ -904,10 +904,10 @@
    "--glass-blur": "18px",
    "--glass-border-color": "rgb(226, 232, 240)",
    "--glass-shadow": "shadow:rgba(15, 23, 42, 0.16) 0px 24px 70px 0px",
-   "--gradient-brand": "linear-gradient(135deg, #0284c7, #06b6d4)",
-   "--gradient-brand-soft": "linear-gradient(135deg, color-mix(in srgb, #0284c7 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))",
+   "--gradient-brand": "linear-gradient(135deg, #0369a1, #06b6d4)",
+   "--gradient-brand-soft": "linear-gradient(135deg, color-mix(in srgb, #0369a1 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))",
    "--gradient-hero": "radial-gradient( 120% 120% at 80% 0%, color-mix(in srgb, #0ea5e9 16%, transparent) 0%, transparent 60% ), radial-gradient( 90% 90% at 0% 100%, color-mix(in srgb, #22d3ee 12%, transparent) 0%, transparent 55% )",
-   "--gradient-page": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0284c7 4%, #ffffff) 48%, #ffffff)",
+   "--gradient-page": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0369a1 4%, #ffffff) 48%, #ffffff)",
    "--gradient-panel": "linear-gradient(145deg, color-mix(in srgb, #ffffff 94%, transparent), color-mix(in srgb, #f8fafc 84%, transparent))",
    "--green-500": "rgb(34, 197, 94)",
    "--grid-line-color": "color(srgb 0.00784314 0.0235294 0.0901961 / 0.06)",
@@ -1047,8 +1047,8 @@
    "--button-padding-x-lg": "1.5rem",
    "--button-padding-x-md": "1.25rem",
    "--button-padding-x-sm": "1rem",
-   "--button-primary-bg": "rgb(2, 132, 199)",
-   "--button-primary-bg-hover": "rgb(14, 165, 233)",
+   "--button-primary-bg": "rgb(3, 105, 161)",
+   "--button-primary-bg-hover": "rgb(7, 89, 133)",
    "--button-primary-text": "rgb(255, 255, 255)",
    "--button-radius": "999rem",
    "--card-bg": "rgb(255, 255, 255)",
@@ -1110,10 +1110,10 @@
    "--glass-blur": "18px",
    "--glass-border-color": "rgb(226, 232, 240)",
    "--glass-shadow": "shadow:rgba(15, 23, 42, 0.16) 0px 24px 70px 0px",
-   "--gradient-brand": "linear-gradient(135deg, #0284c7, #06b6d4)",
-   "--gradient-brand-soft": "linear-gradient(135deg, color-mix(in srgb, #0284c7 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))",
+   "--gradient-brand": "linear-gradient(135deg, #0369a1, #06b6d4)",
+   "--gradient-brand-soft": "linear-gradient(135deg, color-mix(in srgb, #0369a1 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))",
    "--gradient-hero": "radial-gradient( 120% 120% at 80% 0%, color-mix(in srgb, #0ea5e9 16%, transparent) 0%, transparent 60% ), radial-gradient( 90% 90% at 0% 100%, color-mix(in srgb, #22d3ee 12%, transparent) 0%, transparent 55% )",
-   "--gradient-page": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0284c7 4%, #ffffff) 48%, #ffffff)",
+   "--gradient-page": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0369a1 4%, #ffffff) 48%, #ffffff)",
    "--gradient-panel": "linear-gradient(145deg, color-mix(in srgb, #ffffff 94%, transparent), color-mix(in srgb, #f8fafc 84%, transparent))",
    "--green-500": "rgb(34, 197, 94)",
    "--grid-line-color": "color(srgb 1 1 1 / 0.06)",
@@ -1158,8 +1158,8 @@
    "--section-padding-sm": "4rem",
    "--section-padding-xl": "8rem",
    "--shadow-card": "shadow:rgba(15, 23, 42, 0.1) 0px 12px 30px 0px",
-   "--shadow-glow": "shadow:color(srgb 0.0235294 0.713726 0.831373 / 0.24) 0px 0px 40px 0px",
-   "--shadow-hover": "shadow:color(srgb 0.0235294 0.713726 0.831373 / 0.18) 0px 30px 84px 0px",
+   "--shadow-glow": "shadow:rgba(34, 211, 238, 0.24) 0px 0px 40px 0px",
+   "--shadow-hover": "shadow:rgba(34, 211, 238, 0.18) 0px 30px 84px 0px",
    "--shadow-lg": "shadow:rgba(15, 23, 42, 0.16) 0px 24px 70px 0px",
    "--shadow-md": "shadow:rgba(15, 23, 42, 0.1) 0px 12px 30px 0px",
    "--shadow-premium": "shadow:rgba(15, 23, 42, 0.14) 0px 24px 70px 0px",
@@ -1654,5 +1654,187 @@
    "--z-raised": "10",
    "--z-toast": "120"
   }
- }
+ },
+ "intentionalChanges": [
+  {
+   "date": "2026-10-08",
+   "decision": "Owner approved moving the contrast-section glow/hover shadows to the brand value (cyan-400) in the light theme",
+   "changes": [
+    {
+     "context": "light:contrast",
+     "token": "--shadow-glow",
+     "from": "shadow:color(srgb 0.0235294 0.713726 0.831373 / 0.24) 0px 0px 40px 0px",
+     "to": "shadow:rgba(34, 211, 238, 0.24) 0px 0px 40px 0px"
+    },
+    {
+     "context": "light:contrast",
+     "token": "--shadow-hover",
+     "from": "shadow:color(srgb 0.0235294 0.713726 0.831373 / 0.18) 0px 30px 84px 0px",
+     "to": "shadow:rgba(34, 211, 238, 0.18) 0px 30px 84px 0px"
+    },
+    {
+     "context": "none:contrast",
+     "token": "--shadow-glow",
+     "from": "shadow:color(srgb 0.0235294 0.713726 0.831373 / 0.24) 0px 0px 40px 0px",
+     "to": "shadow:rgba(34, 211, 238, 0.24) 0px 0px 40px 0px"
+    },
+    {
+     "context": "none:contrast",
+     "token": "--shadow-hover",
+     "from": "shadow:color(srgb 0.0235294 0.713726 0.831373 / 0.18) 0px 30px 84px 0px",
+     "to": "shadow:rgba(34, 211, 238, 0.18) 0px 30px 84px 0px"
+    }
+   ]
+  },
+  {
+   "date": "2026-10-08",
+   "decision": "CR-0006: light-theme color-action-primary #0284c7→#0369a1, hover #0ea5e9→#075985 (WCAG AA for white text); Owner-approved contrast fix",
+   "changes": [
+    {
+     "context": "light:plain",
+     "token": "--button-primary-bg",
+     "from": "rgb(2, 132, 199)",
+     "to": "rgb(3, 105, 161)"
+    },
+    {
+     "context": "light:plain",
+     "token": "--button-primary-bg-hover",
+     "from": "rgb(14, 165, 233)",
+     "to": "rgb(7, 89, 133)"
+    },
+    {
+     "context": "light:plain",
+     "token": "--color-action-primary",
+     "from": "rgb(2, 132, 199)",
+     "to": "rgb(3, 105, 161)"
+    },
+    {
+     "context": "light:plain",
+     "token": "--color-action-primary-hover",
+     "from": "rgb(14, 165, 233)",
+     "to": "rgb(7, 89, 133)"
+    },
+    {
+     "context": "light:plain",
+     "token": "--gradient-brand",
+     "from": "linear-gradient(135deg, #0284c7, #06b6d4)",
+     "to": "linear-gradient(135deg, #0369a1, #06b6d4)"
+    },
+    {
+     "context": "light:plain",
+     "token": "--gradient-brand-soft",
+     "from": "linear-gradient(135deg, color-mix(in srgb, #0284c7 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))",
+     "to": "linear-gradient(135deg, color-mix(in srgb, #0369a1 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))"
+    },
+    {
+     "context": "light:plain",
+     "token": "--gradient-page",
+     "from": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0284c7 4%, #ffffff) 48%, #ffffff)",
+     "to": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0369a1 4%, #ffffff) 48%, #ffffff)"
+    },
+    {
+     "context": "light:contrast",
+     "token": "--button-primary-bg",
+     "from": "rgb(2, 132, 199)",
+     "to": "rgb(3, 105, 161)"
+    },
+    {
+     "context": "light:contrast",
+     "token": "--button-primary-bg-hover",
+     "from": "rgb(14, 165, 233)",
+     "to": "rgb(7, 89, 133)"
+    },
+    {
+     "context": "light:contrast",
+     "token": "--gradient-brand",
+     "from": "linear-gradient(135deg, #0284c7, #06b6d4)",
+     "to": "linear-gradient(135deg, #0369a1, #06b6d4)"
+    },
+    {
+     "context": "light:contrast",
+     "token": "--gradient-brand-soft",
+     "from": "linear-gradient(135deg, color-mix(in srgb, #0284c7 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))",
+     "to": "linear-gradient(135deg, color-mix(in srgb, #0369a1 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))"
+    },
+    {
+     "context": "light:contrast",
+     "token": "--gradient-page",
+     "from": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0284c7 4%, #ffffff) 48%, #ffffff)",
+     "to": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0369a1 4%, #ffffff) 48%, #ffffff)"
+    },
+    {
+     "context": "none:plain",
+     "token": "--button-primary-bg",
+     "from": "rgb(2, 132, 199)",
+     "to": "rgb(3, 105, 161)"
+    },
+    {
+     "context": "none:plain",
+     "token": "--button-primary-bg-hover",
+     "from": "rgb(14, 165, 233)",
+     "to": "rgb(7, 89, 133)"
+    },
+    {
+     "context": "none:plain",
+     "token": "--color-action-primary",
+     "from": "rgb(2, 132, 199)",
+     "to": "rgb(3, 105, 161)"
+    },
+    {
+     "context": "none:plain",
+     "token": "--color-action-primary-hover",
+     "from": "rgb(14, 165, 233)",
+     "to": "rgb(7, 89, 133)"
+    },
+    {
+     "context": "none:plain",
+     "token": "--gradient-brand",
+     "from": "linear-gradient(135deg, #0284c7, #06b6d4)",
+     "to": "linear-gradient(135deg, #0369a1, #06b6d4)"
+    },
+    {
+     "context": "none:plain",
+     "token": "--gradient-brand-soft",
+     "from": "linear-gradient(135deg, color-mix(in srgb, #0284c7 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))",
+     "to": "linear-gradient(135deg, color-mix(in srgb, #0369a1 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))"
+    },
+    {
+     "context": "none:plain",
+     "token": "--gradient-page",
+     "from": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0284c7 4%, #ffffff) 48%, #ffffff)",
+     "to": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0369a1 4%, #ffffff) 48%, #ffffff)"
+    },
+    {
+     "context": "none:contrast",
+     "token": "--button-primary-bg",
+     "from": "rgb(2, 132, 199)",
+     "to": "rgb(3, 105, 161)"
+    },
+    {
+     "context": "none:contrast",
+     "token": "--button-primary-bg-hover",
+     "from": "rgb(14, 165, 233)",
+     "to": "rgb(7, 89, 133)"
+    },
+    {
+     "context": "none:contrast",
+     "token": "--gradient-brand",
+     "from": "linear-gradient(135deg, #0284c7, #06b6d4)",
+     "to": "linear-gradient(135deg, #0369a1, #06b6d4)"
+    },
+    {
+     "context": "none:contrast",
+     "token": "--gradient-brand-soft",
+     "from": "linear-gradient(135deg, color-mix(in srgb, #0284c7 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))",
+     "to": "linear-gradient(135deg, color-mix(in srgb, #0369a1 18%, transparent), color-mix(in srgb, #06b6d4 10%, transparent))"
+    },
+    {
+     "context": "none:contrast",
+     "token": "--gradient-page",
+     "from": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0284c7 4%, #ffffff) 48%, #ffffff)",
+     "to": "linear-gradient(180deg, #ffffff, color-mix(in srgb, #0369a1 4%, #ffffff) 48%, #ffffff)"
+    }
+   ]
+  }
+ ]
 }
