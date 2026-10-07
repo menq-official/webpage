@@ -1,5 +1,16 @@
 # MenQ Webpage — Changelog / Փոփոխությունների պատմություն
 
+## 2026-10-07 — MenQ brand layer consumed (pinned)
+### Հայերեն
+- Ընդհանուր բրենդային արժեքները գալիս են MenQ Standard-ի `tokens.vars.css`-ից (`493a3df`, SHA-256 pin, D-027, CR-0003)։ Local կրկնօրինակները հեռացվեցին, product-local override-ները մնացին։
+- 1632 resolved token արժեք 8 context-ում հավասար է adoption-ից առաջվա baseline-ին. տեսքը չի փոխվել։
+- CI-ում ավելացվեցին token parity-ի և production runtime-ի (locale, theme, console, axe) evidence check-երը։
+
+### English
+- Shared brand values come from MenQ Standard `tokens.vars.css` (`493a3df`, SHA-256 pin, D-027, CR-0003). Local duplicates were removed; product-local overrides remain.
+- 1632 resolved token values in 8 contexts equal the pre-adoption baseline; the look is unchanged.
+- Added token-parity and production-runtime (locale, theme, console, axe) evidence checks to CI.
+
 ## 2026-07-13 — Canonical documentation architecture completed
 ### Հայերեն
 - Ավելացվել է ամբողջական HY/EN root canonical set։

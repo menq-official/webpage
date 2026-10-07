@@ -18,7 +18,9 @@
     "db:deploy": "prisma migrate deploy",
     "db:seed": "tsx prisma/seed.ts",
     "db:studio": "prisma studio",
-    "validate:docs": "python scripts/validate_webpage_documentation.py"
+    "validate:docs": "python scripts/validate_webpage_documentation.py",
+    "verify:brand-tokens": "node scripts/verify_brand_tokens.mjs",
+    "e2e:consumer": "node scripts/e2e_consumer_smoke.mjs"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
@@ -32,6 +34,7 @@
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
     "@types/nodemailer": "^8.0.1",
@@ -40,6 +43,7 @@
     "autoprefixer": "^10.5.2",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "playwright": "^1.56.1",
     "postcss": "^8.5.16",
     "prisma": "^6.19.3",
     "tailwindcss": "^3.4.19",

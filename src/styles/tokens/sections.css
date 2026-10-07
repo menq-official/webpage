@@ -3,6 +3,10 @@
    It locally redefines semantic tokens to dark values, so child components
    keep using normal semantic classes (text-content-primary, glass, ...) and
    render correctly on the dark background regardless of the active theme.
+   Shared values (colors, spacing, radius, shadows, z-index, durations, easings)
+   come from the vendored MenQ brand expression layer
+   (src/styles/vendor/menq-brand-expression/tokens.vars.css, D-027); this file
+   keeps only Webpage-local tokens and product-local overrides.
    ========================================================================= */
 .section-contrast {
   --color-page-bg: var(--neutral-950);
@@ -54,4 +58,20 @@
       color-mix(in srgb, var(--cyan-400) 16%, transparent) 0%,
       transparent 55%
     );
+}
+
+/* Legacy parity (MenQ Design Platform adoption, 2026-10-07): before adoption the
+   glow/hover shadows were resolved at :root, so inside a contrast section in the
+   light theme they used the light accent (cyan-500). The shared brand layer
+   resolves them inside the section (cyan-400). This keeps the pre-adoption look
+   until the Owner decides; see docs/menq-standard/BRAND_TOKEN_CONSUMPTION.md. */
+:root[data-theme="light"] .section-contrast {
+  --shadow-glow: 0 0 40px color-mix(in srgb, var(--cyan-500) 24%, transparent);
+  --shadow-hover: 0 30px 84px color-mix(in srgb, var(--cyan-500) 18%, transparent);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .section-contrast {
+    --shadow-glow: 0 0 40px color-mix(in srgb, var(--cyan-500) 24%, transparent);
+    --shadow-hover: 0 30px 84px color-mix(in srgb, var(--cyan-500) 18%, transparent);
+  }
 }

@@ -16,7 +16,7 @@ Tokens, components, patterns, themes, responsive behavior, HY/EN/RU locale behav
 Database schema, lead/booking business logic, auth/session/RBAC semantics, notification integrations և deployment secrets։
 
 ### Adoption mode
-Մինչև released package consumption-ը repository-ն controlled source-mapped mode-ում է՝ no-silent-fork, compatibility, validation և rollback evidence-ով։
+Մինչև released package consumption-ը repository-ն controlled source-mapped mode-ում էր։ 2026-10-07-ից ընդհանուր բրենդային արժեքները գալիս են pinned `tokens.vars.css` artifact-ից (`pinned-vendored-artifact`)՝ տես [`BRAND_TOKEN_CONSUMPTION.md`](BRAND_TOKEN_CONSUMPTION.md)։
 
 ### Maturity
 M1 candidate։ M2+ պահանջում է separate operational pilot evidence։
@@ -33,7 +33,7 @@ Tokens, components, patterns, themes, responsive behavior, HY/EN/RU locale behav
 Database schema, lead/booking business logic, authentication/session/RBAC semantics, notification integrations, and deployment secrets.
 
 ### Adoption mode
-Until released package consumption exists, the repository operates in controlled source-mapped mode with no-silent-fork, compatibility, validation, and rollback evidence.
+Until released package consumption existed, the repository operated in controlled source-mapped mode. Since 2026-10-07 the shared brand values come from the pinned `tokens.vars.css` artifact (`pinned-vendored-artifact`); see [`BRAND_TOKEN_CONSUMPTION.md`](BRAND_TOKEN_CONSUMPTION.md).
 
 ### Maturity
 M1 candidate. M2+ requires separate operational-pilot evidence.

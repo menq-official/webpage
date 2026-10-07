@@ -1,11 +1,12 @@
 /* =========================================================================
    COMPONENT TOKENS — component-specific aliases built on semantic tokens.
+   Shared values (colors, spacing, radius, shadows, z-index, durations, easings)
+   come from the vendored MenQ brand expression layer
+   (src/styles/vendor/menq-brand-expression/tokens.vars.css, D-027); this file
+   keeps only Webpage-local tokens and product-local overrides.
    ========================================================================= */
 :root {
   /* ---- Button ---- */
-  --button-height-sm: 2.5rem;
-  --button-height-md: 3rem;
-  --button-height-lg: 3.5rem;
   --button-padding-x-sm: var(--space-4);
   --button-padding-x-md: var(--space-5);
   --button-padding-x-lg: var(--space-6);

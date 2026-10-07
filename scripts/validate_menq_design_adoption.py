@@ -16,7 +16,7 @@ expected={
  'parentStandardRepository':'menqstudio/MenQ-Standard',
  'parentDecision':'D-025',
  'designPlatformStatus':'Locked',
- 'adoptionMode':'controlled-source-mapped',
+ 'adoptionMode':'pinned-vendored-artifact',
  'pullRequest':1,
  'mergeCommit':'d985a5718ed7ec47717fdf271d14580e8eb947cb',
 }
@@ -24,10 +24,17 @@ for k,v in expected.items():
  if record.get(k)!=v: errors.append(f'Adoption record {k} must be {v!r}; got {record.get(k)!r}')
 if record.get('adoptionStatus')!='ValidatedAndMerged': errors.append('Adoption status must be ValidatedAndMerged')
 if record.get('maturity')!='M1-candidate': errors.append('Maturity must remain M1-candidate')
-if record.get('documentationClosure',{}).get('runtimeCodeChanged') is not False: errors.append('Documentation closure must state runtimeCodeChanged=false')
+btc=record.get('brandTokenConsumption',{})
+try: upstream=json.loads(read('src/styles/vendor/menq-brand-expression/UPSTREAM.json') or '{}')
+except json.JSONDecodeError as e: errors.append(f'Invalid UPSTREAM.json: {e}'); upstream={}
+for key in ('repository','commit','path','sha256'):
+ if not btc.get(key) or btc.get(key)!=upstream.get(key): errors.append(f'brandTokenConsumption.{key} must match src/styles/vendor/menq-brand-expression/UPSTREAM.json')
+for key in ('tokenVerifier','runtimeEvidence'):
+ if not (ROOT/str(btc.get(key,''))).is_file(): errors.append(f'brandTokenConsumption.{key} script is missing')
 if record.get('authority',{}).get('maturityPromotionAuthorized') is not False: errors.append('Maturity promotion must remain unauthorized')
 
 imports=[
+ '@import "../styles/vendor/menq-brand-expression/tokens.vars.css";',
  '@import "../styles/tokens/primitives.css";',
  '@import "../styles/tokens/semantic.css";',
  '@import "../styles/tokens/components.css";',
@@ -46,7 +53,7 @@ for token in sorted(tokens):
 
 hexpat=re.compile(r'#[0-9a-fA-F]{3,8}\b')
 for p in sorted((ROOT/'src').rglob('*')):
- if p.is_file() and p.suffix in {'.ts','.tsx','.js','.jsx','.css'} and 'styles/tokens' not in p.as_posix():
+ if p.is_file() and p.suffix in {'.ts','.tsx','.js','.jsx','.css'} and 'styles/tokens' not in p.as_posix() and 'styles/vendor' not in p.as_posix():
   vals=sorted(set(hexpat.findall(p.read_text(encoding='utf-8'))))
   if vals: warnings.append(f"Review raw colors in {p.relative_to(ROOT)}: {', '.join(vals)}")
 if warnings:
@@ -54,4 +61,4 @@ if warnings:
 if errors:
  print('MENQ DESIGN ADOPTION VALIDATION: RED'); [print('-',x) for x in errors]; sys.exit(1)
 print('MENQ DESIGN ADOPTION VALIDATION: GREEN')
-print('Validated merged adoption record, token order, and Product Extension isolation.')
+print('Validated adoption record, pinned brand-layer consumption, token order, and Product Extension isolation.')

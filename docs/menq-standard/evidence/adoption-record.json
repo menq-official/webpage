@@ -7,7 +7,7 @@
   "parentStandardRepository": "menqstudio/MenQ-Standard",
   "parentDecision": "D-025",
   "designPlatformStatus": "Locked",
-  "adoptionMode": "controlled-source-mapped",
+  "adoptionMode": "pinned-vendored-artifact",
   "adoptionStatus": "ValidatedAndMerged",
   "maturity": "M1-candidate",
   "baselineCommit": "f766943d92aa9c6c579a99ca0729c50a8f2206e1",
@@ -21,7 +21,11 @@
     "components": true,
     "patterns": true,
     "themes": true,
-    "locales": ["hy", "en", "ru"],
+    "locales": [
+      "hy",
+      "en",
+      "ru"
+    ],
     "accessibility": true,
     "motion": true,
     "publicSite": true,
@@ -73,11 +77,12 @@
     "validatedContentHead": "5584119831acf3b2b92e7efe392b16b8b491f011",
     "workflowRunId": 29220537035,
     "workflowRunNumber": 73,
-    "runtimeCodeChanged": false,
+    "runtimeCodeChanged": true,
     "mergeAuthorized": false,
     "canonicalMarkdownCount": 41,
     "totalMarkdownCount": 104,
-    "inventoryModel": "canonical-path-set-and-count-plus-CI-byte-sha256-manifest"
+    "inventoryModel": "canonical-path-set-and-count-plus-CI-byte-sha256-manifest",
+    "note": "PR #2 now also carries the brand-layer consumption change (Owner instruction 2026-10-07)."
   },
   "authority": {
     "implementationOwnerInstruction": "go 1 run do all",
@@ -86,7 +91,23 @@
     "documentationMergeAuthorized": false,
     "maturityPromotionAuthorized": false
   },
-  "overallVerdict": "GREEN_IMPLEMENTATION_GREEN_DOCUMENTATION_AWAITING_OWNER_MERGE",
+  "overallVerdict": "GREEN_IMPLEMENTATION_BRAND_CONSUMPTION_AWAITING_CI_EVIDENCE",
   "pullRequest": 1,
-  "mergeCommit": "d985a5718ed7ec47717fdf271d14580e8eb947cb"
+  "mergeCommit": "d985a5718ed7ec47717fdf271d14580e8eb947cb",
+  "brandTokenConsumption": {
+    "status": "Implemented — awaiting CI runtime evidence",
+    "date": "2026-10-07",
+    "repository": "menqstudio/MenQ-Standard",
+    "commit": "493a3df597687dae778afd5c5b88959ff44c0ba4",
+    "path": "platforms/design/brand-expression/tokens.vars.css",
+    "sha256": "1e377a93c40b87404bc473ebdaeb8e3100ba683936547e960f7daaa02f94f3d7",
+    "decision": "D-027",
+    "upstreamChangeRequest": "CR-0003",
+    "localDeclarationsRemoved": "duplicates of the vendored layer removed from primitives/semantic/components/motion/sections; product-local overrides kept",
+    "tokenParity": "1632 resolved values in 8 contexts equal the pre-adoption baseline (measured in Chromium)",
+    "legacyQuirkPreserved": "glow/hover shadows inside light-theme contrast sections keep cyan-500 (pre-adoption look); Owner decision pending",
+    "tokenVerifier": "scripts/verify_brand_tokens.mjs",
+    "runtimeEvidence": "scripts/e2e_consumer_smoke.mjs",
+    "baseline": "docs/menq-standard/evidence/brand-token-baseline.json"
+  }
 }
