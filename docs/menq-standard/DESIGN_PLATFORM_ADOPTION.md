@@ -1,6 +1,6 @@
 # MenQ Webpage — Design Platform Adoption / Design Platform որդեգրում
 
-**Status / Կարգավիճակ:** Validated and merged — M1 candidate / Validate և merge արված — M1 candidate  
+**Status / Կարգավիճակ:** Validated and merged — M2 pilot / Validate և merge արված — M2 pilot  
 **Parent decision:** Locked `D-025`  
 **Consumer ID:** `menq.webpage.public-site-admin`
 
@@ -19,7 +19,7 @@ Database schema, lead/booking business logic, auth/session/RBAC semantics, notif
 Մինչև released package consumption-ը repository-ն controlled source-mapped mode-ում էր։ 2026-10-07-ից ընդհանուր բրենդային արժեքները գալիս են pinned `tokens.vars.css` artifact-ից (`pinned-vendored-artifact`)՝ տես [`BRAND_TOKEN_CONSUMPTION.md`](BRAND_TOKEN_CONSUMPTION.md)։
 
 ### Maturity
-M1 candidate։ M2+ պահանջում է separate operational pilot evidence։
+M2 pilot (Owner-ի հաստատում, 2026-10-08)՝ pinned brand շերտ և CI runtime evidence։ M3-ը պահանջում է conformance profile-ի GREEN՝ ներառյալ accessibility-ն։
 
 ## English
 
@@ -36,6 +36,6 @@ Database schema, lead/booking business logic, authentication/session/RBAC semant
 Until released package consumption existed, the repository operated in controlled source-mapped mode. Since 2026-10-07 the shared brand values come from the pinned `tokens.vars.css` artifact (`pinned-vendored-artifact`); see [`BRAND_TOKEN_CONSUMPTION.md`](BRAND_TOKEN_CONSUMPTION.md).
 
 ### Maturity
-M1 candidate. M2+ requires separate operational-pilot evidence.
+M2 pilot (Owner approval, 2026-10-08): pinned brand layer and CI runtime evidence. M3 requires a GREEN conformance profile, accessibility included.
 
 <!-- END: MENQ_WEBPAGE_DESIGN_PLATFORM_ADOPTION -->

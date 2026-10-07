@@ -9,7 +9,7 @@
   "designPlatformStatus": "Locked",
   "adoptionMode": "pinned-vendored-artifact",
   "adoptionStatus": "ValidatedAndMerged",
-  "maturity": "M1-candidate",
+  "maturity": "M2-pilot",
   "baselineCommit": "f766943d92aa9c6c579a99ca0729c50a8f2206e1",
   "validatedImplementationHead": "ae4ef9519d9e9286d45440ffff4c1e83d02afaf1",
   "implementationPullRequest": 1,
@@ -71,14 +71,14 @@
     "responsiveThemeMatrix": "IMPLEMENTED_MANUAL_BASELINE"
   },
   "documentationClosure": {
-    "status": "ValidatedAwaitingOwnerMerge",
+    "status": "OwnerApprovedForMerge",
     "branch": "menq-webpage-post-merge-closure",
     "pullRequest": 2,
     "validatedContentHead": "5584119831acf3b2b92e7efe392b16b8b491f011",
     "workflowRunId": 29220537035,
     "workflowRunNumber": 73,
     "runtimeCodeChanged": true,
-    "mergeAuthorized": false,
+    "mergeAuthorized": true,
     "canonicalMarkdownCount": 41,
     "totalMarkdownCount": 104,
     "inventoryModel": "canonical-path-set-and-count-plus-CI-byte-sha256-manifest",
@@ -88,10 +88,11 @@
     "implementationOwnerInstruction": "go 1 run do all",
     "implementationMergeAuthorized": true,
     "documentationScopeInstruction": "դե թղթերը դզի, բայց նայ սիրուն սաղ ավելացրու որը չկա, երկու լեզվով, մանրամասն, ոնց ստանդարտինը արեցինք",
-    "documentationMergeAuthorized": false,
-    "maturityPromotionAuthorized": false
+    "documentationMergeAuthorized": true,
+    "maturityPromotionAuthorized": true,
+    "maturityPromotionInstruction": "Owner approved merge + M2 in the project conversation on 2026-10-08 («Հա ընգեր»)"
   },
-  "overallVerdict": "GREEN_BRAND_CONSUMPTION_VALIDATED_AWAITING_OWNER_MERGE_AND_MATURITY_DECISION",
+  "overallVerdict": "GREEN_M2_PILOT_OWNER_APPROVED",
   "pullRequest": 1,
   "mergeCommit": "d985a5718ed7ec47717fdf271d14580e8eb947cb",
   "brandTokenConsumption": {

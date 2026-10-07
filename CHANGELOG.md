@@ -1,5 +1,12 @@
 # MenQ Webpage — Changelog / Փոփոխությունների պատմություն
 
+## 2026-10-08 — M2 pilot
+### Հայերեն
+- Owner-ը հաստատեց PR #2-ի merge-ը և Webpage-ը բարձրացրեց `M2-pilot`։
+
+### English
+- The Owner approved merging PR #2 and promoted Webpage to `M2-pilot`.
+
 ## 2026-10-07 — MenQ brand layer consumed (pinned)
 ### Հայերեն
 - Ընդհանուր բրենդային արժեքները գալիս են MenQ Standard-ի `tokens.vars.css`-ից (`493a3df`, SHA-256 pin, D-027, CR-0003)։ Local կրկնօրինակները հեռացվեցին, product-local override-ները մնացին։

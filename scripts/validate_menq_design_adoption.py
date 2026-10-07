@@ -23,7 +23,8 @@ expected={
 for k,v in expected.items():
  if record.get(k)!=v: errors.append(f'Adoption record {k} must be {v!r}; got {record.get(k)!r}')
 if record.get('adoptionStatus')!='ValidatedAndMerged': errors.append('Adoption status must be ValidatedAndMerged')
-if record.get('maturity')!='M1-candidate': errors.append('Maturity must remain M1-candidate')
+maturity=record.get('maturity')
+if maturity not in ('M1-candidate','M2-pilot'): errors.append('Maturity must be M1-candidate or M2-pilot (M3+ needs independent conformance evidence)')
 btc=record.get('brandTokenConsumption',{})
 try: upstream=json.loads(read('src/styles/vendor/menq-brand-expression/UPSTREAM.json') or '{}')
 except json.JSONDecodeError as e: errors.append(f'Invalid UPSTREAM.json: {e}'); upstream={}
@@ -31,7 +32,8 @@ for key in ('repository','commit','path','sha256'):
  if not btc.get(key) or btc.get(key)!=upstream.get(key): errors.append(f'brandTokenConsumption.{key} must match src/styles/vendor/menq-brand-expression/UPSTREAM.json')
 for key in ('tokenVerifier','runtimeEvidence'):
  if not (ROOT/str(btc.get(key,''))).is_file(): errors.append(f'brandTokenConsumption.{key} script is missing')
-if record.get('authority',{}).get('maturityPromotionAuthorized') is not False: errors.append('Maturity promotion must remain unauthorized')
+if maturity!='M1-candidate' and record.get('authority',{}).get('maturityPromotionAuthorized') is not True: errors.append('Maturity above M1 requires recorded Owner promotion authority')
+if maturity=='M2-pilot' and record.get('brandTokenConsumption',{}).get('status','').startswith('Validated') is not True: errors.append('M2-pilot requires validated brand-token CI evidence')
 
 imports=[
  '@import "../styles/vendor/menq-brand-expression/tokens.vars.css";',

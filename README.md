@@ -12,7 +12,7 @@
 - **Implementation PR:** `#1`
 - **Implementation merge:** `d985a5718ed7ec47717fdf271d14580e8eb947cb`
 - **Validated head:** `ae4ef9519d9e9286d45440ffff4c1e83d02afaf1`
-- **Adoption maturity:** `M1-candidate`
+- **Adoption maturity:** `M2-pilot` (Owner approval 2026-10-08)
 - **Languages:** Armenian + English canonical; Russian product locale
 - **Owner:** Gevorg Ohanyan
 

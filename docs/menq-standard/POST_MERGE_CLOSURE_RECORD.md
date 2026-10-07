@@ -7,7 +7,7 @@
 **Documentation PR:** `#2`  
 **Documentation validated content head:** `5584119831acf3b2b92e7efe392b16b8b491f011`  
 **Documentation workflow run:** `29220537035` — run `#73`  
-**Documentation merge authority:** Not granted / Չի տրվել
+**Documentation merge authority:** Granted 2026-10-08 / Տրված է 2026-10-08
 
 ## Հայերեն
 
@@ -30,7 +30,7 @@ Validation run `29220537035`-ում GREEN են՝
 Documentation transaction-ը փոխում է միայն documentation/governance/validator/workflow/package-script surfaces։ Runtime source, API, database schema, auth/session/RBAC, lead/booking և integration semantics չեն փոխվել։
 
 ### Current authority state
-Documentation content-ը GREEN է և պատրաստ է Owner review-ի։ Merge authority դեռ չի տրվել։ Adoption maturity-ն մնում է `M1-candidate`։
+Documentation content-ը GREEN է և պատրաստ է Owner review-ի։ Owner-ը 2026-10-08-ին տվեց merge authority-ն և բարձրացրեց adoption maturity-ն `M2-pilot`։
 
 ## English
 
@@ -53,6 +53,6 @@ Validation run `29220537035` is GREEN for:
 The documentation transaction changes only documentation, governance, validators, workflow, and package-script surfaces. Runtime source, API, database schema, authentication/session/RBAC, lead/booking, and integration semantics are unchanged.
 
 ### Current authority state
-The documentation content is GREEN and ready for Owner review. Merge authority has not been granted. Adoption maturity remains `M1-candidate`.
+The documentation content is GREEN and ready for Owner review. On 2026-10-08 the Owner granted merge authority and promoted adoption maturity to `M2-pilot`.
 
 <!-- END: MENQ_WEBPAGE_POST_MERGE_CLOSURE_RECORD -->

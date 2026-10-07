@@ -30,7 +30,7 @@ Light theme-ում contrast section-ի ներսում glow/hover shadow-ները
 
 ### Maturity
 
-Webpage-ը մնում է `M1-candidate`։ CI evidence-ը GREEN լինելուց հետո promotion-ը (M2) Owner-ի որոշումն է։
+Owner-ը 2026-10-08-ին Webpage-ը բարձրացրեց `M2-pilot`։ M3-ը պահանջում է light theme-ի `color-contrast` ուղղումը։
 
 ## English
 
@@ -57,6 +57,6 @@ Before adoption, the glow/hover shadows inside a contrast section in the light t
 
 ### Maturity
 
-Webpage remains `M1-candidate`. Promotion (M2) after GREEN CI evidence is an Owner decision.
+On 2026-10-08 the Owner promoted Webpage to `M2-pilot`. M3 requires fixing the light-theme `color-contrast` findings.
 
 <!-- END: MENQ_WEBPAGE_BRAND_TOKEN_CONSUMPTION -->

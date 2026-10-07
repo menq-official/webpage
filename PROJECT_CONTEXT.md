@@ -27,7 +27,7 @@ Next.js 16 App Router, React 19, TypeScript, Tailwind CSS v3, Prisma և PostgreS
 - Token chain-ը՝ primitives → semantic → components → motion → product extension → sections/patterns։
 - Shared `BrandMark`, premium public/admin foundation, light/dark/system և reduced-motion support կան։
 - Validator, lint, typecheck, 24 tests և production build GREEN են։
-- Adoption maturity-ն մնում է M1-candidate։
+- Adoption maturity-ն M2-pilot է (Owner-ի հաստատում, 2026-10-08)։
 
 ## English
 
@@ -49,6 +49,6 @@ Next.js 16 App Router, React 19, TypeScript, Tailwind CSS v3, Prisma, and Postgr
 - Token chain: primitives → semantic → components → motion → product extension → sections/patterns.
 - Shared `BrandMark`, premium public/admin foundation, light/dark/system, and reduced-motion support are implemented.
 - Validator, lint, typecheck, 24 tests, and production build are GREEN.
-- Adoption maturity remains M1-candidate.
+- Adoption maturity is M2-pilot (Owner approval, 2026-10-08).
 
 <!-- END: MENQ_WEBPAGE_PROJECT_CONTEXT -->
