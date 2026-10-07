@@ -61,7 +61,7 @@ for (const theme of themes) {
     results.push(row);
     const problems = [];
     if (status >= 400) problems.push(`HTTP ${status}`);
-    if (locale && probe.lang !== locale) problems.push(`lang=${probe.lang}`);
+    if (locale && !(probe.lang === locale || probe.lang?.startsWith(`${locale}-`))) problems.push(`lang=${probe.lang}`);
     if (probe.dataTheme !== theme) problems.push(`data-theme=${probe.dataTheme}`);
     if (!probe.vendoredLayerLive) problems.push("vendored brand layer not present in shipped CSS");
     if (probe.bodyBg !== probe.pageBg) problems.push(`body background ${probe.bodyBg} != --color-page-bg ${probe.pageBg}`);
@@ -91,4 +91,6 @@ writeFileSync(path.join(evidenceDir, "runtime-consumer-evidence.json"), JSON.str
 console.log(`MENQ WEBPAGE RUNTIME EVIDENCE: ${evidence.verdict} (${results.length} page×theme checks; axe totals ${JSON.stringify(totals)})`);
 for (const f of failures) console.log(process.env.GITHUB_ACTIONS ? `::error title=Runtime consumer evidence::${f.replace(/\r?\n/g, " ")}` : `- ${f}`);
 if (process.env.GITHUB_ACTIONS) console.log(`::notice title=Runtime consumer evidence::${evidence.verdict}; checks=${results.length}; axe=${JSON.stringify(totals)}`);
+const seriousRules = [...new Set(results.flatMap((r) => r.axeRules.filter((x) => x.endsWith(":serious")).map((x) => `${x} @ ${r.route} [${r.theme}]`)))];
+if (process.env.GITHUB_ACTIONS) for (const rule of seriousRules) console.log(`::warning title=axe serious::${rule}`);
 process.exit(failures.length ? 1 : 0);
