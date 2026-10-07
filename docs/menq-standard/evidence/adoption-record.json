@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "recordId": "menq.webpage.design-platform-adoption.2026-07-13",
   "consumerId": "menq.webpage.public-site-admin",
   "consumerName": "MenQ Webpage",
@@ -7,21 +7,25 @@
   "parentStandardRepository": "menqstudio/MenQ-Standard",
   "parentDecision": "D-025",
   "designPlatformStatus": "Locked",
-  "adoptionMode": "controlled-source-mapped",
-  "adoptionStatus": "Validated",
-  "maturity": "M1-candidate",
+  "adoptionMode": "pinned-vendored-artifact",
+  "adoptionStatus": "ValidatedAndMerged",
+  "maturity": "M2-pilot",
   "baselineCommit": "f766943d92aa9c6c579a99ca0729c50a8f2206e1",
-  "validatedImplementationHead": "cf116453bb5e269076bbb65b929eeb9963288233",
-  "workflowRunId": 29216404490,
-  "workflowRunNumber": 57,
-  "workingBranch": "menq-design-platform-adoption-v1",
-  "pullRequest": 1,
+  "validatedImplementationHead": "ae4ef9519d9e9286d45440ffff4c1e83d02afaf1",
+  "implementationPullRequest": 1,
+  "implementationMergeCommit": "d985a5718ed7ec47717fdf271d14580e8eb947cb",
+  "implementationWorkflowRunId": 29216524360,
+  "implementationWorkflowRunNumber": 63,
   "scope": {
     "designTokens": true,
     "components": true,
     "patterns": true,
     "themes": true,
-    "locales": ["hy", "en", "ru"],
+    "locales": [
+      "hy",
+      "en",
+      "ru"
+    ],
     "accessibility": true,
     "motion": true,
     "publicSite": true,
@@ -50,7 +54,8 @@
     "documentationParityGap": "FIXED_GOVERNANCE_PACKAGE",
     "missingAdoptionCIGate": "GREEN_EXECUTED",
     "validatorBilingualFalsePositive": "FIXED",
-    "contrastPanelReadability": "FIXED"
+    "contrastPanelReadability": "FIXED",
+    "generatedArtifactInventoryDoubleCount": "FIXED_GIT_TRACKED_ENUMERATION"
   },
   "validation": {
     "documentationIntegrity": "GREEN",
@@ -65,11 +70,63 @@
     "localizationRuntime": "SUPPORTED_HY_EN_RU",
     "responsiveThemeMatrix": "IMPLEMENTED_MANUAL_BASELINE"
   },
-  "authority": {
-    "ownerInstruction": "go 1 run do all",
-    "readyForReviewAuthorized": true,
+  "documentationClosure": {
+    "status": "OwnerApprovedForMerge",
+    "branch": "menq-webpage-post-merge-closure",
+    "pullRequest": 2,
+    "validatedContentHead": "5584119831acf3b2b92e7efe392b16b8b491f011",
+    "workflowRunId": 29220537035,
+    "workflowRunNumber": 73,
+    "runtimeCodeChanged": true,
     "mergeAuthorized": true,
-    "maturityPromotionAuthorized": false
+    "canonicalMarkdownCount": 41,
+    "totalMarkdownCount": 104,
+    "inventoryModel": "canonical-path-set-and-count-plus-CI-byte-sha256-manifest",
+    "note": "PR #2 now also carries the brand-layer consumption change (Owner instruction 2026-10-07)."
   },
-  "overallVerdict": "GREEN"
+  "authority": {
+    "implementationOwnerInstruction": "go 1 run do all",
+    "implementationMergeAuthorized": true,
+    "documentationScopeInstruction": "դե թղթերը դզի, բայց նայ սիրուն սաղ ավելացրու որը չկա, երկու լեզվով, մանրամասն, ոնց ստանդարտինը արեցինք",
+    "documentationMergeAuthorized": true,
+    "maturityPromotionAuthorized": true,
+    "maturityPromotionInstruction": "Owner approved merge + M2 in the project conversation on 2026-10-08 («Հա ընգեր»)"
+  },
+  "overallVerdict": "GREEN_M2_PILOT_OWNER_APPROVED",
+  "pullRequest": 1,
+  "mergeCommit": "d985a5718ed7ec47717fdf271d14580e8eb947cb",
+  "brandTokenConsumption": {
+    "status": "Validated — CI GREEN",
+    "date": "2026-10-07",
+    "repository": "menqstudio/MenQ-Standard",
+    "commit": "493a3df597687dae778afd5c5b88959ff44c0ba4",
+    "path": "platforms/design/brand-expression/tokens.vars.css",
+    "sha256": "1e377a93c40b87404bc473ebdaeb8e3100ba683936547e960f7daaa02f94f3d7",
+    "decision": "D-027",
+    "upstreamChangeRequest": "CR-0003",
+    "localDeclarationsRemoved": "duplicates of the vendored layer removed from primitives/semantic/components/motion/sections; product-local overrides kept",
+    "tokenParity": "1632 resolved values in 8 contexts equal the pre-adoption baseline (measured in Chromium)",
+    "legacyQuirkPreserved": "glow/hover shadows inside light-theme contrast sections keep cyan-500 (pre-adoption look); Owner decision pending",
+    "tokenVerifier": "scripts/verify_brand_tokens.mjs",
+    "runtimeEvidence": "scripts/e2e_consumer_smoke.mjs",
+    "baseline": "docs/menq-standard/evidence/brand-token-baseline.json",
+    "validatedContentHead": "0ec4aa1",
+    "ciEvidence": {
+      "workflowRunId": 37682218097,
+      "event": "pull_request",
+      "verdict": "GREEN",
+      "tokenParity": "GREEN — 1632/1632 values in 8 contexts",
+      "runtime": "GREEN — 14 page×theme checks (hy, en, ru, privacy ×3, admin login × light/dark): HTTP, lang, data-theme, no console errors, vendored layer live, page background = token",
+      "axe": {
+        "critical": 0,
+        "serious": 7,
+        "moderate": 0,
+        "minor": 0
+      },
+      "findings": [
+        "axe color-contrast (serious) on every light-theme page; present before adoption (token values unchanged); fix is an Owner design decision"
+      ],
+      "note": "Commits re-authored as MenQ <menqstudio@gmail.com> on Owner instruction (2026-10-08); the earlier GREEN run 37680568760 validated the same tree."
+    }
+  }
 }

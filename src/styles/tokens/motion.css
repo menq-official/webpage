@@ -1,16 +1,11 @@
 /* =========================================================================
    MOTION TOKENS — durations + easings. No hardcoded ms/ease in components.
+   Shared values (colors, spacing, radius, shadows, z-index, durations, easings)
+   come from the vendored MenQ brand expression layer
+   (src/styles/vendor/menq-brand-expression/tokens.vars.css, D-027); this file
+   keeps only Webpage-local tokens and product-local overrides.
    ========================================================================= */
 :root {
-  --duration-fast: 150ms;
-  --duration-base: 240ms;
-  --duration-slow: 420ms;
-  --duration-section: 700ms;
-
-  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
-  --ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-
   --motion-hover-lift: translateY(-2px);
   --motion-card-lift: translateY(-4px);
 }

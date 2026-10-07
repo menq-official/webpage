@@ -3,6 +3,10 @@
    These are the values components should mostly consume (via Tailwind classes).
    Product-local gradients, grids, glass, and visual expression live in
    product-extension.css.
+   Shared values (colors, spacing, radius, shadows, z-index, durations, easings)
+   come from the vendored MenQ brand expression layer
+   (src/styles/vendor/menq-brand-expression/tokens.vars.css, D-027); this file
+   keeps only Webpage-local tokens and product-local overrides.
    ========================================================================= */
 
 :root[data-theme="light"],
@@ -26,10 +30,6 @@
   --color-action-secondary: var(--neutral-900);
   --color-accent: var(--cyan-500);
   --color-accent-soft: color-mix(in srgb, var(--cyan-500) 14%, transparent);
-
-  --color-success: var(--green-500);
-  --color-warning: var(--amber-500);
-  --color-danger: var(--red-500);
 
   --color-focus-ring: var(--blue-500);
 }
@@ -58,10 +58,6 @@
   --color-action-secondary: var(--neutral-0);
   --color-accent: var(--cyan-400);
   --color-accent-soft: color-mix(in srgb, var(--cyan-400) 16%, transparent);
-
-  --color-success: var(--green-500);
-  --color-warning: var(--amber-500);
-  --color-danger: var(--red-500);
 
   --color-focus-ring: var(--cyan-400);
 }
@@ -96,8 +92,4 @@
 
     --color-focus-ring: var(--cyan-400);
   }
-}
-
-:root {
-  --shadow-card: var(--shadow-md);
 }

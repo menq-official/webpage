@@ -2,7 +2,7 @@ name: MenQ Design Platform Audit
 
 on:
   push:
-    branches: [main, menq-design-platform-adoption-v1]
+    branches: [main, menq-design-platform-adoption-v1, menq-webpage-post-merge-closure]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
       - name: Build repository inventory
         shell: bash
@@ -47,6 +47,9 @@ jobs:
           Path('audit-artifact/FILE_MANIFEST.json').write_text(json.dumps({'files': rows}, indent=2), encoding='utf-8')
           PY
 
+      - name: Validate MenQ Webpage documentation
+        run: python scripts/validate_webpage_documentation.py
+
       - name: Validate MenQ Design Platform adoption
         run: python scripts/validate_menq_design_adoption.py
 
@@ -65,9 +68,33 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload audit source and inventory
+      - name: Install Chromium for evidence checks
+        run: npx playwright install --with-deps chromium
+
+      - name: Verify brand token consumption (pin + token parity)
+        env:
+          MENQ_EVIDENCE_DIR: audit-artifact/evidence
+        run: |
+          mkdir -p "$MENQ_EVIDENCE_DIR"
+          node scripts/verify_brand_tokens.mjs
+
+      - name: Runtime consumer evidence (production server)
+        env:
+          MENQ_EVIDENCE_DIR: audit-artifact/evidence
+          MENQ_BASE_URL: http://localhost:3100
+          NEXT_PUBLIC_APP_URL: http://localhost:3100
+        run: |
+          set -euo pipefail
+          npm start -- -p 3100 > audit-artifact/evidence/server.log 2>&1 &
+          for i in $(seq 1 60); do curl -fsS -o /dev/null http://localhost:3100/hy && break; sleep 2; done
+          node scripts/e2e_consumer_smoke.mjs || {
+            tail -n 20 audit-artifact/evidence/server.log | sed 's/^/::warning title=server.log::/'
+            exit 1
+          }
+
+      - name: Upload audit source and evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: menq-webpage-audit-source
           path: audit-artifact
