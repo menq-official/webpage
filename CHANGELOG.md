@@ -1,5 +1,14 @@
 # MenQ Webpage — Changelog / Փոփոխությունների պատմություն
 
+## 2026-10-08 — Brand icon set
+### Հայերեն
+- Favicon-ը (ICO + SVG), Apple touch icon-ը և PWA manifest-ը (192/512/maskable) հիմա պաշտոնական Q մարկից են (MenQ-Standard CR-0008)։ CI-ն ստուգում է, որ դրանք հասանելի են։
+- Նախորդ PR-ի CI evidence-ը գրանցված է. axe՝ 0 violation բոլոր մակարդակներում։
+
+### English
+- The favicon (ICO + SVG), Apple touch icon and PWA manifest (192/512/maskable) now come from the official Q mark (MenQ-Standard CR-0008); CI checks they are served.
+- The previous PR's CI evidence is recorded: axe 0 violations at every level.
+
 ## 2026-10-08 — Official BrandMark, contrast and glow
 ### Հայերեն
 - BrandMark-ը փոխարինվեց պաշտոնական MenQ մարկով (կլորացված «Men» + neon power-ring Q), OG պատկերը՝ պաշտոնական լոգոյով։

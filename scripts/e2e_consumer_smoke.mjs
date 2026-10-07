@@ -72,6 +72,12 @@ for (const theme of themes) {
   }
   await context.close();
 }
+// Brand icon set (MenQ-Standard CR-0008) must be served.
+for (const asset of ["/favicon.ico", "/icon.svg", "/apple-icon.png", "/manifest.webmanifest", "/brand/menq-icon-512.png", "/brand/menq-icon-maskable-512.png"]) {
+  const res = await fetch(base + asset);
+  results.push({ route: asset, theme: "n/a", status: res.status, axe: { critical: 0, serious: 0, moderate: 0, minor: 0 }, axeRules: [] });
+  if (res.status >= 400) failures.push(`${asset}: HTTP ${res.status}`);
+}
 await browser.close();
 
 const totals = results.reduce((acc, r) => { for (const k of Object.keys(r.axe)) acc[k] = (acc[k] ?? 0) + r.axe[k]; return acc; }, {});
