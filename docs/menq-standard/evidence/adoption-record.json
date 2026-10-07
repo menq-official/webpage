@@ -91,11 +91,11 @@
     "documentationMergeAuthorized": false,
     "maturityPromotionAuthorized": false
   },
-  "overallVerdict": "GREEN_IMPLEMENTATION_BRAND_CONSUMPTION_AWAITING_CI_EVIDENCE",
+  "overallVerdict": "GREEN_BRAND_CONSUMPTION_VALIDATED_AWAITING_OWNER_MERGE_AND_MATURITY_DECISION",
   "pullRequest": 1,
   "mergeCommit": "d985a5718ed7ec47717fdf271d14580e8eb947cb",
   "brandTokenConsumption": {
-    "status": "Implemented — awaiting CI runtime evidence",
+    "status": "Validated — CI GREEN",
     "date": "2026-10-07",
     "repository": "menqstudio/MenQ-Standard",
     "commit": "493a3df597687dae778afd5c5b88959ff44c0ba4",
@@ -108,6 +108,23 @@
     "legacyQuirkPreserved": "glow/hover shadows inside light-theme contrast sections keep cyan-500 (pre-adoption look); Owner decision pending",
     "tokenVerifier": "scripts/verify_brand_tokens.mjs",
     "runtimeEvidence": "scripts/e2e_consumer_smoke.mjs",
-    "baseline": "docs/menq-standard/evidence/brand-token-baseline.json"
+    "baseline": "docs/menq-standard/evidence/brand-token-baseline.json",
+    "validatedContentHead": "8e106ff",
+    "ciEvidence": {
+      "workflowRunId": 37680568760,
+      "event": "pull_request",
+      "verdict": "GREEN",
+      "tokenParity": "GREEN — 1632/1632 values in 8 contexts",
+      "runtime": "GREEN — 14 page×theme checks (hy, en, ru, privacy ×3, admin login × light/dark): HTTP, lang, data-theme, no console errors, vendored layer live, page background = token",
+      "axe": {
+        "critical": 0,
+        "serious": 7,
+        "moderate": 0,
+        "minor": 0
+      },
+      "findings": [
+        "axe color-contrast (serious) on every light-theme page; present before adoption (token values unchanged); fix is an Owner design decision"
+      ]
+    }
   }
 }
