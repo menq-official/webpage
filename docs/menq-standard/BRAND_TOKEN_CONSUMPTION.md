@@ -1,6 +1,6 @@
 # MenQ Webpage — Brand Token Consumption / Brand token-ների օգտագործում
 
-**Status / Կարգավիճակ:** Validated — CI GREEN (run `37680568760`) / Ստուգված — CI GREEN (run `37680568760`)  
+**Status / Կարգավիճակ:** Validated — CI GREEN (run `37682218097`) / Ստուգված — CI GREEN (run `37682218097`)  
 **Date / Ամսաթիվ:** 2026-10-07  
 **Parent decisions / Ծնող որոշումներ:** `D-025` (Locked), `D-027`  
 **Upstream change request:** `CR-0003` (`menqstudio/MenQ-Standard`)
@@ -22,7 +22,7 @@ Local ֆայլերում (`primitives`, `semantic`, `components`, `motion`, `sec
 
 ### CI արդյունք
 
-Run `37680568760`-ում token parity-ն GREEN է (1632/1632), runtime evidence-ը GREEN է (14 էջ×theme ստուգում), axe-ը՝ 0 critical, 7 serious։ Բոլոր 7 serious-ը `color-contrast` է light theme-ում, ամեն էջում. դա adoption-ից առաջ էլ կար (token արժեքները չեն փոխվել), և ուղղումը Owner-ի design որոշում է։
+Run `37682218097`-ում token parity-ն GREEN է (1632/1632), runtime evidence-ը GREEN է (14 էջ×theme ստուգում), axe-ը՝ 0 critical, 7 serious։ Բոլոր 7 serious-ը `color-contrast` է light theme-ում, ամեն էջում. դա adoption-ից առաջ էլ կար (token արժեքները չեն փոխվել), և ուղղումը Owner-ի design որոշում է։
 
 ### Պահպանված հին վարքագիծ
 
@@ -49,7 +49,7 @@ Both run in CI, and the evidence is stored in the audit artifact.
 
 ### CI result
 
-In run `37680568760`, token parity is GREEN (1632/1632) and runtime evidence is GREEN (14 page×theme checks); axe reports 0 critical and 7 serious. All 7 serious findings are `color-contrast` in the light theme on every page. They existed before adoption (token values are unchanged), and the fix is an Owner design decision.
+In run `37682218097`, token parity is GREEN (1632/1632) and runtime evidence is GREEN (14 page×theme checks); axe reports 0 critical and 7 serious. All 7 serious findings are `color-contrast` in the light theme on every page. They existed before adoption (token values are unchanged), and the fix is an Owner design decision.
 
 ### Preserved legacy behavior
 

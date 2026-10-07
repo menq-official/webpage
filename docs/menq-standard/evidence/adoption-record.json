@@ -109,9 +109,9 @@
     "tokenVerifier": "scripts/verify_brand_tokens.mjs",
     "runtimeEvidence": "scripts/e2e_consumer_smoke.mjs",
     "baseline": "docs/menq-standard/evidence/brand-token-baseline.json",
-    "validatedContentHead": "8e106ff",
+    "validatedContentHead": "0ec4aa1",
     "ciEvidence": {
-      "workflowRunId": 37680568760,
+      "workflowRunId": 37682218097,
       "event": "pull_request",
       "verdict": "GREEN",
       "tokenParity": "GREEN — 1632/1632 values in 8 contexts",
@@ -124,7 +124,8 @@
       },
       "findings": [
         "axe color-contrast (serious) on every light-theme page; present before adoption (token values unchanged); fix is an Owner design decision"
-      ]
+      ],
+      "note": "Commits re-authored as MenQ <menqstudio@gmail.com> on Owner instruction (2026-10-08); the earlier GREEN run 37680568760 validated the same tree."
     }
   }
 }
