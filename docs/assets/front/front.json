@@ -1,0 +1,68 @@
+{
+ "name": "MenQ Webpage",
+ "brand": "menq",
+ "family": {
+  "en": "MenQ Studio · Website",
+  "hy": "MenQ Studio · Կայք"
+ },
+ "tagline": {
+  "en": "MenQ Studio's public website: AI, automation and custom software, leads and bookings.",
+  "hy": "MenQ Studio-ի հանրային կայքը. AI, ավտոմատացում, custom ծրագրեր, հայտեր և ամրագրումներ։"
+ },
+ "start": [
+  [
+   "Project context",
+   "PROJECT_CONTEXT.md"
+  ],
+  [
+   "Documentation index",
+   "DOCUMENTATION_INDEX.md"
+  ],
+  [
+   "Roadmap",
+   "ROADMAP.md"
+  ],
+  [
+   "Design platform adoption",
+   "docs/menq-standard/README.md"
+  ]
+ ],
+ "facts": {
+  "en": [
+   [
+    "What it is",
+    "The public business website of MenQ Studio with lead and booking intake and an invite-only admin"
+   ],
+   [
+    "Who it serves",
+    "Businesses looking for AI, automation and custom software; MenQ's own team in the admin"
+   ],
+   [
+    "State",
+    "Implementation merged and green; design platform adoption M2-pilot (see Status below)"
+   ],
+   [
+    "Built with",
+    "Next.js 16, React 19, TypeScript, Prisma, Tailwind CSS, MenQ brand tokens"
+   ]
+  ],
+  "hy": [
+   [
+    "Ինչ է",
+    "MenQ Studio-ի հանրային բիզնես կայքը՝ հայտերի և ամրագրումների ընդունմամբ և միայն հրավերով admin-ով"
+   ],
+   [
+    "Ում համար",
+    "AI, ավտոմատացում և custom ծրագրեր փնտրող բիզնեսների. admin-ում՝ MenQ-ի թիմի"
+   ],
+   [
+    "Վիճակ",
+    "Իրականացումը merge արված է և կանաչ. դիզայն հարթակի adoption՝ M2-pilot (տես ներքևի Status-ը)"
+   ],
+   [
+    "Կառուցված է",
+    "Next.js 16, React 19, TypeScript, Prisma, Tailwind CSS, MenQ բրենդի token-ներ"
+   ]
+  ]
+ }
+}

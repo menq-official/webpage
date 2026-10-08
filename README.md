@@ -1,3 +1,29 @@
+<!-- FRONT:START -->
+<p align="center"><picture><source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="docs/assets/front/cover-narrow-dark.svg"><source media="(max-width: 600px)" srcset="docs/assets/front/cover-narrow-light.svg"><source media="(prefers-color-scheme: dark)" srcset="docs/assets/front/cover-dark.svg"><img src="docs/assets/front/cover-light.svg" alt="MenQ Webpage: MenQ Studio's public website: AI, automation and custom software, leads and bookings." width="960"></picture></p>
+
+<p align="center"><b>Start here</b> · [Project context](PROJECT_CONTEXT.md) · [Documentation index](DOCUMENTATION_INDEX.md) · [Roadmap](ROADMAP.md) · [Design platform adoption](docs/menq-standard/README.md)</p>
+
+| | |
+| :-- | :-- |
+| **What it is** | The public business website of MenQ Studio with lead and booking intake and an invite-only admin |
+| **Who it serves** | Businesses looking for AI, automation and custom software; MenQ's own team in the admin |
+| **State** | Implementation merged and green; design platform adoption M2-pilot (see Status below) |
+| **Built with** | Next.js 16, React 19, TypeScript, Prisma, Tailwind CSS, MenQ brand tokens |
+
+<details><summary><b>Հայերեն</b></summary>
+
+| | |
+| :-- | :-- |
+| **Ինչ է** | MenQ Studio-ի հանրային բիզնես կայքը՝ հայտերի և ամրագրումների ընդունմամբ և միայն հրավերով admin-ով |
+| **Ում համար** | AI, ավտոմատացում և custom ծրագրեր փնտրող բիզնեսների. admin-ում՝ MenQ-ի թիմի |
+| **Վիճակ** | Իրականացումը merge արված է և կանաչ. դիզայն հարթակի adoption՝ M2-pilot (տես ներքևի Status-ը) |
+| **Կառուցված է** | Next.js 16, React 19, TypeScript, Prisma, Tailwind CSS, MenQ բրենդի token-ներ |
+
+</details>
+
+<sub>MenQ Studio · Website · repository front page standard v1</sub>
+<!-- FRONT:END -->
+
 # MenQ Webpage
 
 > **HY**  
