@@ -4,6 +4,9 @@ import { SESSION_COOKIE } from "@/lib/auth/cookies";
 
 const LOCALE_COOKIE = "menq-locale";
 
+// Every page under /{locale}/ (the part after the locale; "" is the home page).
+const KNOWN_PAGES = new Set(["", "privacy", "terms", "cookies"]);
+
 // Admin routes reachable WITHOUT a session (login/reset/invite flows).
 const PUBLIC_ADMIN_PATHS = [
   "/admin/login",
@@ -51,10 +54,20 @@ export function proxy(req: NextRequest) {
     return NextResponse.next();
   }
 
-  const hasLocale = locales.some(
+  const pathLocale = locales.find(
     (l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`),
   );
-  if (hasLocale) return NextResponse.next();
+  if (pathLocale) {
+    // A real 404 for any path the site does not have (QA F13): the localized page, with
+    // the status a crawler needs. Everything here is static, so the list is complete.
+    const rest = pathname.slice(`/${pathLocale}/`.length).replace(/\/+$/, "");
+    if (KNOWN_PAGES.has(rest) || rest.startsWith("opengraph-image")) {
+      return NextResponse.next();
+    }
+    const url = req.nextUrl.clone();
+    url.pathname = `/${pathLocale}/page-not-found`;
+    return NextResponse.rewrite(url, { status: 404 });
+  }
 
   const locale = detectLocale(req);
   const url = req.nextUrl.clone();
