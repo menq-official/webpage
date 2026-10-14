@@ -1,11 +1,11 @@
 # MenQ Webpage — Post-Merge Closure Record / Post-merge closure գրառում
 
 **Implementation PR:** `#1`  
-**Implementation validated head:** `ae4ef9519d9e9286d45440ffff4c1e83d02afaf1`  
-**Implementation merge:** `d985a5718ed7ec47717fdf271d14580e8eb947cb`  
+**Implementation validated head:** `bfae33680ec408557516d4f9d581a30cc2137cfd`  
+**Implementation merge:** `56c991bfca19b9b5b16860a94e8fe3399f76b5dd`  
 **Implementation exact-tree difference:** `0 files`  
 **Documentation PR:** `#2`  
-**Documentation validated content head:** `5584119831acf3b2b92e7efe392b16b8b491f011`  
+**Documentation validated content head:** `1bcc3e5137c870689a92b10244e8a79eda2ff91f`  
 **Documentation workflow run:** `29220537035` — run `#73`  
 **Documentation merge authority:** Granted 2026-10-08 / Տրված է 2026-10-08
 

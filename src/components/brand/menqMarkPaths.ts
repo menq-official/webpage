@@ -1,4 +1,4 @@
-// Official MenQ mark geometry, vendored from menqstudio/MenQ-Standard
+// Official MenQ mark geometry, vendored from menq-official/standard
 // platforms/design/brand-expression (BrandMark, CR-0005). Do not edit by hand:
 // "Men" is traced from the official logo; the power-ring Q follows its measured geometry.
 export const MENQ_MARK_VIEWBOX = "60 80 1800 560";

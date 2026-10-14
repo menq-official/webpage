@@ -61,16 +61,16 @@ _(none — all queued items landed; the branch is ready for Gev to review + push
       tsc ✅, eslint ✅, `npm test` 19/19 ✅, prod `next build` ✅.
 - [x] **Post-audit hardening pass (2026-07-02)** — 4-agent Fable-5 audit (public/admin/backend/gap), then
       fixed everything not blocked on owner data/secrets, on branch `autopilot/continue`, 4 local commits:
-  - [x] **Batch 1 security** (`5f5e6aa`) — admin-tier privilege guards (invite/role-change/deactivate/reactivate);
+  - [x] **Batch 1 security** (`0881699`) — admin-tier privilege guards (invite/role-change/deactivate/reactivate);
         login throttle + dummy-bcrypt anti-enumeration; trusted-IP `clientIp` (TRUSTED_PROXY_COUNT) vs spoofable XFF;
         seed refuses default password in prod.
-  - [x] **Batch 2 robustness** (`73116a3`) — Telegram/SMTP timeouts; no-DB lead logged (not dropped); 50KB
+  - [x] **Batch 2 robustness** (`9163168`) — Telegram/SMTP timeouts; no-DB lead logged (not dropped); 50KB
         body guard + UTM sanitize; `/api/bookings` now notifies; P2025/P2003 swallow on admin mutations;
         Editor governance (non-publisher edit → DRAFT; section edit accepts `content.edit_assigned`).
-  - [x] **Batch 3 public/SEO/legal/a11y** (`942f330`) — legal-page canonicals + x-default + sitemap alts;
+  - [x] **Batch 3 public/SEO/legal/a11y** (`595158d`) — legal-page canonicals + x-default + sitemap alts;
         consent text on the form; softened cert wording (3 locales); drawer focus-trap; localized error/404 +
         catch-all route; robots-meta cleanup (noindex stands alone on 404).
-  - [x] **Batch 4 hardening** (`fa85e81`) — CSP header; proxy `/admin` session gate; rate-limiter eviction;
+  - [x] **Batch 4 hardening** (`c7d7e8c`) — CSP header; proxy `/admin` session gate; rate-limiter eviction;
         dropped unused `jose`; `.env.example` reconciled; RELEASE/SMOKE checklists filled; vitest + 19 tests.
   - [x] Verified: tsc ✅, lint ✅, `npm test` 19/19 ✅, production `next build` ✅, prod smoke ✅.
         Reserved for Gev: `git push` + owner data/secrets/deploy.

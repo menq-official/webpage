@@ -1,7 +1,7 @@
 {
   "artifact": "MenQ brand expression custom properties (D-027)",
-  "repository": "menqstudio/MenQ-Standard",
-  "commit": "3eb4af22562930a87f5752697722b46fffc09a51",
+  "repository": "menq-official/standard",
+  "commit": "b49a0a4c51c8da128a36ba97f9c117de690d0b2c",
   "path": "platforms/design/brand-expression/tokens.vars.css",
   "sha256": "565657385244c9467642fcc51c60b051a05c5d4485a43710381f8fc835c41f05",
   "decision": "D-027",

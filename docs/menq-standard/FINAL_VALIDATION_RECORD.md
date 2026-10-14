@@ -1,9 +1,9 @@
 # MenQ Webpage — Final Validation Record / Վերջնական validation գրառում
 
 **Verdict / Վճիռ:** GREEN  
-**Validated head:** `ae4ef9519d9e9286d45440ffff4c1e83d02afaf1`  
+**Validated head:** `bfae33680ec408557516d4f9d581a30cc2137cfd`  
 **Workflow run:** `29216524360`  
-**Merge:** `d985a5718ed7ec47717fdf271d14580e8eb947cb`
+**Merge:** `56c991bfca19b9b5b16860a94e8fe3399f76b5dd`
 
 ## Հայերեն
 - Design Platform validator — GREEN։

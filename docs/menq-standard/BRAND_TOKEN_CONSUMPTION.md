@@ -3,7 +3,7 @@
 **Status / Կարգավիճակ:** Validated — CI GREEN (run `37682218097`) / Ստուգված — CI GREEN (run `37682218097`)  
 **Date / Ամսաթիվ:** 2026-10-07  
 **Parent decisions / Ծնող որոշումներ:** `D-025` (Locked), `D-027`  
-**Upstream change request:** `CR-0003` (`menqstudio/MenQ-Standard`)
+**Upstream change request:** `CR-0003` (`menq-official/standard`)
 
 ## Հայերեն
 

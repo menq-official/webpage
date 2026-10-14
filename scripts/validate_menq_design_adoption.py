@@ -13,12 +13,12 @@ record=json.loads(read('docs/menq-standard/evidence/adoption-record.json') or '{
 expected={
  'schemaVersion':2,
  'consumerId':'menq.webpage.public-site-admin',
- 'parentStandardRepository':'menqstudio/MenQ-Standard',
+ 'parentStandardRepository':'menq-official/standard',
  'parentDecision':'D-025',
  'designPlatformStatus':'Locked',
  'adoptionMode':'pinned-vendored-artifact',
  'pullRequest':1,
- 'mergeCommit':'d985a5718ed7ec47717fdf271d14580e8eb947cb',
+ 'mergeCommit':'56c991bfca19b9b5b16860a94e8fe3399f76b5dd',
 }
 for k,v in expected.items():
  if record.get(k)!=v: errors.append(f'Adoption record {k} must be {v!r}; got {record.get(k)!r}')

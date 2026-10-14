@@ -2,10 +2,10 @@
 
 **Status / Կարգավիճակ:** Active — implementation merged and validated / Ակտիվ — implementation-ը merge և validate է արված  
 **Owner / Պատասխանատու:** Gevorg Ohanyan  
-**Repository:** `menqstudio/Webpage`  
-**Parent standard:** `menqstudio/MenQ-Standard`  
+**Repository:** `menq-official/webpage`  
+**Parent standard:** `menq-official/standard`  
 **Design authority:** Locked `D-025`  
-**Implementation merge:** `d985a5718ed7ec47717fdf271d14580e8eb947cb`
+**Implementation merge:** `56c991bfca19b9b5b16860a94e8fe3399f76b5dd`
 
 ## Հայերեն
 

@@ -8,7 +8,7 @@
 | **What it is** | The public business website of MenQ Studio with lead and booking intake and an invite-only admin |
 | **Who it serves** | Businesses looking for AI, automation and custom software; MenQ's own team in the admin |
 | **State** | Implementation merged and green; design platform adoption M2-pilot (see Status below) |
-| **Built with** | Next.js 16, React 19, TypeScript, Prisma, Tailwind CSS, MenQ brand tokens |
+| **Stack** | Next.js 16, React 19, TypeScript, Prisma, Tailwind CSS, MenQ brand tokens |
 
 <details><summary><b>Հայերեն</b></summary>
 
@@ -17,7 +17,7 @@
 | **Ինչ է** | MenQ Studio-ի հանրային բիզնես կայքը՝ հայտերի և ամրագրումների ընդունմամբ և միայն հրավերով admin-ով |
 | **Ում համար** | AI, ավտոմատացում և custom ծրագրեր փնտրող բիզնեսների. admin-ում՝ MenQ-ի թիմի |
 | **Վիճակ** | Իրականացումը merge արված է և կանաչ. դիզայն հարթակի adoption՝ M2-pilot (տես ներքևի Status-ը) |
-| **Կառուցված է** | Next.js 16, React 19, TypeScript, Prisma, Tailwind CSS, MenQ բրենդի token-ներ |
+| **Տեխնոլոգիաներ** | Next.js 16, React 19, TypeScript, Prisma, Tailwind CSS, MenQ բրենդի token-ներ |
 
 </details>
 
@@ -36,8 +36,8 @@
 - **Implementation:** merged and GREEN / merge արված և GREEN
 - **Design Platform authority:** Locked `D-025`
 - **Implementation PR:** `#1`
-- **Implementation merge:** `d985a5718ed7ec47717fdf271d14580e8eb947cb`
-- **Validated head:** `ae4ef9519d9e9286d45440ffff4c1e83d02afaf1`
+- **Implementation merge:** `56c991bfca19b9b5b16860a94e8fe3399f76b5dd`
+- **Validated head:** `bfae33680ec408557516d4f9d581a30cc2137cfd`
 - **Adoption maturity:** `M2-pilot` (Owner approval 2026-10-08)
 - **Languages:** Armenian + English canonical; Russian product locale
 - **Owner:** Gevorg Ohanyan

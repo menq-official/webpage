@@ -1,9 +1,9 @@
 # MenQ Webpage — Final Design Audit / Վերջնական դիզայն audit
 
 **Status / Կարգավիճակ:** GREEN — implementation merged and validated / GREEN — implementation-ը merge և validate է արված  
-**Baseline:** `f766943d92aa9c6c579a99ca0729c50a8f2206e1`  
-**Validated head:** `ae4ef9519d9e9286d45440ffff4c1e83d02afaf1`  
-**Merge:** `d985a5718ed7ec47717fdf271d14580e8eb947cb`
+**Baseline:** `a2e7f66122a61e76aa25ed0e224133ccb8e6f5cc`  
+**Validated head:** `bfae33680ec408557516d4f9d581a30cc2137cfd`  
+**Merge:** `56c991bfca19b9b5b16860a94e8fe3399f76b5dd`
 
 ## Հայերեն
 

@@ -2,7 +2,7 @@
 
 **Status / Կարգավիճակ:** Current / Ընթացիկ  
 **Canonical ref:** `main`  
-**Implementation merge:** `d985a5718ed7ec47717fdf271d14580e8eb947cb`
+**Implementation merge:** `56c991bfca19b9b5b16860a94e8fe3399f76b5dd`
 
 ## Հայերեն
 
@@ -10,7 +10,7 @@
 1. Կարդալ root canonical files-ը։
 2. Կարդալ `docs/menq-standard/README.md` և relevant architecture/decision/validation records-ը։
 3. Active PR-ի դեպքում կարդալ metadata, changed files, diff, review threads և checks։
-4. Shared MenQ truth-ը վերցնել միայն `menqstudio/MenQ-Standard` repository-ից։
+4. Shared MenQ truth-ը վերցնել միայն `menq-official/standard` repository-ից։
 
 ### Current truth
 - PR #1 merged է և implementation-ը GREEN է։
@@ -29,7 +29,7 @@ AI-ն կարող է audit, draft, validate և PR պատրաստել։ AI-ն չի
 1. Read the root canonical files.
 2. Read `docs/menq-standard/README.md` and the relevant architecture, decision, and validation records.
 3. For an active PR, read metadata, changed files, diff, review threads, and checks.
-4. Obtain shared MenQ truth only from the `menqstudio/MenQ-Standard` repository.
+4. Obtain shared MenQ truth only from the `menq-official/standard` repository.
 
 ### Current truth
 - PR #1 is merged and the implementation is GREEN.

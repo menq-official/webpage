@@ -42,7 +42,7 @@
     "Implementation merged and green; design platform adoption M2-pilot (see Status below)"
    ],
    [
-    "Built with",
+    "Stack",
     "Next.js 16, React 19, TypeScript, Prisma, Tailwind CSS, MenQ brand tokens"
    ]
   ],
@@ -60,7 +60,7 @@
     "Իրականացումը merge արված է և կանաչ. դիզայն հարթակի adoption՝ M2-pilot (տես ներքևի Status-ը)"
    ],
    [
-    "Կառուցված է",
+    "Տեխնոլոգիաներ",
     "Next.js 16, React 19, TypeScript, Prisma, Tailwind CSS, MenQ բրենդի token-ներ"
    ]
   ]

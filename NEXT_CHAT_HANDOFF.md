@@ -2,10 +2,10 @@
 
 ## Հայերեն
 ### Current state
-- Implementation merge՝ `d985a5718ed7ec47717fdf271d14580e8eb947cb`։
+- Implementation merge՝ `56c991bfca19b9b5b16860a94e8fe3399f76b5dd`։
 - Validator/lint/typecheck/tests/build GREEN։
 - Canonical documentation package-ը complete է և bilingual։
-- PR #2-ը (Owner-ի հրահանգով, 2026-10-07) նաև միացնում է MenQ brand շերտը՝ pinned `tokens.vars.css` (`493a3df`), token parity 1632/1632, CI runtime evidence (`scripts/e2e_consumer_smoke.mjs`)։ Տես `docs/menq-standard/BRAND_TOKEN_CONSUMPTION.md`։
+- PR #2-ը (Owner-ի հրահանգով, 2026-10-07) նաև միացնում է MenQ brand շերտը՝ pinned `tokens.vars.css` (`bfd0219`), token parity 1632/1632, CI runtime evidence (`scripts/e2e_consumer_smoke.mjs`)։ Տես `docs/menq-standard/BRAND_TOKEN_CONSUMPTION.md`։
 - Adoption maturity՝ M2-pilot (Owner-ի հաստատում, 2026-10-08)։
 
 ### Exact next work
@@ -15,10 +15,10 @@
 
 ## English
 ### Current state
-- Implementation merge: `d985a5718ed7ec47717fdf271d14580e8eb947cb`.
+- Implementation merge: `56c991bfca19b9b5b16860a94e8fe3399f76b5dd`.
 - Validator, lint, typecheck, tests, and build are GREEN.
 - The canonical documentation package is complete and bilingual.
-- By Owner instruction (2026-10-07), PR #2 also consumes the MenQ brand layer: pinned `tokens.vars.css` (`493a3df`), token parity 1632/1632, CI runtime evidence (`scripts/e2e_consumer_smoke.mjs`). See `docs/menq-standard/BRAND_TOKEN_CONSUMPTION.md`.
+- By Owner instruction (2026-10-07), PR #2 also consumes the MenQ brand layer: pinned `tokens.vars.css` (`bfd0219`), token parity 1632/1632, CI runtime evidence (`scripts/e2e_consumer_smoke.mjs`). See `docs/menq-standard/BRAND_TOKEN_CONSUMPTION.md`.
 - Adoption maturity: M2-pilot (Owner approval, 2026-10-08).
 
 ### Exact next work
