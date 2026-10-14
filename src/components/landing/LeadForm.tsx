@@ -1,15 +1,25 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { FormField, SelectField, TextAreaField } from "@/components/ui/FormField";
 import { Button } from "@/components/ui/Button";
-import { validateLead, type FieldErrors, type LeadInput } from "@/lib/forms/lead";
+import { validateLead, type FieldErrors, type LeadField, type LeadInput } from "@/lib/forms/lead";
 import { track, AnalyticsEvent } from "@/lib/analytics/analytics";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/content/locales/types";
 
 type Status = "idle" | "submitting" | "success" | "error";
+
+// Visual order of the fields, so focus lands on the first one that needs fixing.
+const FIELD_IDS: [LeadField, string][] = [
+  ["name", "lead-name"],
+  ["phone", "lead-phone"],
+  ["email", "lead-email"],
+  ["interestedSolution", "lead-solution"],
+  ["message", "lead-message"],
+];
 
 const emptyValues = {
   name: "",
@@ -71,9 +81,17 @@ export function LeadForm({
     event.preventDefault();
     if (status === "submitting") return;
 
-    const fieldErrors = validateLead(values, f.validation);
+    const fieldErrors = validateLead(
+      values,
+      f.validation,
+      f.options.map((option) => option.value),
+    );
     setErrors(fieldErrors);
-    if (Object.keys(fieldErrors).length > 0) return;
+    if (Object.keys(fieldErrors).length > 0) {
+      const first = FIELD_IDS.find(([field]) => fieldErrors[field]);
+      if (first) document.getElementById(first[1])?.focus();
+      return;
+    }
 
     // Metadata only — never PII.
     track(AnalyticsEvent.leadFormSubmit, {
@@ -151,6 +169,7 @@ export function LeadForm({
           onChange={(e) => update("name", e.target.value)}
           error={errors.name}
           autoComplete="name"
+          required
         />
         <FormField
           id="lead-company"
@@ -195,6 +214,8 @@ export function LeadForm({
         value={values.interestedSolution}
         onChange={(e) => update("interestedSolution", e.target.value)}
         error={errors.interestedSolution}
+        hint={f.required}
+        required
       />
 
       <TextAreaField
@@ -205,6 +226,8 @@ export function LeadForm({
         value={values.message}
         onChange={(e) => update("message", e.target.value)}
         error={errors.message}
+        hint={f.required}
+        required
         rows={4}
       />
 
@@ -238,7 +261,15 @@ export function LeadForm({
         {status === "submitting" ? f.submitting : f.submit}
       </Button>
 
-      <p className="text-xs leading-relaxed text-content-muted">{f.privacyNote}</p>
+      <p className="text-xs leading-relaxed text-content-muted">
+        {f.privacyNote}{" "}
+        <Link
+          href={`/${locale}/privacy`}
+          className="underline underline-offset-2 hover:text-content-primary"
+        >
+          {f.privacyLinkLabel}
+        </Link>
+      </p>
     </form>
   );
 }
