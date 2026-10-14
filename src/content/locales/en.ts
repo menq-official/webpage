@@ -530,6 +530,7 @@ export const en: Dictionary = {
       ],
       privacyNote:
         "Your data is used only to contact you and answer your request.",
+      privacyLinkLabel: "Privacy Policy",
       successTitle: "Thank you",
       successBody:
         "Your request has been received. We will contact you as soon as possible.",
@@ -540,6 +541,7 @@ export const en: Dictionary = {
         name: "Please enter your name (at least 2 characters).",
         contact: "Add at least a phone or email so we can reach you.",
         email: "Please enter a valid email address.",
+        phone: "Please enter a valid phone number: digits, optionally starting with +.",
         solution: "Choose which solution you're interested in.",
         message: "Briefly describe your problem (at least 10 characters).",
       },

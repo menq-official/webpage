@@ -202,6 +202,7 @@ export type Dictionary = {
       required: string;
       options: FormOption[];
       privacyNote: string;
+      privacyLinkLabel: string;
       successTitle: string;
       successBody: string;
       errorTitle: string;
@@ -210,6 +211,7 @@ export type Dictionary = {
         name: string;
         contact: string;
         email: string;
+        phone: string;
         solution: string;
         message: string;
       };

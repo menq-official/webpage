@@ -105,7 +105,11 @@ export async function POST(req: NextRequest) {
   const locale = isLocale(body.locale) ? body.locale : defaultLocale;
   const dict = getDictionary(locale);
 
-  const errors = validateLead(body, dict.cta.form.validation);
+  const errors = validateLead(
+    body,
+    dict.cta.form.validation,
+    dict.cta.form.options.map((option) => option.value),
+  );
   if (Object.keys(errors).length > 0) {
     return NextResponse.json({ error: "VALIDATION", fields: errors }, { status: 400 });
   }
