@@ -9,7 +9,7 @@ The builder must not stop on these items. Use placeholders and continue.
 
 ## Contact
 - Phone: DONE — +374 44 74 74 47 (Owner, 2026-10-14).
-- Email: hidden until hello@menqstudio.am exists (Google Workspace, after the domain is approved).
+- Email: DONE — info@menqstudio.am (Google Workspace alias of office@, 2026-10-14).
 - WhatsApp: DONE — same number as the phone.
 - Telegram: hidden until the Owner gives a handle.
 - Social links: only WhatsApp; LinkedIn/Instagram hidden until real pages exist.

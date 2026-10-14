@@ -1,5 +1,12 @@
 # MenQ Webpage — Changelog / Փոփոխությունների պատմություն
 
+## 2026-10-14 — Business email on the site
+### Հայերեն
+- Կայքի կոնտակտներում, footer-ում և Google-ի կառուցվածքային տվյալներում հիմա `info@menqstudio.am`-ն է (Google Workspace)։
+
+### English
+- The site's contacts, footer and structured data now show `info@menqstudio.am` (Google Workspace).
+
 ## 2026-10-14 — AI-first homepage, phase 1
 ### Հայերեն
 - Նոր գլխավոր ուղերձ. «AI-ն աշխատում է 24/7։ Որոշումները՝ դուք»։ Hero-ում ստատիկ dashboard-ի փոխարեն կենդանի դեմո՝ AI գործակալը ստանում է հաղորդագրությունը, պատրաստում է պատասխանը և ուղարկում է միայն հաստատումից հետո (reduced-motion-ի դեպքում՝ ստատիկ վերջնական վիճակ)։

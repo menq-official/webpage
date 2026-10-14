@@ -13,8 +13,7 @@ export const contact: {
   socials: readonly { id: string; label: string; href: string }[];
 } = {
   phone: { label: "+374 44 74 74 47", href: "tel:+37444747447" },
-  // Business mailbox (hello@menqstudio.am) goes live with the domain.
-  email: null,
+  email: { label: "info@menqstudio.am", href: "mailto:info@menqstudio.am" },
   telegram: null,
   whatsapp: { label: "WhatsApp", href: "https://wa.me/37444747447" },
   socials: [
