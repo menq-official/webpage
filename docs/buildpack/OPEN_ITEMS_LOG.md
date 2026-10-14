@@ -8,11 +8,11 @@ The builder must not stop on these items. Use placeholders and continue.
 - Final brand colors: token defaults provided; can be refined later.
 
 ## Contact
-- Phone: placeholder needed.
-- Email: placeholder needed.
-- WhatsApp: placeholder needed.
-- Telegram: placeholder needed.
-- Social links: placeholder needed.
+- Phone: DONE — +374 44 74 74 47 (Owner, 2026-10-14).
+- Email: hidden until hello@menqstudio.am exists (Google Workspace, after the domain is approved).
+- WhatsApp: DONE — same number as the phone.
+- Telegram: hidden until the Owner gives a handle.
+- Social links: only WhatsApp; LinkedIn/Instagram hidden until real pages exist.
 - Address: placeholder optional.
 - Legal company name: placeholder optional.
 
@@ -22,9 +22,8 @@ The builder must not stop on these items. Use placeholders and continue.
 - Add real certificate names/assets later when available.
 
 ## Deployment
-- Deployment target not decided.
-- Keep deploy portable.
-- Recommended default: Vercel.
+- DONE (2026-10-14): Hetzner `menq-prod-1` + Coolify, Dockerfile build, PostgreSQL 16 on the same server.
+- Domain menqstudio.am: awaiting AMNIC approval at name.am.
 
 ## Integrations
 - Email SMTP credentials needed.

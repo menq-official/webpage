@@ -43,9 +43,9 @@ export const en: Dictionary = {
     primaryCta: "Get a free consultation",
     secondaryCta: "See the solutions",
     trustLine:
-      "Specialists growing their qualifications • AI solutions • CRM • Web • ERP • Automation • Dashboard",
+      "AI solutions • CRM • Websites • ERP • Automation • Dashboards",
     visual: {
-      title: "Business control system",
+      title: "Example: business control system",
       liveLabel: "Live",
       metrics: [
         { label: "Active leads", value: "248", delta: "+18%" },
@@ -351,8 +351,8 @@ export const en: Dictionary = {
       "We build trust through a professional approach, not empty promises.",
     cards: [
       {
-        title: "Specialists growing their qualifications",
-        body: "Our team continuously develops its professional qualifications in AI, automation, and digital solutions.",
+        title: "Real, working systems",
+        body: "The websites, bots, AI agents, and automations we build already run in real businesses, not just in presentations.",
       },
       {
         title: "AI-accelerated solutions",
@@ -371,8 +371,8 @@ export const en: Dictionary = {
         body: "The solution doesn't end at launch — it can be continuously improved and developed.",
       },
       {
-        title: "Responsible approach to data",
-        body: "When designing AI and software solutions, we account for data security, access, and control.",
+        title: "Transparent work",
+        body: "After every stage you see the result, the timeline, and the next step — no surprises.",
       },
     ],
     security: {
