@@ -2,11 +2,10 @@ import type { Dictionary } from "./types";
 
 export const en: Dictionary = {
   meta: {
-    title: "AI Automation and Software Solutions for Business Growth",
+    title: "MenQ — AI agents for business, under your control",
     description:
-      "We build CRM, ERP, websites, dashboards, and AI automation solutions that help businesses reduce costs, save time, and attract new customers.",
-    ogImageAlt:
-      "Business automation dashboard with metrics, workflow nodes, and AI insight",
+      "AI agents that answer customers 24/7, process requests and automate routine work, while every important decision stays with you. Websites, CRM and automation.",
+    ogImageAlt: "MenQ — AI agents that work with your approval",
   },
   nav: {
     home: "Home",
@@ -33,38 +32,118 @@ export const en: Dictionary = {
     cookieDecline: "Decline",
   },
   hero: {
-    eyebrow: "AI • Automation • Software Solutions",
-    title: "AI and software solutions that cut costs and",
-    titleAccent: "accelerate business growth",
+    eyebrow: "AI agents • Automation • Business software",
+    title: "AI works 24/7.",
+    titleAccent: "You make the decisions.",
     subtitle:
-      "We build CRM systems, websites, landing pages, ERP and internal management platforms, dashboards, workflow automations, and AI-powered solutions that help businesses save time, attract new customers, and stay in control.",
+      "AI agents answer your customers, process requests, keep your CRM up to date and handle routine work, day and night. Every important step goes through your approval.",
     support:
-      "We find the points in your business where time, money, and control leak away, then replace them with fast, measurable, automated systems.",
+      "You see everything in one dashboard and can change the rules or pause an agent at any moment.",
     primaryCta: "Get a free consultation",
-    secondaryCta: "See the solutions",
+    secondaryCta: "See what we build",
     trustLine:
-      "AI solutions • CRM • Websites • ERP • Automation • Dashboards",
-    visual: {
-      title: "Example: business control system",
-      liveLabel: "Live",
-      metrics: [
-        { label: "Active leads", value: "248", delta: "+18%" },
-        { label: "Automated steps", value: "1.4K", delta: "+32%" },
-        { label: "Avg. response", value: "2.4h", delta: "−41%" },
+      "AI agents • CRM • Websites • Automation • Dashboards • Integrations",
+    console: {
+      title: "AI agent · Sales",
+      badge: "Demo",
+      liveLabel: "Working 24/7",
+      incomingLabel: "New message",
+      thinkingLabel: "AI is analysing the request",
+      draftLabel: "Reply drafted by AI",
+      approvalPrompt: "Send to the customer?",
+      approve: "Approve",
+      edit: "Edit",
+      approvedLabel: "Approved by you and sent",
+      autoLabel: "On its own",
+      srSummary:
+        "Demo: an AI agent receives a customer message, drafts a reply and sends it only after you approve it.",
+      scenarios: [
+        {
+          channel: "Instagram",
+          time: "02:14",
+          customer: "Ani",
+          message: "Hi, is there a free slot tomorrow for teeth cleaning?",
+          draft: "Hi Ani! Tomorrow we have 11:00 and 16:30 available. Which time suits you?",
+          autoActions: ["Request logged in the CRM", "Doctor's calendar checked"],
+        },
+        {
+          channel: "Website",
+          time: "23:40",
+          customer: "Armen",
+          message: "I want to open an online shop. Can you give me a rough price?",
+          draft: "Hi Armen! The price depends on the number of products and payment methods. Our specialist will call you tomorrow at 10:00 to go through the details.",
+          autoActions: ["Request marked as high priority", "Task created for a specialist"],
+        },
+        {
+          channel: "Telegram",
+          time: "07:05",
+          customer: "Mariam",
+          message: "My order still hasn't arrived. What should I do?",
+          draft: "Mariam, sorry for the delay. Your order will be delivered today before 14:00. We'll send the tracking link by SMS.",
+          autoActions: ["Order No. 2048 found", "Delivery status checked"],
+        },
       ],
-      pipelineLabel: "Sales pipeline",
-      pipeline: [
-        { label: "New request", status: "84" },
-        { label: "In progress", status: "37" },
-        { label: "Proposal sent", status: "21" },
-        { label: "Closed deal", status: "12" },
-      ],
-      automationLabel: "Automation",
-      automationStatus: "Running",
-      aiLabel: "AI insight",
-      aiInsight: "3 leads need immediate follow-up",
-      nodes: ["CRM", "AI", "Web", "Dashboard", "Automation", "Analytics"],
     },
+  },
+  agents: {
+    eyebrow: "AI team",
+    title: "Your business's AI team",
+    description:
+      "Each agent has its own role. It handles routine work on its own and asks you before any important step.",
+    autoLabel: "Does on its own",
+    askLabel: "Asks you",
+    items: [
+      {
+        name: "Sales agent",
+        role: "Answers every request and never lets a customer slip away.",
+        auto: ["Replies 24/7 on your website, Instagram and Telegram", "Logs the request in the CRM", "Reminds you about unanswered customers"],
+        ask: ["Sending a price offer", "Giving a discount"],
+      },
+      {
+        name: "Support agent",
+        role: "Solves customer questions quickly and politely.",
+        auto: ["Answers frequently asked questions", "Checks order status", "Books visits and calls"],
+        ask: ["Refunds", "Resolving complaints"],
+      },
+      {
+        name: "Operations agent",
+        role: "Keeps internal work organised and on schedule.",
+        auto: ["Assigns tasks to the team", "Fills in documents and spreadsheets", "Warns about delays"],
+        ask: ["Confirming an order", "Paying a supplier"],
+      },
+      {
+        name: "Analyst agent",
+        role: "Shows you every day what is happening in your business.",
+        auto: ["Prepares daily and weekly reports", "Finds problems and delays", "Suggests improvements"],
+        ask: ["Which suggestion to act on"],
+      },
+    ],
+  },
+  control: {
+    eyebrow: "Control",
+    title: "You are in charge. Always.",
+    description:
+      "AI is fast and never gets tired, but the final word is yours. That is how we build every system.",
+    points: [
+      {
+        title: "Important steps need your approval",
+        body: "You decide what the AI does on its own and what waits for your yes.",
+      },
+      {
+        title: "Everything is visible",
+        body: "One dashboard shows what the AI has done, whom it answered and what is waiting for you.",
+      },
+      {
+        title: "Pause with one click",
+        body: "Stop an agent or change its rules at any moment.",
+      },
+      {
+        title: "Every action is logged",
+        body: "The history is kept, so you can always check who did what and when.",
+      },
+    ],
+    flow: ["AI proposes", "You approve", "The action runs", "Everything is logged"],
+    closing: "AI works for you, not instead of you.",
   },
   pain: {
     title: "Businesses lose money when processes are not systematized",
@@ -132,72 +211,63 @@ export const en: Dictionary = {
     ],
   },
   services: {
-    title: "Our solutions",
+    title: "What we build",
     description:
-      "We offer complete digital and AI solutions — from bringing in new customers to automating internal management and building growth infrastructure.",
-    goalLabel: "Goal",
-    valueLabel: "Business value",
+      "We start with one process and grow the system as your business grows.",
+    goalLabel: "What it gives you",
+    valueLabel: "The result",
     blocks: [
       {
-        title: "Solutions that bring new customers",
-        goal: "We help your business build a trustworthy online presence, capture leads, and stop losing interested customers.",
+        title: "AI agents and chatbots",
+        goal: "AI that answers, sorts and processes requests by your rules and with your approval.",
         services: [
-          "Websites",
+          "Sales and support agents",
+          "Chatbots for your website, Instagram and Telegram",
+          "Document processing",
+          "Automatic reports",
+          "Data extraction",
+          "Internal AI assistants",
+        ],
+        value: "Work continues at night while your team focuses on what matters.",
+      },
+      {
+        title: "New customers",
+        goal: "Websites and tools that collect requests and make sure none of them get lost.",
+        services: [
+          "Company websites",
           "Landing pages",
           "Lead forms",
-          "CRM",
-          "Campaign support",
+          "CRM systems",
           "Sales automation",
-          "E-commerce",
-          "Sales & lead management",
+          "Online shops",
         ],
-        value: "More requests, better follow-up, and fewer lost customers.",
+        value: "More requests and no lost customers.",
       },
       {
-        title: "Solutions that simplify internal management",
-        goal: "We help your business move internal work onto a controllable digital platform.",
+        title: "Internal management",
+        goal: "All internal work in one controllable system.",
         services: [
-          "ERP",
-          "Dashboards",
-          "Workflow automation",
+          "ERP systems",
+          "Management dashboards",
           "Task management",
           "Inventory",
-          "HR systems",
-          "Booking / scheduling",
-          "Ticketing",
-          "Custom admin panels",
+          "Bookings and schedules",
+          "Admin panels",
         ],
-        value: "Less chaos, clear accountability, and a faster workflow.",
+        value: "Less chaos, clear responsibility and faster work.",
       },
       {
-        title: "AI solutions for business",
-        goal: "We apply AI where it can save time, speed up work, and support decision-making.",
+        title: "Integrations and support",
+        goal: "We connect your tools so data is never copied by hand.",
         services: [
-          "AI assistants",
-          "Chatbots",
-          "Document automation",
-          "AI reporting",
-          "AI support",
-          "Data extraction",
-          "Request classification",
-          "Smart recommendations",
+          "Payment systems",
+          "Accounting software",
+          "SMS and email notifications",
+          "API integrations",
+          "Servers and hosting",
+          "Support and development",
         ],
-        value: "Less manual work, faster processing, and smarter decisions.",
-      },
-      {
-        title: "Integration and growth infrastructure",
-        goal: "We connect different tools and data into one clear workflow.",
-        services: [
-          "Integrations",
-          "APIs",
-          "Payment integrations",
-          "Accounting integrations",
-          "SMS / Email notifications",
-          "Cloud deployment",
-          "Support & maintenance",
-          "Analytics",
-        ],
-        value: "Data isn't re-entered by hand, and your systems work together.",
+        value: "All your systems work as one.",
       },
     ],
   },
@@ -222,48 +292,48 @@ export const en: Dictionary = {
   industries: {
     title: "Industries we work with",
     intro:
-      "Our solutions apply to businesses of different sizes and sectors — from small service companies to organizations that need complex internal management.",
-    examplesLabel: "Example sectors",
-    solutionsLabel: "Recommended solutions",
+      "Our solutions fit small and medium businesses that have customers, orders and repetitive work.",
+    examplesLabel: "Examples",
+    solutionsLabel: "What we can do",
     groups: [
       {
-        title: "Sales- and customer-driven businesses",
+        title: "Sales and customer service",
         examples:
-          "Retail, e-commerce, real estate, restaurants, hospitality, tourism, beauty salons, wellness centers, gyms and fitness centers.",
+          "Shops, online stores, real estate, restaurants, hotels, tourism, beauty salons, fitness clubs.",
         solutions:
-          "Website, landing page, CRM, lead management, booking, loyalty, and notification automation.",
+          "AI sales agent, website, CRM, bookings, loyalty programmes and notifications.",
       },
       {
-        title: "Service and field operations businesses",
+        title: "Field services and service teams",
         examples:
-          "Field service, cleaning companies, security companies, auto service, car wash, construction, maintenance, ISP / telecom.",
+          "Cleaning and security companies, car services, construction, maintenance, internet providers.",
         solutions:
-          "Work orders, technician scheduling, dispatch, ticketing, mobile workflows, and status tracking.",
+          "Work orders, technician scheduling, request dispatching and status tracking.",
       },
       {
         title: "Education and healthcare",
         examples:
-          "Education, courses, training centers, healthcare, clinics, dental clinics, medical laboratories.",
+          "Courses, training centres, clinics, dental clinics, laboratories.",
         solutions:
-          "Booking, student/patient CRM, reminders, documents, payments, and dashboards.",
+          "Bookings, reminders, client database, documents and payments.",
       },
       {
-        title: "Finance, accounting, and professional services",
+        title: "Finance and professional services",
         examples:
-          "Finance, accounting, legal companies, consulting, HR / recruiting agencies, B2B service companies.",
+          "Accounting and law firms, consulting, recruitment agencies.",
         solutions:
-          "Document automation, client portals, task workflows, approval systems, and reporting.",
+          "Document automation, client portals, approval workflows and reports.",
       },
       {
-        title: "Manufacturing, warehouse, and supply",
+        title: "Manufacturing, warehousing and delivery",
         examples:
-          "Manufacturing, logistics, delivery, wholesale, distribution, import/export, warehouses, and inventory-heavy businesses.",
+          "Manufacturing, logistics, delivery, wholesale, import and export.",
         solutions:
-          "Inventory, order management, route tracking, warehouse dashboard, and integrations.",
+          "Inventory, order management, route tracking and integrations.",
       },
     ],
     closing:
-      "If your business has repetitive actions, a flow of customers, employee management, documents, sales, orders, or reports, then those processes can be digitized and automated.",
+      "If your business has customers, orders or repetitive work, it can be automated without losing control.",
   },
   results: {
     title: "What your business gets",
@@ -316,107 +386,109 @@ export const en: Dictionary = {
   },
   process: {
     title: "How we work",
-    description:
-      "A clear, staged approach — from business analysis to measurable results.",
+    description: "Six clear steps from the first conversation to a working system.",
     steps: [
       {
-        title: "Business analysis",
-        body: "We understand your current workflows, problems, repetitive steps, and costly areas.",
+        title: "Getting to know you",
+        body: "In a free call we learn about your business, its problems and where time is being lost.",
       },
       {
-        title: "Solution mapping",
-        body: "We decide where you need a website, CRM, ERP, dashboard, automation, or AI.",
+        title: "Solution plan",
+        body: "We decide where you need an AI agent, a CRM, a website or automation, and what the AI will do on its own.",
       },
       {
         title: "Design",
-        body: "We create the solution structure — pages, functions, workflows, roles, data, and integrations.",
+        body: "Together we agree on pages, processes, roles and approval rules.",
       },
       {
         title: "Build",
-        body: "We build the software solution — website, CRM, dashboard, automation, AI assistant, or a complete system.",
+        body: "We build the system and test it on real examples.",
       },
       {
-        title: "Implementation",
-        body: "We set it up, connect the tools, hand it over to the team, and help them use it.",
+        title: "Launch",
+        body: "We connect it to your tools, train your team and launch together.",
       },
       {
-        title: "Measurement and improvement",
-        body: "We track results — time savings, cost reduction, speed, and control.",
+        title: "Support and growth",
+        body: "We track the results and keep improving the system as your business grows.",
       },
     ],
   },
   trust: {
-    title: "Why choose us",
-    description:
-      "We build trust through a professional approach, not empty promises.",
+    title: "Why MenQ",
+    description: "Trust built on facts, not promises.",
     cards: [
       {
         title: "Real, working systems",
-        body: "The websites, bots, AI agents, and automations we build already run in real businesses, not just in presentations.",
+        body: "The websites, bots, AI agents and automations we build already run in real businesses, not just in presentations.",
       },
       {
-        title: "AI-accelerated solutions",
-        body: "We use AI tools to make analysis, design, and some automation faster and more effective.",
+        title: "AI is our everyday tool",
+        body: "We work with AI agents every day ourselves, so we know where they help and where they don't.",
       },
       {
-        title: "Deep business analysis",
-        body: "First we understand the real processes, and only then propose a technical solution.",
+        title: "Your business first",
+        body: "First we understand your processes, and only then propose a technical solution.",
       },
       {
-        title: "Custom approach",
-        body: "We don't force a template solution — we build according to the real needs of the business.",
+        title: "Built for your needs",
+        body: "We don't force a template — we build around your business.",
       },
       {
-        title: "Support and development",
-        body: "The solution doesn't end at launch — it can be continuously improved and developed.",
+        title: "Support after launch",
+        body: "The system doesn't end at launch — we keep improving it.",
       },
       {
         title: "Transparent work",
-        body: "After every stage you see the result, the timeline, and the next step — no surprises.",
+        body: "After every stage you see the result, the timeline and the next step — no surprises.",
       },
     ],
     security: {
-      title: "A responsible approach to data",
-      body: "When designing business systems, CRM, ERP, and AI solutions, the safe and controlled use of data matters. We design solutions so that access rights, roles, data flows, and integrations are clear and manageable.",
+      title: "Your data, under your control",
+      body: "We design every system so it is clear who can access which data, what the AI is allowed to do, and which steps require your approval.",
     },
   },
   faq: {
     title: "Frequently asked questions",
-    description: "The most common questions — before the consultation.",
+    description: "Answers to the questions we hear most often.",
     items: [
       {
-        q: "What kinds of businesses are your solutions for?",
-        a: "Our solutions suit businesses that have a flow of customers, sales, orders, employee management, documents, reports, or repetitive actions.",
+        q: "What kind of businesses are your solutions for?",
+        a: "Businesses with a flow of customers, sales, orders, employees, documents or repetitive work.",
       },
       {
-        q: "Do I have to order a large system?",
-        a: "No. You can start with a small solution — for example a landing page, CRM, dashboard, or automating a single process — and then gradually grow the system.",
+        q: "Does the AI make decisions on its own?",
+        a: "Only the ones you allow. You decide which steps the AI takes on its own and which require your approval. You can change these rules or pause an agent at any time.",
       },
       {
-        q: "If we already have a CRM or another system, can you work with it?",
-        a: "Yes. If the business doesn't want to replace its existing system, we can build automations, integrations, or dashboards around the current tools.",
+        q: "Do we have to order a big system?",
+        a: "No. You can start with one agent or one automated process and grow step by step.",
       },
       {
-        q: "Are AI solutions safe for business data?",
-        a: "AI solutions must be designed with the right boundaries. We pay attention to data access, the purpose of use, and security rules.",
+        q: "We already have a CRM or other software. Can you work with it?",
+        a: "Yes. We can connect AI agents and automations to the tools you already use, without replacing them.",
       },
       {
-        q: "How long does it take to build a solution?",
-        a: "It depends on the size of the solution. A small landing page or automation can be ready faster, while CRM, ERP, or internal systems require more detailed analysis and staged delivery.",
+        q: "How safe is our data?",
+        a: "Access is limited by role, the AI sees only the data it needs for its job, and every action is logged.",
+      },
+      {
+        q: "How long does it take to build?",
+        a: "It depends on the scope. A simple agent or website is ready sooner, while a CRM or internal system is built in stages. We'll give you an exact timeline after the first call.",
       },
       {
         q: "Do you provide support after launch?",
-        a: "Yes. We can provide support, maintenance, improvements, and the development of new features.",
+        a: "Yes. We provide support, updates and new features.",
       },
       {
-        q: "Can you also build a mobile app or e-commerce solution?",
-        a: "Yes. We can build web, e-commerce, mobile app, and business system solutions based on the needs of the business.",
+        q: "Can you also build a mobile app or an online shop?",
+        a: "Yes. We build websites, online shops, mobile apps and business systems.",
       },
     ],
   },
   cta: {
-    title: "Ready to make your business faster and more controllable?",
-    body: "Tell us about your business, and we'll help you understand which software solution, automation, or AI tool can reduce your costs, save time, and bring more results.",
+    title: "Ready to let AI work for you?",
+    body: "Tell us about your business. We'll show you for free which work AI can take over and how you keep control.",
     contactTitle: "Prefer to reach us directly?",
     contactBody: "Message us on a convenient channel and we'll reply as soon as possible.",
     form: {
@@ -428,11 +500,11 @@ export const en: Dictionary = {
       phonePlaceholder: "+374 ...",
       emailLabel: "Email",
       emailPlaceholder: "you@company.com",
-      solutionLabel: "Which solution are you interested in",
+      solutionLabel: "What are you interested in?",
       solutionPlaceholder: "Choose a solution",
       messageLabel: "Briefly describe your problem",
       messagePlaceholder:
-        "For example: leads come in but get lost, and we can't process them in time…",
+        "For example: requests come in, but we can't answer everyone in time…",
       consentLabel:
         "By submitting this form, you agree that we may contact you using the provided details and use your information to respond to your request.",
       submit: "Get a free consultation",
@@ -440,27 +512,27 @@ export const en: Dictionary = {
       optional: "optional",
       required: "required",
       options: [
-        { value: "crm", label: "CRM system" },
-        { value: "web", label: "Website / Landing page" },
-        { value: "erp", label: "ERP / Internal management system" },
-        { value: "dashboard", label: "Dashboard / Analytics" },
+        { value: "ai_assistant", label: "AI agent / chatbot" },
         { value: "ai_automation", label: "AI automation" },
-        { value: "workflow", label: "Workflow automation" },
-        { value: "ecommerce", label: "E-commerce / Online shop" },
+        { value: "crm", label: "CRM system" },
+        { value: "web", label: "Website / landing page" },
+        { value: "erp", label: "ERP / internal management system" },
+        { value: "dashboard", label: "Dashboard / analytics" },
+        { value: "workflow", label: "Process automation" },
+        { value: "ecommerce", label: "Online shop" },
         { value: "integration", label: "System integration" },
-        { value: "ai_assistant", label: "AI assistant / Chatbot" },
-        { value: "booking", label: "Booking / Scheduling system" },
-        { value: "ticketing", label: "Customer support / Ticketing" },
-        { value: "inventory", label: "Inventory / Warehouse management" },
+        { value: "booking", label: "Booking system" },
+        { value: "ticketing", label: "Customer support" },
+        { value: "inventory", label: "Warehouse management" },
         { value: "mobile", label: "Mobile app" },
-        { value: "branding", label: "Branding / UI design" },
+        { value: "branding", label: "Branding / design" },
         { value: "consultation", label: "Not sure yet, I want a consultation" },
       ],
       privacyNote:
-        "Your data is used only to contact you and to process your consultation request.",
+        "Your data is used only to contact you and answer your request.",
       successTitle: "Thank you",
       successBody:
-        "Your request has been received. Our team will contact you as soon as possible.",
+        "Your request has been received. We will contact you as soon as possible.",
       errorTitle: "Couldn't send",
       errorBody:
         "Something went wrong while sending your request. Please try again or reach us through the listed contacts.",
@@ -474,7 +546,7 @@ export const en: Dictionary = {
     },
   },
   footer: {
-    slogan: "AI, automation, and software solutions for business growth.",
+    slogan: "AI agents and automation, under your control.",
     solutionsTitle: "Solutions",
     companyTitle: "Company",
     contactTitle: "Contact",
@@ -488,9 +560,9 @@ export const en: Dictionary = {
   legal: {
     privacy: {
       title: "Privacy policy",
-      updated: "Updated: 2026",
+      updated: "Updated: 14.10.2026",
       intro:
-        "This page describes what data we collect, why, and how we use it. This is an MVP placeholder and will be replaced with final legal text.",
+        "This page describes what data we collect, why, and how we use it.",
       sections: [
         {
           heading: "What data we collect",
@@ -528,9 +600,9 @@ export const en: Dictionary = {
     },
     terms: {
       title: "Terms of use",
-      updated: "Updated: 2026",
+      updated: "Updated: 14.10.2026",
       intro:
-        "This page describes the general terms for using the website. This is an MVP placeholder and will be replaced with final legal text.",
+        "This page describes the general terms for using the website.",
       sections: [
         {
           heading: "Description of services",
@@ -552,9 +624,9 @@ export const en: Dictionary = {
     },
     cookies: {
       title: "Cookie policy",
-      updated: "Updated: 2026",
+      updated: "Updated: 14.10.2026",
       intro:
-        "This page describes how we use cookies. This is an MVP placeholder.",
+        "This page describes how we use cookies.",
       sections: [
         {
           heading: "What cookies are",

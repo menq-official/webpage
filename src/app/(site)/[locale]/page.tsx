@@ -5,13 +5,10 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { Hero } from "@/components/landing/Hero";
-import { Pain } from "@/components/landing/Pain";
-import { SolutionOverview } from "@/components/landing/SolutionOverview";
+import { AgentsTeam } from "@/components/landing/AgentsTeam";
+import { YouControl } from "@/components/landing/YouControl";
 import { ServiceBlocks } from "@/components/landing/ServiceBlocks";
-import { BusinessSuccess } from "@/components/landing/BusinessSuccess";
 import { Industries } from "@/components/landing/Industries";
-import { Results } from "@/components/landing/Results";
-import { AISection } from "@/components/landing/AISection";
 import { HowWeWork } from "@/components/landing/HowWeWork";
 import { Trust } from "@/components/landing/Trust";
 import { Faq } from "@/components/landing/Faq";
@@ -40,20 +37,19 @@ export default async function LandingPage({
 
       <main id="main">
         <Hero dict={dict} locale={locale} />
-        <Pain dict={dict} locale={locale} />
-        <SolutionOverview dict={dict} locale={locale} />
+        <AgentsTeam dict={dict} />
+        <YouControl dict={dict} />
         <ServiceBlocks dict={dict} locale={locale} />
-        <BusinessSuccess dict={dict} locale={locale} />
-        <Industries dict={dict} locale={locale} />
-        <Results dict={dict} locale={locale} />
-        <AISection dict={dict} locale={locale} />
         <HowWeWork dict={dict} locale={locale} />
+        <Industries dict={dict} locale={locale} />
         <Trust dict={dict} locale={locale} />
         <Faq dict={dict} />
         <CTA dict={dict} locale={locale} />
       </main>
 
       <Footer dict={dict} locale={locale} year={year} />
+      {/* Keeps the mobile sticky CTA from covering the end of the footer. */}
+      <div className="h-sticky-cta lg:hidden" aria-hidden="true" />
 
       <MobileStickyCTA
         href={`/${locale}#${site.anchors.contact}`}

@@ -21,6 +21,22 @@ export type IndustryGroup = {
 
 export type FaqItem = { q: string; a: string };
 
+export type AgentScenario = {
+  channel: string;
+  time: string;
+  customer: string;
+  message: string;
+  draft: string;
+  autoActions: string[];
+};
+
+export type AgentProfile = {
+  name: string;
+  role: string;
+  auto: string[];
+  ask: string[];
+};
+
 export type FormOption = { value: string; label: string };
 
 export type LegalSection = { heading: string; body: string };
@@ -70,18 +86,37 @@ export type Dictionary = {
     primaryCta: string;
     secondaryCta: string;
     trustLine: string;
-    visual: {
+    console: {
       title: string;
-      metrics: { label: string; value: string; delta: string }[];
-      pipelineLabel: string;
-      pipeline: { label: string; status: string }[];
+      badge: string;
       liveLabel: string;
-      automationLabel: string;
-      automationStatus: string;
-      aiLabel: string;
-      aiInsight: string;
-      nodes: string[];
+      incomingLabel: string;
+      thinkingLabel: string;
+      draftLabel: string;
+      approvalPrompt: string;
+      approve: string;
+      edit: string;
+      approvedLabel: string;
+      autoLabel: string;
+      srSummary: string;
+      scenarios: AgentScenario[];
     };
+  };
+  agents: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    autoLabel: string;
+    askLabel: string;
+    items: AgentProfile[];
+  };
+  control: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    points: TitleBody[];
+    flow: string[];
+    closing: string;
   };
   pain: {
     title: string;

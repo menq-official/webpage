@@ -83,6 +83,7 @@ const config: Config = {
       spacing: {
         "page-x": "var(--space-page-x)",
         header: "var(--size-header-height)",
+        "sticky-cta": "var(--size-sticky-cta)",
         "section-sm": "var(--section-padding-sm)",
         "section-md": "var(--section-padding-md)",
         "section-lg": "var(--section-padding-lg)",

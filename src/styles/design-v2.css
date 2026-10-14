@@ -64,3 +64,23 @@ body {
 :root[data-theme="dark"] .menq-mark-glow,
 .section-contrast .menq-mark-glow { opacity: 0.9; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme]) .menq-mark-glow { opacity: 0.9; } }
+
+/* ── AI agent console (hero demo) ───────────────────────────────────────── */
+.console-body { min-height: var(--size-console-body); }
+.console-draft { min-height: var(--size-console-draft); }
+.console-step { animation: console-in var(--duration-section) var(--ease-out) both; }
+@keyframes console-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.typing-caret { display: inline-block; width: 2px; height: 1em; margin-left: 2px; vertical-align: text-bottom; background: var(--color-accent); animation: caret-blink 1s steps(1) infinite; }
+@keyframes caret-blink { 50% { opacity: 0; } }
+.thinking-dots::after { content: "…"; display: inline-block; animation: thinking 1.2s ease-in-out infinite; }
+@keyframes thinking { 0%, 100% { opacity: .3; } 50% { opacity: 1; } }
+.approve-pulse { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 55%, transparent); animation: approve-pulse 1.6s ease-out infinite; }
+@keyframes approve-pulse { 70% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--color-accent) 0%, transparent); } 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 0%, transparent); } }
+.ai-avatar { box-shadow: var(--shadow-glow); }
+.ai-orb { position: absolute; width: var(--ai-orb-size); height: var(--ai-orb-size); border-radius: var(--radius-pill); filter: blur(var(--ai-orb-blur)); opacity: .45; pointer-events: none; animation: orb-drift 14s ease-in-out infinite; }
+.ai-orb-a { top: -10%; left: -12%; background: var(--color-accent); }
+.ai-orb-b { bottom: -12%; right: -10%; background: var(--color-action-primary); animation-delay: -7s; }
+@keyframes orb-drift { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(24px, -18px) scale(1.12); } }
+@media (prefers-reduced-motion: reduce) {
+  .console-step, .typing-caret, .thinking-dots::after, .approve-pulse, .ai-orb { animation: none; }
+}
