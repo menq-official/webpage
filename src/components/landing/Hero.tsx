@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
@@ -31,12 +31,7 @@ export async function Hero({ dict, locale }: { dict: Dictionary; locale: Locale 
               <TrackedLink href={`#${site.anchors.contact}`} className={buttonClasses("primary", "lg")} event={AnalyticsEvent.ctaClick} eventProps={{ location: "hero", cta: "primary" }}>{hero.primaryCta}<ArrowRight className="h-5 w-5" aria-hidden="true" /></TrackedLink>
               <TrackedLink href={`#${site.anchors.solutions}`} className={buttonClasses("outline", "lg")} event={AnalyticsEvent.ctaClick} eventProps={{ location: "hero", cta: "secondary" }}>{hero.secondaryCta}</TrackedLink>
             </div>
-            <div className="animate-rise grid w-full gap-3 border-t border-edge-subtle pt-5 sm:grid-cols-3" style={rise(300)}>
-              {hero.visual.metrics.slice(0, 3).map((metric) => (
-                <div key={metric.label} className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden="true" /><div><div className="font-display text-lg font-bold text-content-primary">{metric.value}</div><div className="text-xs leading-relaxed text-content-muted">{metric.label}</div></div></div>
-              ))}
-            </div>
-            <p className="animate-rise text-sm leading-relaxed text-content-muted" style={rise(360)}>{hero.trustLine}</p>
+            <p className="animate-rise w-full border-t border-edge-subtle pt-5 text-sm leading-relaxed text-content-muted" style={rise(300)}>{hero.trustLine}</p>
           </div>
           <div className="animate-rise w-full lg:pl-4" style={rise(160)}><HeroVisual dict={dict} /></div>
         </div>

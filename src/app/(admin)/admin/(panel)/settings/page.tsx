@@ -77,9 +77,9 @@ export default async function SettingsPage() {
           </h2>
           <div className="flex flex-col gap-2 text-sm text-content-secondary">
             <div>{t.leadDetail.phone}: {contact.phone.label}</div>
-            <div>{t.leadDetail.email}: {contact.email.label}</div>
-            <div>Telegram: {contact.telegram.href}</div>
-            <div>WhatsApp: {contact.whatsapp.href}</div>
+            <div>{t.leadDetail.email}: {contact.email?.label ?? "—"}</div>
+            <div>Telegram: {contact.telegram?.href ?? "—"}</div>
+            <div>WhatsApp: {contact.whatsapp?.href ?? "—"}</div>
           </div>
           <p className="mt-3 text-xs text-content-muted">{t.settings.contactNote}</p>
         </Panel>

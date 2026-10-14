@@ -1,5 +1,18 @@
 # MenQ Webpage — Changelog / Փոփոխությունների պատմություն
 
+## 2026-10-14 — Real contacts, honest hero, self-hosted deploy
+### Հայերեն
+- Կոնտակտ՝ իրական հեռախոս և WhatsApp (+374 44 74 74 47)։ Email-ը, Telegram-ը և placeholder սոց. ցանցերը թաքցված են, մինչև իրականները լինեն (`null` ալիքը ոչ մի տեղ չի ցուցադրվում)։
+- Hero-ի տակի «248 ակտիվ lead / 1.4K / 2.4ժ» թվերը հեռացվեցին, որովհետև իրական չէին. dashboard-ի նկարը հիմա նշված է որպես «Օրինակ»։
+- «Ինչու ընտրել մեզ»՝ «Որակավորումները զարգացնող մասնագետներ»-ը փոխարինվեց «Իրական, աշխատող համակարգեր»-ով, իսկ «Տվյալների ...» կրկնվող քարտը՝ «Թափանցիկ աշխատանք»-ով։
+- Կայքը deploy արված է Hetzner + Coolify-ի վրա (OPEN_ITEMS_LOG-ը թարմացված է)։
+
+### English
+- Contact: real phone and WhatsApp (+374 44 74 74 47). Email, Telegram and placeholder socials are hidden until real ones exist (a `null` channel renders nowhere).
+- The "248 active leads / 1.4K / 2.4h" figures under the hero were removed because they were not real; the dashboard visual is now labelled "Example".
+- "Why choose us": "Specialists growing their qualifications" is replaced by "Real, working systems", and the duplicate data card by "Transparent work".
+- The site is deployed on Hetzner + Coolify (OPEN_ITEMS_LOG updated).
+
 ## 2026-10-08 — Brand icon set
 ### Հայերեն
 - Favicon-ը (ICO + SVG), Apple touch icon-ը և PWA manifest-ը (192/512/maskable) հիմա պաշտոնական Q մարկից են (MenQ-Standard CR-0008)։ CI-ն ստուգում է, որ դրանք հասանելի են։

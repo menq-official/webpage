@@ -17,7 +17,7 @@ export function JsonLd({ dict, locale }: { dict: Dictionary; locale: Locale }) {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "sales",
-        email: contact.email.label,
+        ...(contact.email ? { email: contact.email.label } : {}),
         telephone: contact.phone.label,
       },
     },

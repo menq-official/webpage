@@ -80,9 +80,11 @@ export function Footer({
             <a href={contact.phone.href} className="text-content-secondary transition-colors duration-base ease-standard hover:text-content-primary">
               {contact.phone.label}
             </a>
-            <a href={contact.email.href} className="text-content-secondary transition-colors duration-base ease-standard hover:text-content-primary">
-              {contact.email.label}
-            </a>
+            {contact.email ? (
+              <a href={contact.email.href} className="text-content-secondary transition-colors duration-base ease-standard hover:text-content-primary">
+                {contact.email.label}
+              </a>
+            ) : null}
             <div className="mt-1 flex flex-wrap gap-2">
               {contact.socials.map((social) => (
                 <a

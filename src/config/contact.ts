@@ -1,18 +1,25 @@
 /**
- * Contact + social placeholders. Replace before launch.
- * Tracked in docs/buildpack/OPEN_ITEMS_LOG.md.
+ * Public contact channels. A channel set to `null` is not live yet and is
+ * hidden everywhere it would render. Remaining gaps are tracked in
+ * docs/buildpack/OPEN_ITEMS_LOG.md.
  */
-export const contact = {
-  phone: { label: "+374 00 000 000", href: "tel:+37400000000" },
-  email: { label: "hello@menq.example", href: "mailto:hello@menq.example" },
-  telegram: { label: "Telegram", href: "https://t.me/menq" },
-  whatsapp: { label: "WhatsApp", href: "https://wa.me/37400000000" },
+type Channel = { label: string; href: string };
+
+export const contact: {
+  phone: Channel;
+  email: Channel | null;
+  telegram: Channel | null;
+  whatsapp: Channel | null;
+  socials: readonly { id: string; label: string; href: string }[];
+} = {
+  phone: { label: "+374 44 74 74 47", href: "tel:+37444747447" },
+  // Business mailbox (hello@menqstudio.am) goes live with the domain.
+  email: null,
+  telegram: null,
+  whatsapp: { label: "WhatsApp", href: "https://wa.me/37444747447" },
   socials: [
-    { id: "telegram", label: "Telegram", href: "https://t.me/menq" },
-    { id: "whatsapp", label: "WhatsApp", href: "https://wa.me/37400000000" },
-    { id: "linkedin", label: "LinkedIn", href: "https://linkedin.com/company/menq" },
-    { id: "instagram", label: "Instagram", href: "https://instagram.com/menq" },
+    { id: "whatsapp", label: "WhatsApp", href: "https://wa.me/37444747447" },
   ],
-} as const;
+};
 
 export type ContactConfig = typeof contact;

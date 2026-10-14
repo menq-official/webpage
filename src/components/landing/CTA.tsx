@@ -50,37 +50,43 @@ export async function CTA({ dict, locale }: { dict: Dictionary; locale: Locale }
                   <Phone className="h-4 w-4 text-accent" aria-hidden="true" />
                   {contact.phone.label}
                 </TrackedLink>
-                <TrackedLink
-                  href={contact.email.href}
-                  event={AnalyticsEvent.contactButtonClick}
-                  eventProps={{ method: "email" }}
-                  className="inline-flex items-center gap-2 rounded-pill border border-edge-subtle bg-surface-secondary px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-base ease-standard hover:border-edge-strong"
-                >
-                  <Mail className="h-4 w-4 text-accent" aria-hidden="true" />
-                  {contact.email.label}
-                </TrackedLink>
-                <TrackedLink
-                  href={contact.telegram.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  event={AnalyticsEvent.contactButtonClick}
-                  eventProps={{ method: "telegram" }}
-                  className="inline-flex items-center gap-2 rounded-pill border border-edge-subtle bg-surface-secondary px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-base ease-standard hover:border-edge-strong"
-                >
-                  <Send className="h-4 w-4 text-accent" aria-hidden="true" />
-                  {contact.telegram.label}
-                </TrackedLink>
-                <TrackedLink
-                  href={contact.whatsapp.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  event={AnalyticsEvent.contactButtonClick}
-                  eventProps={{ method: "whatsapp" }}
-                  className="inline-flex items-center gap-2 rounded-pill border border-edge-subtle bg-surface-secondary px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-base ease-standard hover:border-edge-strong"
-                >
-                  <MessageCircle className="h-4 w-4 text-accent" aria-hidden="true" />
-                  {contact.whatsapp.label}
-                </TrackedLink>
+                {contact.email ? (
+                  <TrackedLink
+                    href={contact.email.href}
+                    event={AnalyticsEvent.contactButtonClick}
+                    eventProps={{ method: "email" }}
+                    className="inline-flex items-center gap-2 rounded-pill border border-edge-subtle bg-surface-secondary px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-base ease-standard hover:border-edge-strong"
+                  >
+                    <Mail className="h-4 w-4 text-accent" aria-hidden="true" />
+                    {contact.email.label}
+                  </TrackedLink>
+                ) : null}
+                {contact.telegram ? (
+                  <TrackedLink
+                    href={contact.telegram.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    event={AnalyticsEvent.contactButtonClick}
+                    eventProps={{ method: "telegram" }}
+                    className="inline-flex items-center gap-2 rounded-pill border border-edge-subtle bg-surface-secondary px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-base ease-standard hover:border-edge-strong"
+                  >
+                    <Send className="h-4 w-4 text-accent" aria-hidden="true" />
+                    {contact.telegram.label}
+                  </TrackedLink>
+                ) : null}
+                {contact.whatsapp ? (
+                  <TrackedLink
+                    href={contact.whatsapp.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    event={AnalyticsEvent.contactButtonClick}
+                    eventProps={{ method: "whatsapp" }}
+                    className="inline-flex items-center gap-2 rounded-pill border border-edge-subtle bg-surface-secondary px-4 py-2 text-sm font-medium text-content-primary transition-colors duration-base ease-standard hover:border-edge-strong"
+                  >
+                    <MessageCircle className="h-4 w-4 text-accent" aria-hidden="true" />
+                    {contact.whatsapp.label}
+                  </TrackedLink>
+                ) : null}
               </div>
 
               {calendlyUrl ? (
