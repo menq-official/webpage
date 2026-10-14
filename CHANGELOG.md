@@ -1,5 +1,20 @@
 # MenQ Webpage — Changelog / Փոփոխությունների պատմություն
 
+## 2026-10-14 — AI-first homepage, phase 1
+### Հայերեն
+- Նոր գլխավոր ուղերձ. «AI-ն աշխատում է 24/7։ Որոշումները՝ դուք»։ Hero-ում ստատիկ dashboard-ի փոխարեն կենդանի դեմո՝ AI գործակալը ստանում է հաղորդագրությունը, պատրաստում է պատասխանը և ուղարկում է միայն հաստատումից հետո (reduced-motion-ի դեպքում՝ ստատիկ վերջնական վիճակ)։
+- Նոր բաժիններ՝ «Ձեր բիզնեսի AI թիմը» (4 գործակալ, «անում է ինքնուրույն / հարցնում է ձեզ») և «Ղեկավարը դուք եք։ Միշտ։»։
+- Գլխավոր էջը 12 բաժնից դարձավ 9. Pain, Solution, Success, Results և AI բաժինները հանվեցին էջից (կոմպոնենտներն ու տեքստերը մնում են ադմինի համար)։
+- Տեքստը վերաշարադրված է երեք լեզվով. մաքուր հայերեն, ուղղված կետադրություն և հարցական նշաններ, «կորչում», «ձեզ» և այլն։ Իրավական էջերից հանված է «MVP placeholder»-ը։
+- Mobile-ում sticky CTA-ն այլևս չի ծածկում footer-ը։
+
+### English
+- New core message: "AI works 24/7. You make the decisions." The hero's static dashboard is replaced by a live demo: an AI agent receives a message, drafts a reply and sends it only after approval (static final state under reduced motion).
+- New sections: "Your business's AI team" (4 agents, "does on its own / asks you") and "You are in charge. Always."
+- The homepage goes from 12 sections to 9: Pain, Solution, Success, Results and AI are removed from the page (components and copy stay for the admin).
+- Copy rewritten in all three locales: plain Armenian, fixed punctuation and question marks. "MVP placeholder" removed from the legal pages.
+- On mobile the sticky CTA no longer covers the footer.
+
 ## 2026-10-14 — Real contacts, honest hero, self-hosted deploy
 ### Հայերեն
 - Կոնտակտ՝ իրական հեռախոս և WhatsApp (+374 44 74 74 47)։ Email-ը, Telegram-ը և placeholder սոց. ցանցերը թաքցված են, մինչև իրականները լինեն (`null` ալիքը ոչ մի տեղ չի ցուցադրվում)։

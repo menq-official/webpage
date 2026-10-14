@@ -58,3 +58,12 @@
   --glass-blur: 18px;
   --glass-shadow: var(--shadow-lg);
 }
+
+/* AI agent console (hero demo) and mobile sticky-CTA clearance. */
+:root {
+  --size-sticky-cta: var(--space-20);
+  --size-console-body: calc(var(--space-20) * 4.5);
+  --size-console-draft: var(--space-16);
+  --ai-orb-size: calc(var(--space-20) * 3);
+  --ai-orb-blur: 60px;
+}
