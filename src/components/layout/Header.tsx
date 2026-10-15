@@ -16,16 +16,38 @@ import type { Dictionary } from "@/content/locales/types";
 
 export function Header({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [active, setActive] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuTriggerRef = useRef<HTMLButtonElement>(null);
   const drawerCloseRef = useRef<HTMLButtonElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 8);
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Mark the section on screen in the main navigation (aria-current="location").
+  useEffect(() => {
+    const sections = navItems
+      .map((item) => document.getElementById(item.anchor))
+      .filter((el): el is HTMLElement => Boolean(el));
+    if (!sections.length || !("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) if (entry.isIntersecting) setActive(entry.target.id);
+      },
+      { rootMargin: "-40% 0px -55% 0px" },
+    );
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -55,12 +77,18 @@ export function Header({ dict, locale }: { dict: Dictionary; locale: Locale }) {
 
   return (
     <header className={cn("sticky top-0 z-header w-full border-b transition duration-base ease-standard", scrolled ? "border-edge-subtle surface-float shadow-sm" : "border-transparent bg-transparent") }>
+      {/* Reading progress: a thin accent line along the bottom edge of the header. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 origin-left bg-accent motion-safe:transition-transform motion-safe:duration-150"
+        style={{ transform: `scaleX(${progress})` }}
+      />
       <Container size="wide">
         <div className="flex h-header items-center justify-between gap-4">
           <a href={`/${locale}#${site.anchors.top}`} className="rounded-pill text-content-primary"><BrandMark compact /></a>
           <nav className="hidden items-center gap-1 rounded-pill border border-edge-subtle bg-surface-primary p-1 shadow-sm lg:flex" aria-label={dict.common.mainNavLabel}>
             {navItems.map((item) => (
-              <a key={item.key} href={`/${locale}#${item.anchor}`} className="rounded-pill px-3 py-2 text-sm font-medium text-content-secondary transition-colors duration-base hover:bg-surface-secondary hover:text-content-primary">{dict.nav[item.key]}</a>
+              <a key={item.key} href={`/${locale}#${item.anchor}`} aria-current={active === item.anchor ? "location" : undefined} className={cn("rounded-pill px-3 py-2 text-sm font-medium transition-colors duration-base hover:bg-surface-secondary hover:text-content-primary", active === item.anchor ? "bg-accent-soft text-content-primary" : "text-content-secondary")}>{dict.nav[item.key]}</a>
             ))}
           </nav>
           <div className="hidden items-center gap-2 lg:flex">

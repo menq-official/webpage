@@ -45,15 +45,16 @@ export function Footer({
             <h2 className="text-sm font-semibold uppercase tracking-wide text-content-muted">
               {dict.footer.solutionsTitle}
             </h2>
-            <a href={`/${locale}#${site.anchors.solutions}`} className="text-content-secondary transition-colors duration-base ease-standard hover:text-content-primary">
-              {dict.nav.solutions}
-            </a>
-            <a href={`/${locale}#${site.anchors.industries}`} className="text-content-secondary transition-colors duration-base ease-standard hover:text-content-primary">
-              {dict.nav.industries}
-            </a>
-            <a href={`/${locale}#${site.anchors.process}`} className="text-content-secondary transition-colors duration-base ease-standard hover:text-content-primary">
-              {dict.nav.process}
-            </a>
+            {/* The four service areas (F12: this column used to repeat the Company links). */}
+            {dict.services.blocks.map((block) => (
+              <a
+                key={block.title}
+                href={`/${locale}#${site.anchors.solutions}`}
+                className="text-content-secondary transition-colors duration-base ease-standard hover:text-content-primary"
+              >
+                {block.title}
+              </a>
+            ))}
           </nav>
 
           {/* Company / nav */}
@@ -61,7 +62,7 @@ export function Footer({
             <h2 className="text-sm font-semibold uppercase tracking-wide text-content-muted">
               {dict.footer.companyTitle}
             </h2>
-            {navItems.map((item) => (
+            {navItems.filter((item) => item.key !== "solutions").map((item) => (
               <a
                 key={item.key}
                 href={`/${locale}#${item.anchor}`}
