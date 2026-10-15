@@ -95,7 +95,7 @@ export const en: Dictionary = {
     items: [
       {
         name: "Sales agent",
-        role: "Answers every request and never lets a customer slip away.",
+        role: "Answers requests around the clock, so fewer customers slip away.",
         auto: ["Replies 24/7 on your website, Instagram and Telegram", "Logs the request in the CRM", "Reminds you about unanswered customers"],
         ask: ["Sending a price offer", "Giving a discount"],
       },
@@ -138,8 +138,8 @@ export const en: Dictionary = {
         body: "Stop an agent or change its rules at any moment.",
       },
       {
-        title: "Every action is logged",
-        body: "The history is kept, so you can always check who did what and when.",
+        title: "Actions are logged",
+        body: "The history is kept, so you can check who did what and when.",
       },
     ],
     flow: ["AI proposes", "You approve", "The action runs", "Everything is logged"],
@@ -241,7 +241,7 @@ export const en: Dictionary = {
           "Sales automation",
           "Online shops",
         ],
-        value: "More requests and no lost customers.",
+        value: "More requests handled and fewer customers lost.",
       },
       {
         title: "Internal management",
@@ -258,7 +258,7 @@ export const en: Dictionary = {
       },
       {
         title: "Integrations and support",
-        goal: "We connect your tools so data is never copied by hand.",
+        goal: "We connect your tools so data doesn't have to be copied by hand.",
         services: [
           "Payment systems",
           "Accounting software",
@@ -267,7 +267,7 @@ export const en: Dictionary = {
           "Servers and hosting",
           "Support and development",
         ],
-        value: "All your systems work as one.",
+        value: "Your systems work together.",
       },
     ],
   },
@@ -419,8 +419,8 @@ export const en: Dictionary = {
     description: "Trust built on facts, not promises.",
     cards: [
       {
-        title: "Real, working systems",
-        body: "The websites, bots, AI agents and automations we build already run in real businesses, not just in presentations.",
+        title: "Working results, not slides",
+        body: "We build websites, bots, AI agents and automations for everyday work, and at every stage you see a working result, not a presentation.",
       },
       {
         title: "AI is our everyday tool",
@@ -440,7 +440,7 @@ export const en: Dictionary = {
       },
       {
         title: "Transparent work",
-        body: "After every stage you see the result, the timeline and the next step — no surprises.",
+        body: "After every stage you see the result, the timeline and the next step.",
       },
     ],
     security: {
