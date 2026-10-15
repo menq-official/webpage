@@ -232,7 +232,7 @@ export const en: Dictionary = {
       },
       {
         title: "New customers",
-        goal: "Websites and tools that collect requests and make sure none of them get lost.",
+        goal: "Websites and tools that capture requests in one place and help your team track follow-up.",
         services: [
           "Company websites",
           "Landing pages",
@@ -541,7 +541,7 @@ export const en: Dictionary = {
         name: "Please enter your name (at least 2 characters).",
         contact: "Add at least a phone or email so we can reach you.",
         email: "Please enter a valid email address.",
-        phone: "Please enter a valid phone number: digits, optionally starting with +.",
+        phone: "Enter a phone number with 7–15 digits. You may start with + and use spaces, hyphens or parentheses.",
         solution: "Choose which solution you're interested in.",
         message: "Briefly describe your problem (at least 10 characters).",
       },

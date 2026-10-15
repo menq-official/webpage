@@ -11,7 +11,18 @@ const copy: Record<Locale, { title: string; home: string }> = {
   ru: { title: "Страница не найдена", home: "Главная" },
 };
 
-export const metadata: Metadata = { robots: { index: false, follow: false } };
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale = isLocale(raw) ? raw : defaultLocale;
+  return {
+    title: { absolute: `${copy[locale].title} | MenQ` },
+    robots: { index: false, follow: false },
+  };
+}
 
 export default async function PageNotFound({
   params,
