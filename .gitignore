@@ -42,7 +42,9 @@ yarn-error.log*
 next-env.d.ts
 
 # --- Bro infra (SuperBro-governed, re-deliverable; do NOT commit) ---
-/.claude/
+# Claude Code local settings stay local; shared project skills are tracked.
+/.claude/*
+!/.claude/skills/
 /bro/spine/
 /bro/tools/
 /bro/.claude/
