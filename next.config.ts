@@ -23,6 +23,9 @@ const securityHeaders = [
   { key: "X-Frame-Options", value: "SAMEORIGIN" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   { key: "X-DNS-Prefetch-Control", value: "on" },
+  // One year of HTTPS-only. No includeSubDomains/preload yet: every subdomain
+  // must be HTTPS-only first, and preload is hard to undo.
+  { key: "Strict-Transport-Security", value: "max-age=31536000" },
   {
     key: "Permissions-Policy",
     value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
@@ -39,6 +42,8 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  // Nothing uses next/image, so the optimizer endpoint (/_next/image) is off.
+  images: { unoptimized: true },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
