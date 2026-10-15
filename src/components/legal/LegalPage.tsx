@@ -21,7 +21,7 @@ export function LegalPage({
   return (
     <>
       <SkipLink label={dict.common.skipToContent} />
-      <Header dict={dict} locale={locale} />
+      <Header dict={{ nav: dict.nav, common: dict.common }} locale={locale} />
       <main id="main">
         <Section variant="base" spacing="lg">
           <Container size="narrow">

@@ -1,6 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
-import { companyNavItems } from "@/config/navigation";
+import { navItems } from "@/config/navigation";
 import { BrandMark } from "@/components/brand/BrandMark";
 import { site } from "@/config/site";
 import { contact } from "@/config/contact";
@@ -20,7 +20,7 @@ export function Footer({
   return (
     <footer className="section-contrast border-t border-edge-subtle">
       <Container className="py-section-sm">
-        <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1.2fr]">
           {/* Brand + slogan */}
           <div className="flex flex-col gap-4">
             <a
@@ -39,28 +39,16 @@ export function Footer({
             />
           </div>
 
-          {/* Solutions */}
-          <nav aria-label={dict.footer.solutionsTitle} className="flex flex-col gap-3">
+          {/* Explore */}
+          <nav aria-label={dict.footer.exploreTitle} className="flex flex-col gap-3">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-content-muted">
-              {dict.footer.solutionsTitle}
+              {dict.footer.exploreTitle}
             </h2>
-            {dict.footer.solutionsLinks.map((label) => (
-              <a key={label} href={`/${locale}#${site.anchors.solutions}`} className="text-content-secondary transition-colors duration-base ease-standard hover:text-accent">
-                {label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Company / nav */}
-          <nav aria-label={dict.footer.companyTitle} className="flex flex-col gap-3">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-content-muted">
-              {dict.footer.companyTitle}
-            </h2>
-            {companyNavItems.map((item) => (
+            {navItems.map((item) => (
               <a
                 key={item.key}
                 href={`/${locale}#${item.anchor}`}
-                className="text-content-secondary transition-colors duration-base ease-standard hover:text-content-primary"
+                className="text-content-secondary transition-colors duration-base ease-standard hover:text-accent"
               >
                 {dict.nav[item.key]}
               </a>

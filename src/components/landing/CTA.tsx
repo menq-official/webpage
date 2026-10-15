@@ -75,7 +75,7 @@ export async function CTA({ dict, locale }: { dict: Dictionary; locale: Locale }
             </div>
           </Reveal>
           <Reveal delay={140} className="w-full">
-            <LeadForm dict={dict} locale={locale} />
+            <LeadForm form={cta.form} locale={locale} />
           </Reveal>
         </div>
       </Container>

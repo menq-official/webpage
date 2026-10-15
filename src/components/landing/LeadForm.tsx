@@ -28,8 +28,7 @@ const emptyValues = { phone: "", message: "", name: "", website: "" };
  * Lead form → POST /api/leads → saved in the DB first, then the team is
  * notified (src/lib/leads/createLead.ts). Validation is shared with the server.
  */
-export function LeadForm({ dict, locale }: { dict: Dictionary; locale: Locale }) {
-  const f = dict.cta.form;
+export function LeadForm({ form: f, locale }: { form: Dictionary["cta"]["form"]; locale: Locale }) {
   const [values, setValues] = useState(emptyValues);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [status, setStatus] = useState<Status>("idle");

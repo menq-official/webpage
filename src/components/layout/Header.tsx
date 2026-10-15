@@ -14,7 +14,10 @@ import { cn } from "@/lib/cn";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/content/locales/types";
 
-export function Header({ dict, locale }: { dict: Dictionary; locale: Locale }) {
+/** Gets only the copy it shows, so the full dictionary never ships to the browser. */
+export type HeaderCopy = Pick<Dictionary, "nav" | "common">;
+
+export function Header({ dict, locale }: { dict: HeaderCopy; locale: Locale }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuTriggerRef = useRef<HTMLButtonElement>(null);

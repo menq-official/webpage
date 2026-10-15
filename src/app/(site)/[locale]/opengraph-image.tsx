@@ -56,16 +56,16 @@ export default async function OpengraphImage() {
               letterSpacing: "-0.03em",
             }}
           >
-            <div style={{ display: "flex" }}>AI automation & software solutions</div>
-            <div style={{ display: "flex", color: "#22d3ee" }}>for business growth</div>
+            <div style={{ display: "flex" }}>Practical software and AI automation</div>
+            <div style={{ display: "flex", color: "#22d3ee" }}>for your business</div>
           </div>
           <div style={{ display: "flex", fontSize: "30px", color: "#94a3b8" }}>
-            CRM · ERP · Dashboards · Web · Workflow automation · AI
+            Websites · Business workflows · Integrations · AI-assisted automation
           </div>
         </div>
 
         <div style={{ display: "flex", gap: "12px" }}>
-          {["Reduce costs", "Save time", "Win customers", "Stay in control"].map(
+          {["Start with one process", "Rules agreed up front", "People stay in control"].map(
             (chip) => (
               <div
                 key={chip}
