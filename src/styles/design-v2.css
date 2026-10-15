@@ -132,11 +132,13 @@ body {
 .attn-ring::after { position: absolute; inset: 0; content: ""; border-radius: inherit; box-shadow: 0 0 0 2px var(--color-accent); animation: attn-ring 1.6s var(--ease-out) infinite; pointer-events: none; }
 @keyframes attn-ring { from { opacity: 0.8; transform: scale(1); } to { opacity: 0; transform: scale(1.35); } }
 
-/* Control loop: a signal travels the line, step after step. The track is as wide
-   as the line, so translateX(100%) carries the dot from one end to the other. */
-.loop-signal { position: absolute; inset: 0; animation: loop-signal 4.8s var(--ease-in-out) infinite; }
-.loop-signal::after { position: absolute; top: 50%; left: 0; width: var(--space-3); height: var(--space-3); content: ""; border-radius: var(--radius-pill); background: var(--color-accent); box-shadow: var(--shadow-glow); transform: translate(-50%, -50%); }
-@keyframes loop-signal { from { transform: translateX(0); opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
+/* Control loop: a signal travels the line, step after step. Only the 12px dot
+   moves, by the line's own width (100cqw of the line container), so its box never
+   leaves the line. (A full-width track moved by translateX(100%) used to stick out
+   past the viewport and flash a horizontal scrollbar.) */
+.loop-line { container-type: inline-size; }
+.loop-signal { position: absolute; top: 50%; left: 0; width: var(--space-3); height: var(--space-3); border-radius: var(--radius-pill); background: var(--color-accent); box-shadow: var(--shadow-glow); translate: -50% -50%; animation: loop-signal 4.8s var(--ease-in-out) infinite; }
+@keyframes loop-signal { from { transform: translateX(0); opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } to { transform: translateX(100cqw); opacity: 0; } }
 /* The "you approve" step breathes. */
 .step-you { position: relative; }
 .step-you::after { position: absolute; inset: 0; content: ""; border-radius: inherit; box-shadow: 0 0 0 2px var(--color-action-primary); animation: attn-ring 2.4s var(--ease-out) infinite; }
