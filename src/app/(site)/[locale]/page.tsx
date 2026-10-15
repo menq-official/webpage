@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { Hero } from "@/components/landing/Hero";
 import { AgentsTeam } from "@/components/landing/AgentsTeam";
+import { ProblemPicker } from "@/components/landing/ProblemPicker";
 import { YouControl } from "@/components/landing/YouControl";
 import { ServiceBlocks } from "@/components/landing/ServiceBlocks";
 import { Industries } from "@/components/landing/Industries";
@@ -37,6 +38,7 @@ export default async function LandingPage({
 
       <main id="main">
         <Hero dict={dict} locale={locale} />
+        <ProblemPicker problems={dict.problems} />
         <AgentsTeam dict={dict} />
         <YouControl dict={dict} />
         <ServiceBlocks dict={dict} locale={locale} />

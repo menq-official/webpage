@@ -7,6 +7,7 @@ import { FormField, SelectField, TextAreaField } from "@/components/ui/FormField
 import { Button } from "@/components/ui/Button";
 import { validateLead, type FieldErrors, type LeadField, type LeadInput } from "@/lib/forms/lead";
 import { track, AnalyticsEvent } from "@/lib/analytics/analytics";
+import { PREFILL_EVENT, type LeadPrefill } from "@/lib/forms/prefill";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/content/locales/types";
 
@@ -58,6 +59,23 @@ export function LeadForm({
   useEffect(() => {
     if (status === "success") successHeadingRef.current?.focus();
   }, [status]);
+
+  // A problem card or the "describe it in one line" box can start the form for the visitor.
+  useEffect(() => {
+    const offered = new Set(f.options.map((option) => option.value));
+    function onPrefill(event: Event) {
+      const { solution, message } = (event as CustomEvent<LeadPrefill>).detail ?? {};
+      setStatus((s) => (s === "success" ? "idle" : s));
+      setValues((prev) => ({
+        ...prev,
+        interestedSolution: solution && offered.has(solution) ? solution : prev.interestedSolution,
+        message: message?.trim() ? message.trim().slice(0, 3000) : prev.message,
+      }));
+      requestAnimationFrame(() => document.getElementById("lead-name")?.focus({ preventScroll: true }));
+    }
+    window.addEventListener(PREFILL_EVENT, onPrefill);
+    return () => window.removeEventListener(PREFILL_EVENT, onPrefill);
+  }, [f.options]);
 
   function update<K extends keyof typeof emptyValues>(
     key: K,

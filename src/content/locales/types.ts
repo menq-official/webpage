@@ -112,6 +112,16 @@ export type Dictionary = {
       scenarios: AgentScenario[];
     };
   };
+  problems: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    cta: string;
+    askLabel: string;
+    askPlaceholder: string;
+    askButton: string;
+    items: { category: string; title: string; body: string; solution: string }[];
+  };
   agents: {
     eyebrow: string;
     title: string;

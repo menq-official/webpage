@@ -96,6 +96,21 @@ export const en: Dictionary = {
       ],
     },
   },
+  problems: {
+    eyebrow: "Start with the problem",
+    title: "What work is eating your time right now?",
+    description: "Pick the situation you recognise. We suggest a solution from there and decide on the technology afterwards.",
+    cta: "Discuss this problem",
+    askLabel: "Or describe your problem in one line",
+    askPlaceholder: "For example: we cannot keep up with Instagram enquiries",
+    askButton: "Continue",
+    items: [
+      { category: "Customers", title: "We can't answer every request in time", body: "An AI agent answers around the clock, records the request and hands it to the right person.", solution: "ai_assistant" },
+      { category: "Sales", title: "Sales is scattered", body: "A website, a CRM and a clear follow-up sequence, so no request is forgotten.", solution: "crm" },
+      { category: "Operations", title: "The team repeats the same work", body: "Tasks, documents and reports run on their own; important steps wait for your approval.", solution: "workflow" },
+      { category: "Integrations", title: "We move data by hand", body: "We connect the tools you already use, so data is entered once and arrives everywhere.", solution: "integration" },
+    ],
+  },
   agents: {
     eyebrow: "AI team",
     title: "Your business's AI team",
