@@ -3,6 +3,7 @@ import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
 import { navItems } from "@/config/navigation";
 import { site } from "@/config/site";
 import { contact } from "@/config/contact";
+import { socialIconPaths } from "@/components/brand/socialIcons";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/content/locales/types";
 
@@ -92,9 +93,17 @@ export function Footer({
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-pill border border-edge-subtle px-3 py-1 text-xs font-medium text-content-secondary transition-colors duration-base ease-standard hover:border-edge-strong hover:text-content-primary"
+                  aria-label={social.label}
+                  title={social.label}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-pill border border-edge-subtle text-content-secondary transition duration-base ease-standard hover:-translate-y-0.5 hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"
                 >
-                  {social.label}
+                  {socialIconPaths[social.id] ? (
+                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[18px] w-[18px] fill-current">
+                      <path d={socialIconPaths[social.id]} />
+                    </svg>
+                  ) : (
+                    <span className="text-xs font-medium">{social.label}</span>
+                  )}
                 </a>
               ))}
             </div>
