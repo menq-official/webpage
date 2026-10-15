@@ -16,6 +16,7 @@ const config: Config = {
           primary: "var(--color-surface-primary)",
           secondary: "var(--color-surface-secondary)",
           muted: "var(--color-surface-muted)",
+          elevated: "var(--color-surface-elevated)",
           inverse: "var(--color-surface-inverse)",
         },
         content: {
@@ -32,14 +33,18 @@ const config: Config = {
         accent: {
           DEFAULT: "var(--color-accent)",
           soft: "var(--color-accent-soft)",
+          text: "var(--color-accent-text)",
         },
+        selected: "var(--color-selected)",
         edge: {
           subtle: "var(--color-border-subtle)",
           strong: "var(--color-border-strong)",
         },
         state: {
           success: "var(--color-success)",
+          "success-text": "var(--color-success-text)",
           warning: "var(--color-warning)",
+          "warning-text": "var(--color-warning-text)",
           danger: "var(--color-danger)",
         },
         focus: "var(--color-focus-ring)",
@@ -125,11 +130,13 @@ const config: Config = {
         base: "var(--duration-base)",
         slow: "var(--duration-slow)",
         section: "var(--duration-section)",
+        spring: "var(--duration-spring)",
       },
       transitionTimingFunction: {
         standard: "var(--ease-standard)",
         out: "var(--ease-out)",
         "in-out": "var(--ease-in-out)",
+        spring: "var(--ease-spring)",
       },
       backdropBlur: {
         glass: "var(--glass-blur)",

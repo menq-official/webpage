@@ -66,7 +66,7 @@ function formatBody(lead: LeadNotification): string {
         .join("\n")
     : "";
   return [
-    `Name: ${lead.name}`,
+    `Name: ${lead.name || "—"}`,
     `Company: ${lead.company ?? "-"}`,
     `Phone: ${lead.phone ?? "-"}`,
     `Email: ${lead.email ?? "-"}`,

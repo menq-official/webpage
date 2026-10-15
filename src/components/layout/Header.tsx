@@ -54,19 +54,20 @@ export function Header({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   }, [menuOpen]);
 
   return (
-    <header className={cn("sticky top-0 z-header w-full border-b transition duration-base ease-standard", scrolled ? "border-edge-subtle surface-float shadow-sm" : "border-transparent bg-transparent") }>
+    // Dark in both themes, like the hero it sits on.
+    <header className={cn("section-contrast header-glass sticky top-0 z-header w-full border-b transition duration-base ease-standard", scrolled ? "border-edge-subtle shadow-sm" : "border-transparent")}>
       <Container size="wide">
         <div className="flex h-header items-center justify-between gap-4">
           <a href={`/${locale}#${site.anchors.top}`} className="rounded-pill text-content-primary"><BrandMark compact /></a>
-          <nav className="hidden items-center gap-1 rounded-pill border border-edge-subtle bg-surface-primary p-1 shadow-sm lg:flex" aria-label={dict.common.mainNavLabel}>
+          <nav className="hidden items-center gap-7 lg:flex" aria-label={dict.common.mainNavLabel}>
             {navItems.map((item) => (
-              <a key={item.key} href={`/${locale}#${item.anchor}`} className="rounded-pill px-3 py-2 text-sm font-medium text-content-secondary transition-colors duration-base hover:bg-surface-secondary hover:text-content-primary">{dict.nav[item.key]}</a>
+              <a key={item.key} href={`/${locale}#${item.anchor}`} className="rounded-sm py-2 text-content-secondary transition-colors duration-base hover:text-accent">{dict.nav[item.key]}</a>
             ))}
           </nav>
           <div className="hidden items-center gap-2 lg:flex">
             <LanguageSwitcher current={locale} label={dict.common.languageLabel} />
             <ThemeToggle label={dict.common.themeToggle} />
-            <ButtonLink href={`/${locale}#${site.anchors.contact}`} size="sm" onClick={() => track(AnalyticsEvent.ctaClick, { location: "header" })}>{dict.common.ctaPrimary}</ButtonLink>
+            <ButtonLink href={`/${locale}#${site.anchors.contact}`} size="sm" onClick={() => track(AnalyticsEvent.ctaClick, { location: "header" })}>{dict.common.ctaShort}</ButtonLink>
           </div>
           <div className="flex items-center gap-2 lg:hidden">
             <ThemeToggle label={dict.common.themeToggle} />

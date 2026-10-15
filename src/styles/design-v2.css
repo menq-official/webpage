@@ -84,3 +84,75 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .console-step, .typing-caret, .thinking-dots::after, .approve-pulse, .ai-orb { animation: none; }
 }
+
+/* ── Homepage v2 ────────────────────────────────────────────────────────── */
+/* Hero grid fades out toward the edges. */
+.mask-hero-grid {
+  mask-image: radial-gradient(ellipse 70% 60% at 60% 30%, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 60% 30%, black 30%, transparent 80%);
+}
+
+/* Live dot: a ring that scales out and fades (transform + opacity only). */
+.live-dot { position: relative; display: inline-block; flex: none; width: var(--space-2); height: var(--space-2); border-radius: var(--radius-pill); background: var(--color-success); }
+.live-dot::after { position: absolute; inset: 0; content: ""; border-radius: inherit; background: inherit; animation: live-ring 2s var(--ease-out) infinite; }
+@keyframes live-ring { from { opacity: 0.6; transform: scale(1); } to { opacity: 0; transform: scale(2.6); } }
+
+/* Console: a business tab switches its scene; approving confirms with a spring. */
+.console-scene { animation: console-in var(--duration-base) var(--ease-out) both; }
+.approve-done { animation: approve-in var(--duration-spring) var(--ease-spring) both; }
+@keyframes approve-in { from { opacity: 0; transform: scale(0.94); } }
+
+/* Stop switch: the knob travels on the spring. */
+.switch { position: relative; flex: none; width: calc(var(--space-12) - var(--space-1) / 2); height: calc(var(--space-6) + var(--space-1) / 2); border-radius: var(--radius-pill); background-image: var(--gradient-brand); background-color: color-mix(in srgb, var(--color-content-muted) 45%, transparent); }
+.switch[aria-pressed="false"] { background-image: none; }
+.switch::after { position: absolute; top: calc(var(--space-1) - var(--space-1) / 4); left: calc(var(--space-1) - var(--space-1) / 4); width: var(--space-5); height: var(--space-5); content: ""; border-radius: var(--radius-pill); background: var(--color-surface-inverse); transform: translateX(var(--space-5)); transition: transform var(--duration-spring) var(--ease-spring); }
+.switch[aria-pressed="false"]::after { transform: none; }
+
+/* Control loop: the line behind the four step dots. */
+.loop-line { background-image: linear-gradient(90deg, var(--color-border-subtle), var(--color-action-primary) 35%, var(--color-accent-text) 60%, var(--color-border-subtle)); }
+/* The "you approve" step and light-ground gradient fills. */
+.brand-orb-deep { background-image: linear-gradient(135deg, var(--color-action-primary), var(--color-accent-text)); }
+
+/* Bento: the lead tile carries an accent wash. */
+.tile-wash { background-image: radial-gradient(32rem 20rem at 100% 0%, color-mix(in srgb, var(--color-action-primary) 30%, transparent), transparent 70%); }
+
+/* FAQ: the answer settles in when opened. */
+.faq-answer:not([hidden]) { animation: console-in var(--duration-base) var(--ease-out) both; }
+
+/* Site header: dark glass in both themes (after .section-contrast, so it wins). */
+.header-glass {
+  background-color: color-mix(in srgb, var(--color-page-bg) 72%, transparent);
+  backdrop-filter: blur(var(--header-blur));
+  -webkit-backdrop-filter: blur(var(--header-blur));
+}
+
+/* ── Homepage v2: life ─────────────────────────────────────────────────── */
+/* Attention ring on the button that waits for the owner's yes. */
+.attn-ring { position: relative; }
+.attn-ring::after { position: absolute; inset: 0; content: ""; border-radius: inherit; box-shadow: 0 0 0 2px var(--color-accent); animation: attn-ring 1.6s var(--ease-out) infinite; pointer-events: none; }
+@keyframes attn-ring { from { opacity: 0.8; transform: scale(1); } to { opacity: 0; transform: scale(1.35); } }
+
+/* Control loop: a signal travels the line, step after step. The track is as wide
+   as the line, so translateX(100%) carries the dot from one end to the other. */
+.loop-signal { position: absolute; inset: 0; animation: loop-signal 4.8s var(--ease-in-out) infinite; }
+.loop-signal::after { position: absolute; top: 50%; left: 0; width: var(--space-3); height: var(--space-3); content: ""; border-radius: var(--radius-pill); background: var(--color-accent); box-shadow: var(--shadow-glow); transform: translate(-50%, -50%); }
+@keyframes loop-signal { from { transform: translateX(0); opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
+/* The "you approve" step breathes. */
+.step-you { position: relative; }
+.step-you::after { position: absolute; inset: 0; content: ""; border-radius: inherit; box-shadow: 0 0 0 2px var(--color-action-primary); animation: attn-ring 2.4s var(--ease-out) infinite; }
+
+/* Control panel: a live line that changes, the newest item settles in. */
+.feed-in { animation: console-in var(--duration-slow) var(--ease-out) both; }
+
+/* Cards: the icon answers the hover. */
+.premium-card[data-interactive="true"] .card-icon { transition: transform var(--duration-slow) var(--ease-spring); }
+.premium-card[data-interactive="true"]:hover .card-icon { transform: scale(1.08) rotate(-4deg); }
+
+/* Lead bento tile: its accent wash drifts slowly. */
+.tile-drift { position: relative; isolation: isolate; }
+.tile-drift::after { position: absolute; inset: -20%; z-index: -1; content: ""; background-image: radial-gradient(40% 40% at 70% 20%, color-mix(in srgb, var(--color-accent) 22%, transparent), transparent 70%); animation: menq-float 9s var(--ease-in-out) infinite; pointer-events: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .attn-ring::after, .loop-signal, .step-you::after, .tile-drift::after { animation: none; }
+  .loop-signal { display: none; }
+}

@@ -36,7 +36,7 @@ export async function sendTelegramMessage(
 function formatMessage(lead: LeadNotification): string {
   return [
     "🟦 New consultation request",
-    `Name: ${lead.name}`,
+    `Name: ${lead.name || "—"}`,
     lead.company ? `Company: ${lead.company}` : null,
     lead.phone ? `Phone: ${lead.phone}` : null,
     lead.email ? `Email: ${lead.email}` : null,

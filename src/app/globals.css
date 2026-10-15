@@ -34,12 +34,19 @@
   .text-gradient-accent { background-image: linear-gradient(90deg, var(--color-action-primary), var(--color-accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
   @keyframes rise-in { from { transform: translateY(12px); } to { transform: translateY(0); } }
   .animate-rise { animation: rise-in var(--duration-section) var(--ease-out) both; animation-delay: var(--rise-delay, 0ms); }
-  .reveal { opacity: 0; transform: translateY(var(--space-4)); transition-property: opacity, transform; transition-duration: var(--duration-section); transition-timing-function: var(--ease-out); transition-delay: var(--reveal-delay, 0ms); will-change: opacity, transform; }
-  .reveal.is-visible { opacity: 1; transform: none; }
+  @keyframes rise-fade-in { from { opacity: 0; transform: translateY(var(--space-4)); } }
+  .animate-rise-fade { animation: rise-fade-in var(--duration-section) var(--ease-out) both; animation-delay: var(--rise-delay, 0ms); }
+  /* Scroll reveal: content is visible without JS. RevealController arms the page
+     (html.reveal-armed) after marking what is already on screen; only content
+     below the fold then rests at a dimmed, lowered state and eases in. The resting
+     state has no transition (it hides instantly while off screen); will-change is
+     set only while an element still waits to be revealed. */
+  .reveal { transition-property: opacity, transform; transition-duration: var(--duration-section); transition-timing-function: var(--ease-out); transition-delay: var(--reveal-delay, 0ms); }
+  .reveal-armed .reveal:not(.is-visible) { opacity: var(--motion-reveal-rest-opacity); transform: translateY(var(--motion-reveal-offset)); transition: none; will-change: opacity, transform; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
-  .reveal { opacity: 1; transform: none; }
+  .reveal-armed .reveal:not(.is-visible) { opacity: 1; transform: none; }
 }

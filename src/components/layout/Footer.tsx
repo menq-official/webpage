@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
-import { navItems } from "@/config/navigation";
+import { companyNavItems } from "@/config/navigation";
+import { BrandMark } from "@/components/brand/BrandMark";
 import { site } from "@/config/site";
 import { contact } from "@/config/contact";
 import { socialIconPaths } from "@/components/brand/socialIcons";
@@ -24,12 +25,9 @@ export function Footer({
           <div className="flex flex-col gap-4">
             <a
               href={`/${locale}#${site.anchors.top}`}
-              className="flex items-center gap-2 font-display text-lg font-bold tracking-tightest text-content-primary"
+              className="self-start rounded-pill text-content-primary"
             >
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-action-primary text-content-inverse">
-                M
-              </span>
-              {site.name}
+              <BrandMark />
             </a>
             <p className="max-w-xs leading-relaxed text-content-secondary">
               {dict.footer.slogan}
@@ -46,15 +44,11 @@ export function Footer({
             <h2 className="text-sm font-semibold uppercase tracking-wide text-content-muted">
               {dict.footer.solutionsTitle}
             </h2>
-            <a href={`/${locale}#${site.anchors.solutions}`} className="text-content-secondary transition-colors duration-base ease-standard hover:text-content-primary">
-              {dict.nav.solutions}
-            </a>
-            <a href={`/${locale}#${site.anchors.industries}`} className="text-content-secondary transition-colors duration-base ease-standard hover:text-content-primary">
-              {dict.nav.industries}
-            </a>
-            <a href={`/${locale}#${site.anchors.process}`} className="text-content-secondary transition-colors duration-base ease-standard hover:text-content-primary">
-              {dict.nav.process}
-            </a>
+            {dict.footer.solutionsLinks.map((label) => (
+              <a key={label} href={`/${locale}#${site.anchors.solutions}`} className="text-content-secondary transition-colors duration-base ease-standard hover:text-accent">
+                {label}
+              </a>
+            ))}
           </nav>
 
           {/* Company / nav */}
@@ -62,7 +56,7 @@ export function Footer({
             <h2 className="text-sm font-semibold uppercase tracking-wide text-content-muted">
               {dict.footer.companyTitle}
             </h2>
-            {navItems.map((item) => (
+            {companyNavItems.map((item) => (
               <a
                 key={item.key}
                 href={`/${locale}#${item.anchor}`}

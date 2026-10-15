@@ -1,35 +1,29 @@
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionHead } from "./SectionHead";
 import { site } from "@/config/site";
 import { getSectionData } from "@/lib/content/publicContent";
+import { cn } from "@/lib/cn";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/content/locales/types";
 
+/** From the first call to a working system: six steps, the first one free. */
 export async function HowWeWork({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const process = await getSectionData("process", locale, dict.process);
   return (
-    <Section id={site.anchors.process} variant="muted" spacing="lg">
+    <Section id={site.anchors.process} labelledBy="process-title" variant="base" spacing="lg">
       <Container>
-        <SectionHeading title={process.title} description={process.description} />
-
-        <ol className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <SectionHead id="process-title" eyebrow={process.eyebrow} title={process.title} />
+        <ol className="mt-12 grid grid-cols-2 gap-x-3 gap-y-7 md:grid-cols-3 lg:grid-cols-6">
           {process.steps.map((step, i) => (
-            <Reveal as="li" key={i} delay={(i % 3) * 70}>
-              <div className="relative h-full rounded-card border border-edge-subtle bg-surface-primary p-6">
-                <div className="flex items-center gap-4">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-pill bg-action-primary font-display text-lg font-bold text-content-inverse">
-                    {i + 1}
-                  </span>
-                  <h3 className="text-lg font-semibold text-content-primary">
-                    {step.title}
-                  </h3>
-                </div>
-                <p className="mt-4 leading-relaxed text-content-secondary">
-                  {step.body}
-                </p>
-              </div>
+            <Reveal as="li" key={step.title} delay={(i + 1) * 70} className={cn("flex flex-col gap-1.5 border-t-2 pt-5", i === 0 ? "border-action-primary" : "border-edge-subtle")}>
+              <span className={cn("text-sm font-bold", i === 0 ? "text-action-primary" : "text-content-muted")}>
+                {i + 1}
+                {i === 0 ? ` · ${process.freeLabel}` : null}
+              </span>
+              <h3 className="font-semibold text-content-primary">{step.title}</h3>
+              <p className="text-sm text-content-secondary">{step.body}</p>
             </Reveal>
           ))}
         </ol>

@@ -1,12 +1,12 @@
 import type { LucideIcon } from "lucide-react";
 import {
   Code2,
-  Handshake,
-  Headset,
+  MessageSquare,
+  Headphones,
+  LayoutGrid,
   LineChart,
-  UserCheck,
-  CirclePause,
-  ScrollText,
+  Power,
+  FileText,
   Bot,
   Globe,
   Workflow,
@@ -92,7 +92,7 @@ export const trustIcons: LucideIcon[] = [
 ];
 
 /** AI agent roles: sales, support, operations, analyst. */
-export const agentIcons: LucideIcon[] = [Handshake, Headset, Workflow, LineChart];
+export const agentIcons: LucideIcon[] = [MessageSquare, Headphones, LayoutGrid, LineChart];
 
-/** "You are in charge" points: approval, visibility, pause, audit log. */
-export const controlIcons: LucideIcon[] = [UserCheck, Eye, CirclePause, ScrollText];
+/** "You are in charge" points: rules, visibility, stop, history. */
+export const controlIcons: LucideIcon[] = [ShieldCheck, Eye, Power, FileText];

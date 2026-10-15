@@ -102,7 +102,7 @@ export default async function LeadsPage({
               {leads.map((lead) => (
                 <tr key={lead.id} className="hover:bg-surface-secondary">
                   <td className="px-4 py-3 font-medium text-content-primary">
-                    {lead.name}
+                    {lead.name || "—"}
                   </td>
                   <td className="px-4 py-3 text-content-secondary">
                     {lead.company ?? "—"}
