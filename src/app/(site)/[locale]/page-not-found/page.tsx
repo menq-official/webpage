@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ui/Button";
+import { DocumentTitle } from "@/components/seo/DocumentTitle";
 import { defaultLocale, isLocale, type Locale } from "@/lib/i18n";
 
 // The proxy rewrites every unknown path under a locale here with HTTP 404 (src/proxy.ts).
@@ -37,6 +38,7 @@ export default async function PageNotFound({
       {/* A 404 served through the proxy rewrite does not get generateMetadata's title, so the
           page sets it itself; React hoists <title> into <head>. */}
       <title>{`${t.title} | MenQ`}</title>
+      <DocumentTitle title={`${t.title} | MenQ`} />
       <p className="font-display text-6xl font-bold text-content-muted">404</p>
       <h1 className="font-display text-2xl font-bold text-content-primary">{t.title}</h1>
       <ButtonLink href={`/${locale}`} size="lg">
