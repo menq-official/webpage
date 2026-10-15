@@ -22,6 +22,8 @@ export function buildMetadata(locale: Locale, opts: MetaOptions = {}): Metadata 
   const dict = getDictionary(locale);
   const metaTitle = title ?? dict.meta.title;
   const metaDescription = description ?? dict.meta.description;
+  const socialTitle = title ?? dict.meta.socialTitle;
+  const socialDescription = description ?? dict.meta.socialDescription;
 
   const languages: Record<string, string> = {};
   for (const l of locales) {
@@ -43,15 +45,15 @@ export function buildMetadata(locale: Locale, opts: MetaOptions = {}): Metadata 
     openGraph: {
       type: "website",
       siteName: site.name,
-      title: metaTitle,
-      description: metaDescription,
+      title: socialTitle,
+      description: socialDescription,
       url,
       locale: localeHtmlLang[locale],
     },
     twitter: {
       card: "summary_large_image",
-      title: metaTitle,
-      description: metaDescription,
+      title: socialTitle,
+      description: socialDescription,
     },
     // No explicit robots tag: pages are indexable by default, and this lets
     // notFound()'s injected `noindex` stand alone on the 404 page (otherwise

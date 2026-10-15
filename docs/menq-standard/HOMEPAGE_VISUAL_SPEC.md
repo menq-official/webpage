@@ -11,9 +11,9 @@ Premium, warm, modern AI-business visual language՝ restrained futuristic expres
 ### Rules
 
 - Header՝ մուգ ապակե մակերես երկու թեմայում էլ, 4 բաժնի nav, MenQ BrandMark։
-- Hero՝ outcome copy + dual CTA + trust line + կենդանի կոնսոլ (Կլինիկա / Խանութ / Սերվիս). ինքն է խաղում, այցելուի սեղմումով կանգնում է, դադարի կոճակ ունի + 3 փաստ։
-- Հերթականություն՝ hero → 4 քայլ → AI թիմ → մուգ վահանակ (աշխատող անջատիչ) → bento + ոլորտներ → օրինակներ → գործընթաց → FAQ → ձև → footer։ Մուգ բաժիններ՝ hero, վահանակ, ձև, footer. մնացածը թեմայով։
-- Օրինակային տվյալները (անուններ, 10%, 8 000 ֏) պիտակված են «Օրինակ»։ Նմուշը՝ `menqstudio/Webpage`, branch `design/v2-reference`, `docs/design/v2/index.html`։
+- Hero՝ copy + dual CTA + trust line + կենդանի դեմո՝ մեկ պիտակված օրինակային հարցում. ինքն է խաղում մինչև «Սպասում է ստուգման», հաստատողը մարդն է, «Նորից ցույց տալ» կոճակ + 3 արժեք։
+- Հերթականություն (copy v2)՝ hero → 4 քայլ (վերահսկողությունը՝ նախագծից) → հնարավորություններ (bento) → ում հետ ենք աշխատում → օրինակներ → գործընթաց → FAQ → ձև → footer։ Մուգ բաժիններ՝ hero, «ում հետ», ձև, footer. մնացածը թեմայով։
+- Ոչ մի երաշխիք, «անվճար», անուն կամ գին. դեմոն և օրինակները պիտակված են որպես ցուցադրական (copy v2-ի §13)։ Նմուշը՝ `menqstudio/Webpage`, branch `design/v2-reference`, `docs/design/v2/index.html`։
 - Cards՝ premium borders, top rule, subtle depth և governed hover lift։
 - Contrast sections՝ dark scoped semantic environment և readable dark panels։
 - Motion՝ միայն CSS (transform/opacity), governed tokens + spring `linear()`. բաժինները բարձրանում են scroll-ով, կոնսոլն ու վահանակը կանգնում են էկրանից դուրս և reduced-motion-ի դեպքում։
@@ -31,9 +31,9 @@ A premium, warm, modern AI-business visual language with restrained futuristic e
 ### Rules
 
 - Header: dark glass surface in both themes, four-section navigation, and MenQ BrandMark.
-- Hero: outcome copy, dual CTA, trust line, and a live console (Clinic / Shop / Service) that plays by itself, stops when the visitor clicks into it and has a pause button; three facts below.
-- Order: hero → four steps → AI team → dark dashboard (working stop switch) → bento + industries → examples → process → FAQ → form → footer. Dark sections: hero, dashboard, form, footer; the rest follow the theme.
-- Sample data (names, 10%, 8,000 AMD) is labelled "Sample". Reference: `menqstudio/Webpage`, branch `design/v2-reference`, `docs/design/v2/index.html`.
+- Hero: copy, dual CTA, trust line and a live demo of one labelled sample enquiry that plays up to "Awaiting review"; a person approves; a "Replay demo" button; three value points below.
+- Order (copy v2): hero → four steps (control by design) → capabilities (bento) → who we work with → examples → process → FAQ → form → footer. Dark sections: hero, who we work with, form, footer; the rest follow the theme.
+- No guarantees, "free", names or prices; the demo and examples are labelled as illustrative (copy v2 §13). Reference: `menqstudio/Webpage`, branch `design/v2-reference`, `docs/design/v2/index.html`.
 - Cards: premium borders, top rule, subtle depth, and governed hover lift.
 - Contrast sections: dark scoped semantic environment with readable dark panels.
 - Motion: CSS only (transform/opacity), governed tokens and a spring `linear()`. Sections rise in on scroll; the console and dashboard stop off screen and under reduced motion.

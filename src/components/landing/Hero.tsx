@@ -23,7 +23,7 @@ export async function Hero({ dict, locale }: { dict: Dictionary; locale: Locale 
       <div className="pointer-events-none absolute inset-0 bg-hero-gradient" aria-hidden="true" />
       <div className="mask-hero-grid pointer-events-none absolute inset-0 bg-grid" aria-hidden="true" />
       <Container className="relative">
-        <div className="grid items-center gap-10 pb-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:pb-16">
+        <div className="grid grid-cols-1 items-center gap-10 pb-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-14 lg:pb-16">
           <div className="flex flex-col items-start gap-6">
             <span className="animate-rise-fade glass inline-flex items-center gap-2 rounded-pill border-edge-strong px-4 py-2 text-sm text-content-secondary" style={rise(0)}>
               <span className="live-dot" aria-hidden="true" />
@@ -59,14 +59,14 @@ export async function Hero({ dict, locale }: { dict: Dictionary; locale: Locale 
       </Container>
       <div className="relative border-t border-edge-subtle">
         <Container>
-          <dl className="grid gap-5 py-8 sm:grid-cols-3 sm:gap-6 lg:pb-10">
-            {hero.facts.map((fact) => (
-              <div key={fact.value} className="flex flex-col gap-1">
-                <dt className="text-gradient-accent font-display text-2xl font-bold tracking-tightest">{fact.value}</dt>
-                <dd className="text-content-secondary">{fact.label}</dd>
-              </div>
+          <ul className="grid gap-6 py-8 sm:grid-cols-3 lg:pb-10">
+            {hero.values.map((value) => (
+              <li key={value.title} className="flex flex-col gap-1.5">
+                <h2 className="text-gradient-accent font-display text-lg font-bold tracking-tightest">{value.title}</h2>
+                <p className="text-content-secondary">{value.body}</p>
+              </li>
             ))}
-          </dl>
+          </ul>
         </Container>
       </div>
     </Section>

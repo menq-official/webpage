@@ -11,19 +11,18 @@
 
 1. `SkipLink`
 2. `Header`
-3. `Hero` (+ `AgentConsole`)
+3. `Hero` (+ `AgentConsole`, three value points)
 4. `ControlLoop`
-5. `AgentsTeam`
-6. `YouControl` (+ `ControlPanel`)
-7. `ServiceBlocks` (+ `Industries`)
-8. `Examples`
-9. `HowWeWork`
-10. `Faq`
-11. `CTA` (+ `LeadForm`)
-12. `Footer`
-13. `MobileStickyCTA`
-14. `RevealController`
-15. `JsonLd`
+5. `ServiceBlocks`
+6. `Industries`
+7. `Examples`
+8. `HowWeWork`
+9. `Faq`
+10. `CTA` (+ `LeadForm`)
+11. `Footer`
+12. `MobileStickyCTA`
+13. `RevealController`
+14. `JsonLd`
 
 ### Product capabilities and routes
 
@@ -86,19 +85,18 @@ The composition in `src/app/(site)/[locale]/page.tsx` is:
 
 1. `SkipLink`
 2. `Header`
-3. `Hero` (+ `AgentConsole`)
+3. `Hero` (+ `AgentConsole`, three value points)
 4. `ControlLoop`
-5. `AgentsTeam`
-6. `YouControl` (+ `ControlPanel`)
-7. `ServiceBlocks` (+ `Industries`)
-8. `Examples`
-9. `HowWeWork`
-10. `Faq`
-11. `CTA` (+ `LeadForm`)
-12. `Footer`
-13. `MobileStickyCTA`
-14. `RevealController`
-15. `JsonLd`
+5. `ServiceBlocks`
+6. `Industries`
+7. `Examples`
+8. `HowWeWork`
+9. `Faq`
+10. `CTA` (+ `LeadForm`)
+11. `Footer`
+12. `MobileStickyCTA`
+13. `RevealController`
+14. `JsonLd`
 
 ### Product capabilities and routes
 

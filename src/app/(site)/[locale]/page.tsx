@@ -5,10 +5,9 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { Hero } from "@/components/landing/Hero";
-import { AgentsTeam } from "@/components/landing/AgentsTeam";
 import { ControlLoop } from "@/components/landing/ControlLoop";
-import { YouControl } from "@/components/landing/YouControl";
 import { ServiceBlocks } from "@/components/landing/ServiceBlocks";
+import { Industries } from "@/components/landing/Industries";
 import { Examples } from "@/components/landing/Examples";
 import { HowWeWork } from "@/components/landing/HowWeWork";
 import { Faq } from "@/components/landing/Faq";
@@ -33,17 +32,16 @@ export default async function LandingPage({
     <>
       <SkipLink label={dict.common.skipToContent} />
 
-      <Header dict={dict} locale={locale} />
+      <Header dict={{ nav: dict.nav, common: dict.common }} locale={locale} />
 
       <main id="main">
         <Hero dict={dict} locale={locale} />
         <ControlLoop dict={dict} />
-        <AgentsTeam dict={dict} />
-        <YouControl dict={dict} />
         <ServiceBlocks dict={dict} locale={locale} />
+        <Industries dict={dict} />
         <Examples dict={dict} />
         <HowWeWork dict={dict} locale={locale} />
-        <Faq dict={dict} />
+        <Faq faq={dict.faq} />
         <CTA dict={dict} locale={locale} />
       </main>
 

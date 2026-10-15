@@ -12,14 +12,13 @@ import { track, AnalyticsEvent } from "@/lib/analytics/analytics";
 import { cn } from "@/lib/cn";
 import type { Dictionary } from "@/content/locales/types";
 
-export function Faq({ dict }: { dict: Dictionary }) {
-  const { faq } = dict;
+export function Faq({ faq }: { faq: Dictionary["faq"] }) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
     <Section id={site.anchors.faq} labelledBy="faq-title" variant="muted" spacing="lg">
       <Container>
-        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-14">
           <Reveal className="flex flex-col items-start gap-4">
             <Kicker>{faq.eyebrow}</Kicker>
             <h2 id="faq-title" className="text-balance font-display text-3xl font-bold leading-tight tracking-tightest text-content-primary sm:text-4xl lg:text-5xl">{faq.title}</h2>

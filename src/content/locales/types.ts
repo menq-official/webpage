@@ -21,34 +21,34 @@ export type IndustryGroup = {
 
 export type FaqItem = { q: string; a: string };
 
-/** One business tab of the hero console. Names, prices and times are samples. */
-export type ConsoleScenario = {
-  /** Tab label: the kind of business. */
-  tab: string;
-  /** Which agent is answering. */
-  agent: string;
+/** The hero demo: one labelled sample enquiry, never a live system. */
+export type DemoCopy = {
+  label: string;
+  sampleNote: string;
+  badge: string;
+  title: string;
   channel: string;
-  customer: string;
-  time: string;
   message: string;
-  /** What the agent already did on its own. */
-  autoActions: string[];
+  thinking: string;
+  /** What the workflow does before a person reviews it. */
+  activities: string[];
   draftLabel: string;
+  awaiting: string;
   draft: string;
-  /** What waits for the owner's yes. */
-  waiting: string;
+  edit: string;
+  approve: string;
+  approvedLabel: string;
+  replay: string;
+  disclosure: string;
 };
-
-export type Fact = { value: string; label: string };
 
 export type PanelAgent = { name: string; status: string; waiting: boolean };
 export type PanelRule = { label: string; value: string; asksYou: boolean };
 
 export type ExampleCase = {
-  tag: string;
+  title: string;
   problem: string;
   solution: string;
-  outcome: string;
 };
 
 export type AgentProfile = {
@@ -73,6 +73,8 @@ export type Dictionary = {
   meta: {
     title: string;
     description: string;
+    socialTitle: string;
+    socialDescription: string;
     ogImageAlt: string;
   };
   nav: {
@@ -80,6 +82,7 @@ export type Dictionary = {
     how: string;
     team: string;
     solutions: string;
+    examples: string;
     industries: string;
     process: string;
     faq: string;
@@ -110,29 +113,17 @@ export type Dictionary = {
     primaryCta: string;
     secondaryCta: string;
     trust: string[];
-    facts: Fact[];
-    console: {
-      label: string;
-      sampleNote: string;
-      liveLabel: string;
-      tabsLabel: string;
-      autoPrefix: string;
-      approve: string;
-      edit: string;
-      approvedLabel: string;
-      footnote: string;
-      thinking: string;
-      pause: string;
-      play: string;
-      scenarios: ConsoleScenario[];
-    };
+    /** Three value points under the hero. */
+    values: TitleBody[];
+    console: DemoCopy;
   };
   loop: {
     eyebrow: string;
     title: string;
     description: string;
-    /** Four steps; the second one is the owner's approval. */
+    /** Four steps; the second one is where people set the rules. */
     steps: TitleBody[];
+    note: string;
   };
   agents: {
     eyebrow: string;
@@ -184,6 +175,7 @@ export type Dictionary = {
     description: string;
     /** The first block is the lead tile of the bento grid. */
     blocks: ServiceBlock[];
+    note: string;
   };
   success: {
     title: string;
@@ -193,6 +185,8 @@ export type Dictionary = {
   };
   industries: {
     title: string;
+    body: string;
+    areasLabel: string;
     items: string[];
   };
   results: {
@@ -209,6 +203,7 @@ export type Dictionary = {
   examples: {
     eyebrow: string;
     title: string;
+    intro: string;
     problemLabel: string;
     solutionLabel: string;
     items: ExampleCase[];
@@ -216,8 +211,6 @@ export type Dictionary = {
   process: {
     eyebrow: string;
     title: string;
-    /** Marks the first step as free of charge. */
-    freeLabel: string;
     steps: TitleBody[];
   };
   trust: {
@@ -271,9 +264,7 @@ export type Dictionary = {
   };
   footer: {
     slogan: string;
-    solutionsTitle: string;
-    solutionsLinks: string[];
-    companyTitle: string;
+    exploreTitle: string;
     contactTitle: string;
     rights: string;
     legal: { privacy: string; terms: string; cookies: string };

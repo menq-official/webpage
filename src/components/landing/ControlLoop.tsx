@@ -6,7 +6,7 @@ import { site } from "@/config/site";
 import { cn } from "@/lib/cn";
 import type { Dictionary } from "@/content/locales/types";
 
-/** The control loop: AI proposes → you approve → it gets done → it is on record. */
+/** Control by design: understand → define (people set the rules) → build and test → launch and improve. */
 export function ControlLoop({ dict }: { dict: Dictionary }) {
   const loop = dict.loop;
   return (
@@ -38,6 +38,9 @@ export function ControlLoop({ dict }: { dict: Dictionary }) {
             );
           })}
         </ol>
+        <Reveal className="mt-10 max-w-3xl border-l-2 border-action-primary pl-4 text-content-secondary">
+          <p>{loop.note}</p>
+        </Reveal>
       </Container>
     </Section>
   );

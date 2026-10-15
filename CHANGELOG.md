@@ -1,5 +1,20 @@
 # MenQ Webpage — Changelog / Փոփոխությունների պատմություն
 
+## 2026-10-15 — Website copy v2
+### Հայերեն
+- Կայքի տեքստը փոխարինված է copy v2-ով (EN՝ նախագծից, HY/RU՝ նույն իմաստով). «Ամենօրյա աշխատանքը՝ ավելի պարզ ու կանոնավոր»։ Ծրագրեր, կայքեր, գործընթացներ, AI-ով աջակցվող ավտոմատացում՝ որպես հնարավորություններից մեկը։
+- Հանված են երաշխիքները, «անվճար»-ը, օրինակային անուններն ու գները. դեմոն մեկ պիտակված օրինակ է, խաղում է մինչև «Սպասում է ստուգման», հաստատողը մարդն է։
+- Էջից հանված են AI թիմի և մուգ վահանակի բաժինները (կոմպոնենտները մնում են). նոր՝ 3 արժեք hero-ի տակ, «Ում հետ ենք աշխատում», օրինակների «Խնդիր / Հնարավոր մոտեցում»։
+- Client կոմպոնենտները ստանում են միայն իրենց տեքստը. ամբողջ dictionary-ն այլևս չի գնում բրաուզեր (աուդիտ #44)։
+- Hero-ի grid-ը չի լայնանում երկար վերնագրից (HY 390px-ում 19px overflow-ն ուղղված է)։
+
+### English
+- The site copy is replaced by copy v2 (EN from the draft, HY/RU adapted): "Make everyday work run more clearly." Software, websites, workflows, with AI-assisted automation as one capability.
+- Guarantees, "free", sample names and prices are gone; the demo is one labelled sample that plays up to "Awaiting review" and waits for a person to approve.
+- The AI team and dark dashboard sections are off the page (components kept); new: three value points under the hero, "Who we work with", examples as "Challenge / Possible approach".
+- Client components receive only their own copy, so the full dictionary no longer ships to the browser (audit #44).
+- The hero grid no longer widens from a long title (19px overflow at 390px in HY fixed).
+
 ## 2026-10-15 — Homepage v2
 ### Հայերեն
 - Գլխավոր էջը նոր դիզայնով է (v2). hero + կենդանի կոնսոլ (Կլինիկա / Խանութ / Սերվիս, Խմբագրել / Հաստատել), 4 քայլ, AI թիմ (անում է ինքը / հարցնում է), մուգ վահանակ աշխատող անջատիչով, լուծումներ (bento) + ոլորտներ, օրինակներ, գործընթաց, FAQ, ձև, footer։
