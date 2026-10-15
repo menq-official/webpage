@@ -8,4 +8,14 @@
 :root {
   --motion-hover-lift: translateY(-2px);
   --motion-card-lift: translateY(-4px);
+
+  /* Spring for physical UI (toggle knob, approve confirmation): bounce 0.15,
+     ~560ms, as a CSS linear() curve. No overshoot worth noticing on a business site. */
+  --ease-spring: linear(0, 0.054, 0.176, 0.323, 0.468, 0.599, 0.708, 0.796, 0.863, 0.912, 0.948, 0.972, 0.987, 0.997, 1.003, 1.005, 1.006, 1.006, 1.005, 1.005, 1.004, 1.003, 1.002, 1.001, 1.001);
+  --duration-spring: 560ms;
+
+  /* Scroll reveal: content below the fold rises in from a lower, hidden state. */
+  --motion-reveal-rest-opacity: 0;
+  --motion-reveal-offset: var(--space-8);
+  --motion-stagger: 70ms;
 }

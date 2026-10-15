@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
-import { FormField, SelectField, TextAreaField } from "@/components/ui/FormField";
+import { FormField, TextAreaField } from "@/components/ui/FormField";
 import { Button } from "@/components/ui/Button";
 import { validateLead, type FieldErrors, type LeadField, type LeadInput } from "@/lib/forms/lead";
 import { track, AnalyticsEvent } from "@/lib/analytics/analytics";
@@ -12,35 +12,25 @@ import type { Dictionary } from "@/content/locales/types";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
+/** The form asks what the AI should do instead of a solution list. */
+const SOLUTION = "consultation";
+
 // Visual order of the fields, so focus lands on the first one that needs fixing.
 const FIELD_IDS: [LeadField, string][] = [
-  ["name", "lead-name"],
   ["phone", "lead-phone"],
-  ["email", "lead-email"],
-  ["interestedSolution", "lead-solution"],
   ["message", "lead-message"],
+  ["name", "lead-name"],
 ];
 
-const emptyValues = {
-  name: "",
-  company: "",
-  phone: "",
-  email: "",
-  interestedSolution: "",
-  message: "",
-  consent: false,
-  website: "",
-};
+const emptyValues = { phone: "", message: "", name: "", website: "" };
 
-export function LeadForm({
-  dict,
-  locale,
-}: {
-  dict: Dictionary;
-  locale: Locale;
-}) {
+/**
+ * Lead form → POST /api/leads → saved in the DB first, then the team is
+ * notified (src/lib/leads/createLead.ts). Validation is shared with the server.
+ */
+export function LeadForm({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const f = dict.cta.form;
-  const [values, setValues] = useState<typeof emptyValues>(emptyValues);
+  const [values, setValues] = useState(emptyValues);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [status, setStatus] = useState<Status>("idle");
   const started = useRef(false);
@@ -59,15 +49,11 @@ export function LeadForm({
     if (status === "success") successHeadingRef.current?.focus();
   }, [status]);
 
-  function update<K extends keyof typeof emptyValues>(
-    key: K,
-    value: (typeof emptyValues)[K],
-  ) {
+  function update(key: keyof typeof emptyValues, value: string) {
     setValues((prev) => ({ ...prev, [key]: value }));
   }
 
   function collectUtm(): Record<string, string> {
-    if (typeof window === "undefined") return {};
     const params = new URLSearchParams(window.location.search);
     const utm: Record<string, string> = {};
     for (const key of ["source", "medium", "campaign", "term", "content"]) {
@@ -81,11 +67,9 @@ export function LeadForm({
     event.preventDefault();
     if (status === "submitting") return;
 
-    const fieldErrors = validateLead(
-      values,
-      f.validation,
-      f.options.map((option) => option.value),
-    );
+    const input = { ...values, interestedSolution: SOLUTION };
+    // The form has no email field, so a missing phone is a phone error.
+    const fieldErrors = validateLead(input, f.validation, f.options.map((option) => option.value));
     setErrors(fieldErrors);
     if (Object.keys(fieldErrors).length > 0) {
       const first = FIELD_IDS.find(([field]) => fieldErrors[field]);
@@ -94,23 +78,18 @@ export function LeadForm({
     }
 
     // Metadata only — never PII.
-    track(AnalyticsEvent.leadFormSubmit, {
-      interested_solution: values.interestedSolution,
-      language: locale,
-    });
+    track(AnalyticsEvent.leadFormSubmit, { interested_solution: SOLUTION, language: locale });
     setStatus("submitting");
     try {
       const payload: LeadInput = {
         name: values.name,
-        company: values.company || undefined,
-        phone: values.phone || undefined,
-        email: values.email || undefined,
-        interestedSolution: values.interestedSolution,
+        phone: values.phone,
+        interestedSolution: SOLUTION,
         message: values.message,
-        consent: true, // submitting the form is the consent (see the note below it)
+        consent: true, // submitting the form is the consent (see the note under the button)
         website: values.website,
         locale,
-        sourcePage: typeof window !== "undefined" ? window.location.pathname : undefined,
+        sourcePage: window.location.pathname,
         utm: collectUtm(),
       };
 
@@ -121,10 +100,7 @@ export function LeadForm({
       });
 
       if (!res.ok) throw new Error("Request failed");
-      track(AnalyticsEvent.leadFormSuccess, {
-        interested_solution: payload.interestedSolution,
-        language: locale,
-      });
+      track(AnalyticsEvent.leadFormSuccess, { interested_solution: SOLUTION, language: locale });
       setStatus("success");
       setValues(emptyValues);
     } catch {
@@ -133,10 +109,12 @@ export function LeadForm({
     }
   }
 
+  const panel = "premium-panel premium-card rounded-card border-edge-strong p-6 sm:p-8";
+
   if (status === "success") {
     return (
-      <div className="glass flex flex-col items-center gap-4 rounded-card p-8 text-center">
-        <span className="inline-flex h-14 w-14 items-center justify-center rounded-pill bg-accent-soft text-accent">
+      <div className={`${panel} flex flex-col items-center gap-4 text-center`}>
+        <span className="approve-done inline-flex h-14 w-14 items-center justify-center rounded-pill bg-accent-soft text-state-success-text">
           <CheckCircle2 className="h-8 w-8" aria-hidden="true" />
         </span>
         <h3
@@ -152,72 +130,19 @@ export function LeadForm({
   }
 
   return (
-    <form
-      onSubmit={onSubmit}
-      onFocusCapture={onFirstInteraction}
-      noValidate
-      className="glass flex flex-col gap-4 rounded-card p-6 sm:p-7"
-    >
-      <div className="grid gap-4 sm:grid-cols-2">
-        <FormField
-          id="lead-name"
-          name="name"
-          label={f.nameLabel}
-          hint={f.required}
-          placeholder={f.namePlaceholder}
-          value={values.name}
-          onChange={(e) => update("name", e.target.value)}
-          error={errors.name}
-          autoComplete="name"
-          required
-        />
-        <FormField
-          id="lead-company"
-          name="company"
-          label={f.companyLabel}
-          hint={f.optional}
-          placeholder={f.companyPlaceholder}
-          value={values.company}
-          onChange={(e) => update("company", e.target.value)}
-          autoComplete="organization"
-        />
-        <FormField
-          id="lead-phone"
-          name="phone"
-          type="tel"
-          label={f.phoneLabel}
-          placeholder={f.phonePlaceholder}
-          value={values.phone}
-          onChange={(e) => update("phone", e.target.value)}
-          error={errors.phone}
-          autoComplete="tel"
-        />
-        <FormField
-          id="lead-email"
-          name="email"
-          type="email"
-          label={f.emailLabel}
-          placeholder={f.emailPlaceholder}
-          value={values.email}
-          onChange={(e) => update("email", e.target.value)}
-          error={errors.email}
-          autoComplete="email"
-        />
-      </div>
-
-      <SelectField
-        id="lead-solution"
-        name="interestedSolution"
-        label={f.solutionLabel}
-        placeholder={f.solutionPlaceholder}
-        options={f.options}
-        value={values.interestedSolution}
-        onChange={(e) => update("interestedSolution", e.target.value)}
-        error={errors.interestedSolution}
-        hint={f.required}
+    <form onSubmit={onSubmit} onFocusCapture={onFirstInteraction} noValidate className={`${panel} flex flex-col gap-5`}>
+      <FormField
+        id="lead-phone"
+        name="phone"
+        type="tel"
+        label={f.phoneLabel}
+        placeholder={f.phonePlaceholder}
+        value={values.phone}
+        onChange={(e) => update("phone", e.target.value)}
+        error={errors.phone}
+        autoComplete="tel"
         required
       />
-
       <TextAreaField
         id="lead-message"
         name="message"
@@ -226,9 +151,19 @@ export function LeadForm({
         value={values.message}
         onChange={(e) => update("message", e.target.value)}
         error={errors.message}
-        hint={f.required}
         required
         rows={4}
+      />
+      <FormField
+        id="lead-name"
+        name="name"
+        label={f.nameLabel}
+        hint={f.optional}
+        placeholder={f.namePlaceholder}
+        value={values.name}
+        onChange={(e) => update("name", e.target.value)}
+        error={errors.name}
+        autoComplete="name"
       />
 
       {/* Honeypot — hidden from users, catches bots. */}
@@ -245,30 +180,24 @@ export function LeadForm({
       </div>
 
       {status === "error" ? (
-        <div
-          role="alert"
-          className="rounded-lg border border-state-danger bg-surface-secondary px-4 py-3 text-sm text-content-primary"
-        >
+        <div role="alert" className="rounded-lg border border-state-danger bg-surface-secondary px-4 py-3 text-sm text-content-primary">
           <strong className="font-semibold">{f.errorTitle}. </strong>
           {f.errorBody}
         </div>
       ) : null}
 
-      {/* Consent statement the user actually sees — matches the stored consent. */}
-      <p className="text-xs leading-relaxed text-content-secondary">{f.consentLabel}</p>
-
-      <Button type="submit" size="lg" disabled={status === "submitting"}>
+      <Button type="submit" size="lg" className="w-full" disabled={status === "submitting"}>
         {status === "submitting" ? f.submitting : f.submit}
       </Button>
 
-      <p className="text-xs leading-relaxed text-content-muted">
-        {f.privacyNote}{" "}
-        <Link
-          href={`/${locale}/privacy`}
-          className="underline underline-offset-2 hover:text-content-primary"
-        >
+      {/* Consent statement the user actually sees — matches the stored consent. */}
+      <p className="text-sm leading-relaxed text-content-muted">
+        {f.consentBefore}
+        <Link href={`/${locale}/privacy`} className="underline underline-offset-2 hover:text-content-primary">
           {f.privacyLinkLabel}
         </Link>
+        {f.consentAfter}
+        {f.replyTime ? ` ${f.replyTime}` : null}
       </p>
     </form>
   );

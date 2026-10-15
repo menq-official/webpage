@@ -36,8 +36,9 @@ export const editableSections: SectionDef[] = [
       { key: "title", label: "Title", type: "text" },
       { key: "titleAccent", label: "Title accent", type: "text" },
       { key: "subtitle", label: "Subtitle", type: "textarea", rows: 3 },
-      { key: "support", label: "Support text", type: "textarea", rows: 3 },
-      { key: "trustLine", label: "Trust line", type: "textarea", rows: 2 },
+      { key: "primaryCta", label: "Primary button", type: "text" },
+      { key: "secondaryCta", label: "Secondary button", type: "text" },
+      { key: "trust", label: "Trust line", type: "stringList", count: 3 },
     ],
   },
   {
@@ -85,8 +86,8 @@ export const editableSections: SectionDef[] = [
   {
     type: "process",
     fields: [
+      { key: "eyebrow", label: "Eyebrow", type: "text" },
       { key: "title", label: "Title", type: "text" },
-      { key: "description", label: "Description", type: "textarea", rows: 2 },
       { key: "steps", label: "Steps", type: "cardList", count: 6, sub: CARD },
     ],
   },
@@ -101,6 +102,7 @@ export const editableSections: SectionDef[] = [
   {
     type: "cta",
     fields: [
+      { key: "eyebrow", label: "Eyebrow", type: "text" },
       { key: "title", label: "Title", type: "text" },
       { key: "body", label: "Body", type: "textarea", rows: 3 },
     ],

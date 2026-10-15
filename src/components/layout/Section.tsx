@@ -21,6 +21,7 @@ const spacingMap: Record<SectionSpacing, string> = {
 export function Section({
   as,
   id,
+  labelledBy,
   variant = "base",
   spacing = "lg",
   className,
@@ -28,6 +29,8 @@ export function Section({
 }: {
   as?: ElementType;
   id?: string;
+  /** Id of the section's heading (aria-labelledby). */
+  labelledBy?: string;
   variant?: SectionVariant;
   spacing?: SectionSpacing;
   className?: string;
@@ -37,6 +40,7 @@ export function Section({
   return (
     <Tag
       id={id}
+      aria-labelledby={labelledBy}
       className={cn(
         "relative scroll-mt-header",
         variantMap[variant],

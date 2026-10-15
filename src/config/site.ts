@@ -13,7 +13,10 @@ export const site = {
   /** Section anchor ids used by nav + CTAs. */
   anchors: {
     top: "top",
+    how: "how",
+    team: "team",
     solutions: "solutions",
+    examples: "examples",
     industries: "industries",
     process: "process",
     faq: "faq",

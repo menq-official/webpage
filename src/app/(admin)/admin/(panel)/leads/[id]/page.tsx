@@ -63,7 +63,7 @@ export default async function LeadDetailPage({
   return (
     <div>
       <PageTitle
-        title={lead.name}
+        title={lead.name || lead.phone || lead.email || "—"}
         description={`${t.leadDetail.submitted} ${lead.createdAt.toLocaleString()} · ${lead.locale.toUpperCase()}`}
         action={
           canArchive && lead.status !== "ARCHIVED" ? (

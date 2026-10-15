@@ -19,7 +19,15 @@ describe("validateLead", () => {
     expect(Object.keys(errors)).toHaveLength(0);
   });
 
-  it("requires a name of at least 2 chars", () => {
+  it("accepts a lead without a name", () => {
+    const errors = validateLead(
+      { phone: "+374 44 74 74 47", interestedSolution: "consultation", message: "Answer Instagram questions." },
+      messages,
+    );
+    expect(Object.keys(errors)).toHaveLength(0);
+  });
+
+  it("refuses a one-character name", () => {
     const errors = validateLead(
       { name: "A", email: "a@b.com", interestedSolution: "crm", message: "Long enough message." },
       messages,
@@ -73,8 +81,8 @@ describe("phone, untrusted input and the offered solutions", () => {
   });
 
   it("treats a non-string field as empty instead of throwing", () => {
-    const errors = validateLead({ ...valid, email: "a@b.com", name: 42 as unknown }, messages);
-    expect(errors.name).toBe("name");
+    const errors = validateLead({ ...valid, email: "a@b.com", message: 42 as unknown }, messages);
+    expect(errors.message).toBe("message");
   });
 
   it("refuses a solution that is not offered when the list is given", () => {

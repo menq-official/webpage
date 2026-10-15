@@ -1,5 +1,20 @@
 # MenQ Webpage — Changelog / Փոփոխությունների պատմություն
 
+## 2026-10-15 — Homepage v2
+### Հայերեն
+- Գլխավոր էջը նոր դիզայնով է (v2). hero + կենդանի կոնսոլ (Կլինիկա / Խանութ / Սերվիս, Խմբագրել / Հաստատել), 4 քայլ, AI թիմ (անում է ինքը / հարցնում է), մուգ վահանակ աշխատող անջատիչով, լուծումներ (bento) + ոլորտներ, օրինակներ, գործընթաց, FAQ, ձև, footer։
+- Կոնսոլն ինքն է խաղում, սեղմելիս կանգնում է, դադարի կոճակ ունի։ Վահանակի «Հենց հիմա» տողը կանգնում է անջատիչով։ Շարժումը միայն CSS է, reduced-motion-ի և էկրանից դուրս՝ կանգնած։
+- Ձևը՝ հեռախոս, «ի՞նչ անի AI-ն», անուն (ոչ պարտադիր). նույն lead flow-ն է (նախ DB, հետո ծանուցում), լուծումը՝ «խորհրդատվություն»։ Անունը server-ում էլ ոչ պարտադիր է. admin-ում և ծանուցումներում դատարկ անունը «—» է։
+- Օրինակային տվյալները պիտակված են «Օրինակ»։ Պատասխանի ժամկետը դատարկ է և չի ցուցադրվում, մինչև Գևը տա։
+- Բոլոր տեքստերը HY / EN / RU dictionary-ում են. գույներ, տարածություններ, radius-ներ՝ token-ներից։ Trust բաժինը էջից հանված է (կոմպոնենտը մնում է)։
+
+### English
+- The homepage has the new design (v2): hero + live console (Clinic / Shop / Service, Edit / Approve), four steps, AI team (does on its own / asks you), a dark dashboard with a working stop switch, solutions bento + industries, examples, process, FAQ, form, footer.
+- The console plays by itself, stops when clicked and has a pause button. The dashboard's "Right now" line stops with the switch. Motion is CSS only and stays still under reduced motion and off screen.
+- The form asks for a phone, what the AI should do and an optional name; it uses the same lead flow (DB first, then notifications) with the "consultation" solution. The name is optional on the server too; admin and notifications show an empty name as "—".
+- Sample data is labelled "Sample". The reply time is empty and hidden until Gev sets it.
+- All copy lives in the HY / EN / RU dictionaries; colors, spacing and radii come from tokens. The Trust section is off the page (the component stays).
+
 ## 2026-10-14 — Business email on the site
 ### Հայերեն
 - Կայքի կոնտակտներում, footer-ում և Google-ի կառուցվածքային տվյալներում հիմա `info@menqstudio.am`-ն է (Google Workspace)։

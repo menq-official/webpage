@@ -65,7 +65,8 @@ export function validateLead(
   const solution = text(input.interestedSolution);
   const message = text(input.message);
 
-  if (name.length < 2) errors.name = messages.name;
+  // The name is optional; when given it must be a real one.
+  if (name && name.length < 2) errors.name = messages.name;
   if (!phone && !email) errors.phone = messages.contact;
   else if (phone && !isValidPhone(phone)) errors.phone = messages.phone;
   if (email && !EMAIL_RE.test(email)) errors.email = messages.email;
