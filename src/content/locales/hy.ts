@@ -57,8 +57,17 @@ export const hy: Dictionary = {
       autoLabel: "Ինքնուրույն",
       srSummary:
         "Դեմո. AI գործակալը ստանում է հաճախորդի հաղորդագրությունը, պատրաստում է պատասխանը և ուղարկում է այն միայն ձեր հաստատումից հետո։",
+      tabsLabel: "Օրինակի ոլորտ",
+      save: "Պահպանել",
+      editFieldLabel: "Խմբագրել պատասխանը",
+      handOver: "Ինքս կպատասխանեմ",
+      handedOverLabel: "Փոխանցվեց ձեզ. AI-ն ոչինչ չի ուղարկում",
+      waitingLabel: "Սպասում է ձեր որոշմանը",
+      next: "Հաջորդ օրինակը",
+      note: "Սցենարային օրինակ է. ոչ մի հաղորդագրություն չի ուղարկվում։",
       scenarios: [
         {
+          tab: "Ամրագրում",
           channel: "Instagram",
           time: "02:14",
           customer: "Անի",
@@ -67,6 +76,7 @@ export const hy: Dictionary = {
           autoActions: ["Հայտը գրանցվեց CRM-ում", "Ստուգվեց բժշկի օրացույցը"],
         },
         {
+          tab: "Վաճառք",
           channel: "Կայք",
           time: "23:40",
           customer: "Արմեն",
@@ -75,6 +85,7 @@ export const hy: Dictionary = {
           autoActions: ["Հայտը նշվեց որպես առաջնահերթ", "Մասնագետի համար ստեղծվեց առաջադրանք"],
         },
         {
+          tab: "Սպասարկում",
           channel: "Telegram",
           time: "07:05",
           customer: "Մարիամ",

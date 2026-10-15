@@ -22,6 +22,8 @@ export type IndustryGroup = {
 export type FaqItem = { q: string; a: string };
 
 export type AgentScenario = {
+  /** Short tab label for the interactive demo (e.g. "Booking"). */
+  tab: string;
   channel: string;
   time: string;
   customer: string;
@@ -99,6 +101,14 @@ export type Dictionary = {
       approvedLabel: string;
       autoLabel: string;
       srSummary: string;
+      tabsLabel: string;
+      save: string;
+      editFieldLabel: string;
+      handOver: string;
+      handedOverLabel: string;
+      waitingLabel: string;
+      next: string;
+      note: string;
       scenarios: AgentScenario[];
     };
   };

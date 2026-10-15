@@ -57,8 +57,17 @@ export const en: Dictionary = {
       autoLabel: "On its own",
       srSummary:
         "Demo: an AI agent receives a customer message, drafts a reply and sends it only after you approve it.",
+      tabsLabel: "Example scenario",
+      save: "Save",
+      editFieldLabel: "Edit the reply",
+      handOver: "I'll answer myself",
+      handedOverLabel: "Handed to you: the AI does not send anything",
+      waitingLabel: "Waiting for your decision",
+      next: "Next example",
+      note: "A scripted example: nothing is sent to anyone.",
       scenarios: [
         {
+          tab: "Booking",
           channel: "Instagram",
           time: "02:14",
           customer: "Ani",
@@ -67,6 +76,7 @@ export const en: Dictionary = {
           autoActions: ["Request logged in the CRM", "Doctor's calendar checked"],
         },
         {
+          tab: "Sales",
           channel: "Website",
           time: "23:40",
           customer: "Armen",
@@ -75,6 +85,7 @@ export const en: Dictionary = {
           autoActions: ["Request marked as high priority", "Task created for a specialist"],
         },
         {
+          tab: "Support",
           channel: "Telegram",
           time: "07:05",
           customer: "Mariam",

@@ -57,8 +57,17 @@ export const ru: Dictionary = {
       autoLabel: "Самостоятельно",
       srSummary:
         "Демо: AI-агент получает сообщение клиента, готовит ответ и отправляет его только после вашего одобрения.",
+      tabsLabel: "Пример сценария",
+      save: "Сохранить",
+      editFieldLabel: "Изменить ответ",
+      handOver: "Отвечу сам",
+      handedOverLabel: "Передано вам: AI ничего не отправляет",
+      waitingLabel: "Ждёт вашего решения",
+      next: "Следующий пример",
+      note: "Сценарный пример: ничего никому не отправляется.",
       scenarios: [
         {
+          tab: "Запись",
           channel: "Instagram",
           time: "02:14",
           customer: "Ани",
@@ -67,6 +76,7 @@ export const ru: Dictionary = {
           autoActions: ["Заявка добавлена в CRM", "Проверен календарь врача"],
         },
         {
+          tab: "Продажи",
           channel: "Сайт",
           time: "23:40",
           customer: "Армен",
@@ -75,6 +85,7 @@ export const ru: Dictionary = {
           autoActions: ["Заявка отмечена как приоритетная", "Создана задача для специалиста"],
         },
         {
+          tab: "Поддержка",
           channel: "Telegram",
           time: "07:05",
           customer: "Мариам",
