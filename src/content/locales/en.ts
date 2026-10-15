@@ -562,85 +562,97 @@ export const en: Dictionary = {
   legal: {
     privacy: {
       title: "Privacy policy",
-      updated: "Updated: 14.10.2026",
+      updated: "Updated: 15.10.2026",
       intro:
-        "This page describes what data we collect, why, and how we use it.",
+        "This policy explains what personal data menqstudio.am collects, why, who receives it and how long we keep it. The site is operated by MenQ Studio, Armenia. Contact: info@menqstudio.am.",
       sections: [
         {
-          heading: "What data we collect",
-          body: "Name, company, phone, email, interested solution, message, language, UTM parameters, referrer, landing page, submission timestamp, and IP address when needed for spam/security.",
+          heading: "Who is responsible",
+          body: "MenQ Studio (Armenia) decides how the data collected on this site is used. MenQ Studio is not yet registered as a legal entity; until it is, the person behind MenQ Studio is responsible for this processing. Write to info@menqstudio.am about anything in this policy.",
+        },
+        {
+          heading: "What we collect through the form",
+          body: "The name, company, phone, email, the solution you choose and your message; the site language, the page you sent it from, the referring page and UTM tags if the link had them; the time of the request and your IP address.",
         },
         {
           heading: "Why we collect it",
-          body: "We collect data solely to respond to your request, contact you, and provide the consultation.",
+          body: "To answer your request and prepare a consultation or an offer, which you ask for by sending the form. The IP address and the time are kept to protect the form from spam and abuse.",
         },
         {
-          heading: "How we use contact data",
-          body: "We contact you via the phone or email you provide to process your request. We do not sell your data to third parties.",
+          heading: "Who receives it",
+          body: "Only MenQ Studio's team, each person according to their role. Service providers process data for us: Hetzner (servers in Germany), Cloudflare (delivery and protection of the site; it sees your IP address), Google Workspace (our email) and, when enabled, Telegram (notifications to our team). We do not sell personal data.",
+        },
+        {
+          heading: "Analytics",
+          body: "Google Analytics runs only if you allow analytics in the cookie banner, and it is not used to identify you. Without your consent no analytics is loaded.",
         },
         {
           heading: "How long we keep it",
-          body: "We keep data for as long as needed to process the request and for business records. The exact retention period will be defined in the final policy.",
-        },
-        {
-          heading: "Who has internal access",
-          body: "Only authorized team members can access the data, based on their roles and a need-to-know basis.",
-        },
-        {
-          heading: "Third-party tools",
-          body: "We may use notification (email, Telegram) and analytics tools. The list will be specified in the final version.",
+          body: "Requests are kept for up to 24 months after our last contact with you, then deleted, unless you ask us to delete them sooner. Analytics data is kept for 14 months.",
         },
         {
           heading: "Your rights",
-          body: "You can request correction or deletion of your data by contacting us through the listed contacts.",
+          body: "You can ask to see, correct or delete your data, and withdraw your consent to analytics at any time in the cookie banner or by clearing cookies. Write to info@menqstudio.am; we answer within 30 days.",
         },
         {
-          heading: "Contact",
-          body: "For privacy questions, reach us through the contacts listed on the page.",
+          heading: "Changes",
+          body: "We will update this page when our processing changes. The date at the top shows the latest version.",
         },
       ],
     },
     terms: {
       title: "Terms of use",
-      updated: "Updated: 14.10.2026",
+      updated: "Updated: 15.10.2026",
       intro:
-        "This page describes the general terms for using the website.",
+        "These terms apply to using menqstudio.am, operated by MenQ Studio, Armenia. By using the site you accept them.",
       sections: [
         {
-          heading: "Description of services",
-          body: "The website presents our AI, automation, and software solution services and lets you submit a consultation request.",
+          heading: "The site",
+          body: "The site describes MenQ Studio's services in AI agents, automation, websites and software, and lets you send a request for a consultation. Sending a request does not create a contract or an obligation for either side.",
         },
         {
-          heading: "Use of submissions",
-          body: "Submitted requests are processed to contact you. Please provide accurate information.",
+          heading: "Your request",
+          body: "Please give accurate contact details and do not send other people's data without their permission. We use your request as described in the Privacy policy.",
+        },
+        {
+          heading: "Information on the site",
+          body: "Descriptions, examples and the demo on the site are general information about our services, not a binding offer. The scope, price and timeline of any work are agreed separately in writing.",
         },
         {
           heading: "Intellectual property",
-          body: "Website content belongs to MenQ unless otherwise stated.",
+          body: "The texts, design, logo and the MenQ name on this site belong to MenQ Studio. You may link to the site; copying its content needs our permission.",
         },
         {
-          heading: "Limitation of liability",
-          body: "The website is provided on an 'as is' basis. Final terms will be defined in the updated version.",
+          heading: "Liability",
+          body: "We keep the site accurate and available, but it is provided as is, without a guarantee of uninterrupted operation. MenQ Studio is not liable for losses caused by using the site or by being unable to use it, to the extent the law allows.",
+        },
+        {
+          heading: "Law and changes",
+          body: "These terms are governed by the law of the Republic of Armenia. We may update them; the date at the top shows the latest version. Questions: info@menqstudio.am.",
         },
       ],
     },
     cookies: {
       title: "Cookie policy",
-      updated: "Updated: 14.10.2026",
+      updated: "Updated: 15.10.2026",
       intro:
-        "This page describes how we use cookies.",
+        "This page lists the cookies menqstudio.am uses. Necessary cookies keep the site working; analytics cookies are set only with your consent.",
       sections: [
         {
-          heading: "What cookies are",
-          body: "Cookies are small files stored on your device to keep the site working and to enable analytics.",
+          heading: "Necessary cookies",
+          body: "menq-locale remembers your language (1 year). menq-theme remembers the light or dark theme (1 year). menq-consent remembers your cookie choice (180 days). Cloudflare may set a security cookie such as __cf_bm to protect the site from bots (30 minutes).",
         },
         {
-          heading: "Which cookies we use",
-          body: "Essential cookies for site operation (e.g. theme and language preference). Analytics cookies activate only when the corresponding tools are enabled.",
+          heading: "Analytics cookies (only with consent)",
+          body: "If you allow analytics, Google Analytics sets _ga and _ga_<ID> to count visits without identifying you (up to 2 years). If you decline, they are not set.",
+        },
+        {
+          heading: "Team-only cookies",
+          body: "menq_session and menq-admin-locale are set only when a MenQ team member signs in to the admin area; visitors never receive them.",
         },
         {
           heading: "Managing cookies",
-          body: "You can manage cookies through your browser settings.",
+          body: "You can change your analytics choice by clearing the menq-consent cookie, after which the banner appears again, or block and delete cookies in your browser settings. Without necessary cookies some settings, such as the language, will not be remembered.",
         },
       ],
     },
