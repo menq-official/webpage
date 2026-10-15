@@ -34,6 +34,9 @@ export default async function PageNotFound({
   const t = copy[locale];
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-6 bg-page px-page-x text-center">
+      {/* A 404 served through the proxy rewrite does not get generateMetadata's title, so the
+          page sets it itself; React hoists <title> into <head>. */}
+      <title>{`${t.title} | MenQ`}</title>
       <p className="font-display text-6xl font-bold text-content-muted">404</p>
       <h1 className="font-display text-2xl font-bold text-content-primary">{t.title}</h1>
       <ButtonLink href={`/${locale}`} size="lg">
