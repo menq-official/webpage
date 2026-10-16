@@ -18,6 +18,8 @@ export async function logSystemEvent(input: {
   const line = `[${input.severity}] ${input.eventType}: ${input.message}`;
   if (input.severity === "ERROR" || input.severity === "CRITICAL") {
     console.error(line);
+  } else if (input.severity === "WARNING") {
+    console.warn(line);
   } else {
     console.info(line);
   }

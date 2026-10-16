@@ -39,6 +39,25 @@ describe("clientIp", () => {
     expect(clientIp(headers({ "x-real-ip": "5.5.5.5" }))).toBe("5.5.5.5");
   });
 
+  it("prefers CF-Connecting-IP (set by Cloudflare) over XFF", () => {
+    process.env.TRUSTED_PROXY_COUNT = "1";
+    expect(
+      clientIp(
+        headers({
+          "cf-connecting-ip": "7.7.7.7",
+          "x-forwarded-for": "7.7.7.7, 172.68.0.1",
+        }),
+      ),
+    ).toBe("7.7.7.7");
+  });
+
+  it("falls back to the XFF logic when CF-Connecting-IP is absent or empty", () => {
+    process.env.TRUSTED_PROXY_COUNT = "1";
+    expect(
+      clientIp(headers({ "cf-connecting-ip": " ", "x-forwarded-for": "1.1.1.1, 2.2.2.2" })),
+    ).toBe("2.2.2.2");
+  });
+
   it("returns 'unknown' when nothing is present", () => {
     expect(clientIp(headers({}))).toBe("unknown");
   });
