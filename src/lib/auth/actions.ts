@@ -174,16 +174,14 @@ export async function acceptInviteAction(
     return { error: t.errors.inviteInvalid };
   }
 
-  // Never let an invite re-activate a suspended/deactivated/rejected account.
+  // An invite only ever CREATES a new account. It must never touch an existing
+  // user (any status): otherwise anyone who can invite could invite an existing
+  // admin's email, open the link and overwrite that admin's password.
   const existingUser = await db.user.findUnique({
     where: { email: invite.email },
-    select: { status: true },
+    select: { id: true },
   });
-  if (
-    existingUser &&
-    existingUser.status !== "ACTIVE" &&
-    existingUser.status !== "PENDING_APPROVAL"
-  ) {
+  if (existingUser) {
     return { error: t.errors.inviteInvalid };
   }
 
@@ -198,16 +196,24 @@ export async function acceptInviteAction(
   }
 
   const passwordHash = await hashPassword(password);
-  const user = await db.user.upsert({
-    where: { email: invite.email },
-    update: { passwordHash, status: "ACTIVE", name: name || undefined },
-    create: {
-      email: invite.email,
-      name: name || invite.email.split("@")[0],
-      passwordHash,
-      status: "ACTIVE",
-    },
-  });
+  let user: { id: string };
+  try {
+    // create (never upsert): the unique email constraint rejects a user that
+    // appeared between the check above and this write.
+    user = await db.user.create({
+      data: {
+        email: invite.email,
+        name: name || invite.email.split("@")[0],
+        passwordHash,
+        status: "ACTIVE",
+      },
+      select: { id: true },
+    });
+  } catch {
+    return { error: t.errors.inviteInvalid };
+  }
+  // A password was just set: no session may predate it.
+  await invalidateUserSessions(user.id);
 
   if (invite.roleKey) {
     const role = await db.role.findUnique({ where: { key: invite.roleKey } });
@@ -305,8 +311,11 @@ export async function resetPasswordAction(
   redirect("/admin/login?reset=1");
 }
 
-/** Admin-only: create an invite for a non-super-admin role. Returns the link
- * (also emailed) so it can be shown/copied in the admin UI. */
+/** Admin-only: create an invite for a non-super-admin role, for an email that
+ * does not belong to any account yet. The link is emailed. It is returned to
+ * the inviter ONLY when the email could not be delivered (SMTP not configured
+ * or sending failed): that is the sole delivery path while SMTP is off. Once
+ * SMTP works the link goes to the invitee's mailbox only. */
 export async function createInviteAction(input: {
   email: string;
   roleKey: string;
@@ -332,6 +341,13 @@ export async function createInviteAction(input: {
   const db = getPrisma();
   if (!db) return { error: t.errors.notAvailable };
 
+  // Invites are for new accounts only (see acceptInviteAction).
+  const existingUser = await db.user.findUnique({
+    where: { email },
+    select: { id: true },
+  });
+  if (existingUser) return { error: t.errors.emailInUse };
+
   const token = randomBytes(32).toString("hex");
   await db.inviteToken.create({
     data: {
@@ -343,16 +359,16 @@ export async function createInviteAction(input: {
     },
   });
   const link = `${site.url}/admin/accept-invite?token=${token}`;
-  await sendRawEmail({
+  const delivery = await sendRawEmail({
     to: email,
     subject: "You're invited to the MenQ admin panel",
     text: `You've been invited as ${input.roleKey}. Set your password:\n${link}\n\nThis link expires in 72 hours.`,
-  }).catch(() => {});
+  }).catch(() => ({ sent: false }));
   await writeAuditLog({
     actorUserId: actor.id,
     action: "auth.invite_created",
     entityType: "user",
-    metadata: { email, roleKey: input.roleKey },
+    metadata: { email, roleKey: input.roleKey, emailed: delivery.sent },
   });
-  return { ok: true, link };
+  return delivery.sent ? { ok: true } : { ok: true, link };
 }
