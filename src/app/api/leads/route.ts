@@ -17,12 +17,12 @@ export const runtime = "nodejs";
 // Single-instance only; swap for a shared store (Redis/Upstash) when scaling.
 const buckets = new Map<string, number[]>();
 
-function overLimit(key: string, windowMs: number, max: number): boolean {
+function recentHits(key: string, windowMs: number): number[] {
   const now = Date.now();
   const recent = (buckets.get(key) ?? []).filter((t) => now - t < windowMs);
-  recent.push(now);
-  buckets.set(key, recent);
-  return recent.length > max;
+  if (recent.length === 0) buckets.delete(key);
+  else buckets.set(key, recent);
+  return recent;
 }
 
 const MIN = 60_000;
@@ -42,15 +42,39 @@ function sweepBuckets(now: number): void {
   }
 }
 
-function isRateLimited(ip: string, email?: string, phone?: string): boolean {
-  if (process.env.RATE_LIMIT_ENABLED === "false") return false;
+type RateRule = { key: string; windowMs: number; max: number };
+
+function rateRules(ip: string, email?: string, phone?: string): RateRule[] {
+  const rules: RateRule[] = [
+    { key: `ip10:${ip}`, windowMs: 10 * MIN, max: 5 },
+    { key: `ip60:${ip}`, windowMs: 60 * MIN, max: 10 },
+  ];
+  if (email) rules.push({ key: `em:${email}`, windowMs: 60 * MIN, max: 3 });
+  if (phone) rules.push({ key: `ph:${phone}`, windowMs: 60 * MIN, max: 3 });
+  return rules;
+}
+
+function rateLimitEnabled(): boolean {
+  return process.env.RATE_LIMIT_ENABLED !== "false";
+}
+
+/** True when any bucket is already full. Does not record anything. */
+function isRateLimited(rules: RateRule[]): boolean {
+  if (!rateLimitEnabled()) return false;
   sweepBuckets(Date.now());
-  let limited = false;
-  if (overLimit(`ip10:${ip}`, 10 * MIN, 5)) limited = true;
-  if (overLimit(`ip60:${ip}`, 60 * MIN, 10)) limited = true;
-  if (email && overLimit(`em:${email}`, 60 * MIN, 3)) limited = true;
-  if (phone && overLimit(`ph:${phone}`, 60 * MIN, 3)) limited = true;
-  return limited;
+  return rules.some((r) => recentHits(r.key, r.windowMs).length >= r.max);
+}
+
+/** Counts a submission. Called only for valid submissions that are accepted,
+ * so invalid / rejected requests never eat into a real visitor's allowance. */
+function recordSubmission(rules: RateRule[]): void {
+  if (!rateLimitEnabled()) return;
+  const now = Date.now();
+  for (const r of rules) {
+    const recent = recentHits(r.key, r.windowMs);
+    recent.push(now);
+    buckets.set(r.key, recent);
+  }
 }
 
 function cap(value: unknown, max: number): string {
@@ -59,6 +83,29 @@ function cap(value: unknown, max: number): string {
 
 // Reject oversized payloads before parsing (fields are capped again below).
 const MAX_BODY_BYTES = 50_000;
+
+/**
+ * Reads the body as text, counting the bytes actually received. The
+ * content-length header is only a hint (absent with chunked encoding), so the
+ * cap is enforced on the stream itself. Returns null when the cap is exceeded.
+ */
+async function readCappedBody(req: NextRequest, maxBytes: number): Promise<string | null> {
+  if (!req.body) return "";
+  const reader = req.body.getReader();
+  const chunks: Uint8Array[] = [];
+  let total = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    total += value.byteLength;
+    if (total > maxBytes) {
+      await reader.cancel().catch(() => {});
+      return null;
+    }
+    chunks.push(value);
+  }
+  return Buffer.concat(chunks).toString("utf8");
+}
 
 export async function POST(req: NextRequest) {
   const ip = clientIp(req.headers);
@@ -69,12 +116,22 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "PAYLOAD_TOO_LARGE" }, { status: 413 });
   }
 
-  let body: Partial<LeadInput>;
+  const raw = await readCappedBody(req, MAX_BODY_BYTES);
+  if (raw === null) {
+    return NextResponse.json({ error: "PAYLOAD_TOO_LARGE" }, { status: 413 });
+  }
+
+  let parsed: unknown;
   try {
-    body = (await req.json()) as Partial<LeadInput>;
+    parsed = JSON.parse(raw);
   } catch {
     return NextResponse.json({ error: "INVALID_JSON" }, { status: 400 });
   }
+  // Valid JSON that is not an object (null, array, number, string) → 400.
+  if (parsed === null || typeof parsed !== "object" || Array.isArray(parsed)) {
+    return NextResponse.json({ error: "INVALID_JSON" }, { status: 400 });
+  }
+  const body = parsed as Partial<LeadInput>;
 
   // Honeypot: silently accept so bots don't learn they were caught.
   if (isHoneypotTripped(body)) {
@@ -91,7 +148,8 @@ export async function POST(req: NextRequest) {
   const email = cap(body.email, LEAD_MAX_LENGTHS.email) || undefined;
   const phone = cap(body.phone, LEAD_MAX_LENGTHS.phone) || undefined;
 
-  if (isRateLimited(ip, email, phone)) {
+  const rules = rateRules(ip, email, phone);
+  if (isRateLimited(rules)) {
     await logSystemEvent({
       severity: "WARNING",
       eventType: "lead.rate_limited",
@@ -144,6 +202,7 @@ export async function POST(req: NextRequest) {
     referrer,
   };
 
+  recordSubmission(rules);
   const result = await createLead(lead);
 
   if (!result.ok) {

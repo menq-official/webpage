@@ -188,5 +188,16 @@ export async function createLead(
     }
   }
 
+  // No channel configured at all: the lead is saved, but nobody was told about
+  // it. Make that loud (same mechanism as a failure) instead of silent.
+  if (!duplicate && results.every((r) => r.outcome === "skipped")) {
+    await logSystemEvent({
+      severity: "WARNING",
+      eventType: "lead.notify_skipped",
+      message: "Lead notification skipped: no channel (email/Telegram) is configured",
+      metadata: { leadId, persisted },
+    });
+  }
+
   return { ok: true, leadId, persisted, duplicate };
 }

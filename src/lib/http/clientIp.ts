@@ -11,8 +11,15 @@
  * Set `TRUSTED_PROXY_COUNT` to the number of proxies between the public
  * internet and this app: Vercel = 1, a single nginx = 1, nginx behind
  * Cloudflare = 2, etc. Defaults to 1.
+ *
+ * `CF-Connecting-IP` wins when present: the production origin is reachable
+ * only through Cloudflare, which always overwrites that header with the real
+ * visitor IP, so a client cannot spoof it. The XFF logic above is the
+ * fallback (local dev, any non-Cloudflare deployment).
  */
 export function clientIp(headers: { get(name: string): string | null }): string {
+  const cf = headers.get("cf-connecting-ip")?.trim();
+  if (cf) return cf;
   const hops = Math.max(1, Number(process.env.TRUSTED_PROXY_COUNT ?? 1) || 1);
   const xff = headers.get("x-forwarded-for");
   if (xff) {
