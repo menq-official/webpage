@@ -74,6 +74,7 @@ export const adminHy = {
     inviteInvalid: "Այս հրավերը անվավեր է կամ ժամկետանց։",
     resetInvalid: "Այս վերականգնման հղումն անվավեր է կամ ժամկետանց։",
     superAdminInvite: "Super Admin-ը չի կարող հրավիրվել վահանակից։",
+    emailInUse: "Այս էլ. հասցեով հաշիվ արդեն կա։",
     invalidEmail: "Մուտքագրեք վավեր email։",
     roleNotAllowed: "Դուք չունեք այս դերը նշանակելու թույլտվություն։",
     tooManyAttempts: "Չափից շատ փորձեր։ Փորձեք մի փոքր ուշ։",
